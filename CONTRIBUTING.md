@@ -11,8 +11,8 @@ Also if you work on code please follow our coding conventions. We're not going t
 3. Use `final` keyword wherever applicable
 4. Document your code (of course!)
 
-If you create new widgets please add them to our [demo](https://github.com/gwtbootstrap3/gwtbootstrap3-demo), too.
+If you create new widgets please add them to our [demo](https://github.com/gwtbootstrap4/gwtbootstrap4-demo), too.
 
 Thank you!
 
-[1]: https://groups.google.com/forum/?fromgroups#!forum/gwtbootstrap3
+[1]: https://groups.google.com/forum/?fromgroups#!forum/gwtbootstrap4
