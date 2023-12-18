@@ -39,7 +39,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @see org.gwtbootstrap4.client.ui.VerticalButtonGroup
  */
 public abstract class AbstractButtonGroup extends FlowPanel implements HasName, HasSize<ButtonGroupSize>,
-        HasDataToggle, HasJustified, HasPull, HasResponsiveness {
+        HasDataToggle, HasPull, HasResponsiveness {
 
     private final PullMixin<AbstractButtonGroup> pullMixin = new PullMixin<AbstractButtonGroup>(this);
     private final DataToggleMixin<AbstractButtonGroup> toggleMixin = new DataToggleMixin<AbstractButtonGroup>(this);
@@ -93,27 +93,6 @@ public abstract class AbstractButtonGroup extends FlowPanel implements HasName, 
     @Override
     public Toggle getDataToggle() {
         return toggleMixin.getDataToggle();
-    }
-
-    /**
-     * Make a group of buttons stretch at the same size to span the entire width of its parent.
-     * <p/>
-     * <strong>Note:</strong> Justified button groups only work with {@link org.gwtbootstrap4.client.ui.AnchorButton} child elements!
-     *
-     * @param justified Stretch button group
-     */
-    @Override
-    public void setJustified(final boolean justified) {
-        if (justified) {
-            addStyleName(Styles.BTN_GROUP_JUSTIFIED);
-        } else {
-            removeStyleName(Styles.BTN_GROUP_JUSTIFIED);
-        }
-    }
-
-    @Override
-    public boolean isJustified() {
-        return StyleHelper.containsStyle(getStyleName(), Styles.BTN_GROUP_JUSTIFIED);
     }
 
     @Override

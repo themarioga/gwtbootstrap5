@@ -154,10 +154,8 @@ public class Alert extends Div implements HasWidgets, HasText, HasType<AlertType
     public void setDismissable(final boolean dismissable) {
         if (dismissable) {
             insert(closeButton, (Element) getElement(), 0, true);
-            addStyleName(Styles.ALERT_DISMISSABLE);
         } else {
             closeButton.removeFromParent();
-            removeStyleName(Styles.ALERT_DISMISSABLE);
         }
     }
 

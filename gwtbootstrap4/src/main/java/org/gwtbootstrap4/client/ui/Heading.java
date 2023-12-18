@@ -25,10 +25,10 @@ import org.gwtbootstrap4.client.ui.base.HasAlignment;
 import org.gwtbootstrap4.client.ui.base.HasEmphasis;
 import org.gwtbootstrap4.client.ui.base.HasSubText;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.Alignment;
 import org.gwtbootstrap4.client.ui.constants.Emphasis;
 import org.gwtbootstrap4.client.ui.constants.HeadingSize;
 import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.constants.TextAlignment;
 import org.gwtbootstrap4.client.ui.html.Small;
 import org.gwtbootstrap4.client.ui.html.Text;
 
@@ -177,16 +177,16 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      * {@inheritDoc}
      */
     @Override
-    public void setAlignment(final Alignment alignment) {
-        StyleHelper.addUniqueEnumStyleName(this, Alignment.class, alignment);
+    public void setAlignment(final TextAlignment alignment) {
+        StyleHelper.addUniqueEnumStyleName(this, TextAlignment.class, alignment);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Alignment getAlignment() {
-        return Alignment.fromStyleName(getStyleName());
+    public TextAlignment getAlignment() {
+        return TextAlignment.fromStyleName(getStyleName());
     }
 
     /**
@@ -198,12 +198,8 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
 
         // Adding styles to the heading depending on the parent
         if (getParent() != null) {
-            if (getParent() instanceof LinkedGroupItem) {
-                addStyleName(Styles.LIST_GROUP_ITEM_HEADING);
-            } else if (getParent() instanceof CardHeader) {
+            if (getParent() instanceof CardHeader) {
                 addStyleName(Styles.CARD_TITLE);
-            } else if (getParent() instanceof MediaBody) {
-                addStyleName(Styles.MEDIA_HEADING);
             }
         }
     }

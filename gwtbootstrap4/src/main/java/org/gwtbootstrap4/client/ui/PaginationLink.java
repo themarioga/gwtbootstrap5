@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2014 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,15 +21,16 @@ package org.gwtbootstrap4.client.ui;
  */
 
 import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.gwt.FlowPanel;
 
 /**
- * @author Sven Jacobs
+ * Support for Bootstrap pagination (http://getbootstrap.com/components/#pagination)
+ *
  * @author Joshua Godi
  */
-public class NavbarHeader extends FlowPanel {
+public class PaginationLink extends Anchor {
 
-    public NavbarHeader() {
-        setStyleName(Styles.NAVBAR_HEADER);
+    public PaginationLink() {
+        setStyleName(Styles.PAGINATION_LINK);
     }
+
 }

@@ -77,12 +77,6 @@ public class ListItem extends AbstractListItem implements HasWidgets, HasText, H
     @Override
     protected void onAttach() {
         super.onAttach();
-        // Adding styles to the list item depending on the parent
-        if (getParent() != null) {
-            if (getParent() instanceof MediaList) {
-                addStyleName(Styles.MEDIA);
-            }
-        }
     }
 
     /** {@inheritDoc} */

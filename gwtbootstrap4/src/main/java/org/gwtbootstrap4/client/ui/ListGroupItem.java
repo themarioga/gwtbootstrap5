@@ -67,4 +67,13 @@ public class ListGroupItem extends ComplexWidget implements HasType<ListGroupIte
     public ListGroupItemType getType() {
         return ListGroupItemType.fromStyleName(getStyleName());
     }
+
+    public void setFlush(boolean flush) {
+        if (flush) {
+            addStyleName(Styles.LIST_GROUP_FLUSH);
+        } else {
+            removeStyleName(Styles.LIST_GROUP_FLUSH);
+        }
+    }
+
 }

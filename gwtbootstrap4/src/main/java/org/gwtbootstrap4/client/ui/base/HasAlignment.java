@@ -20,7 +20,7 @@ package org.gwtbootstrap4.client.ui.base;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Alignment;
+import org.gwtbootstrap4.client.ui.constants.TextAlignment;
 
 /**
  * An object that implements this interface has alignment, which can be set and
@@ -34,12 +34,12 @@ public interface HasAlignment {
      *
      * @param alignment the object's new alignment
      */
-    void setAlignment(Alignment alignment);
+    void setAlignment(TextAlignment alignment);
 
     /**
      * Get the object's alignment.
      *
      * @return the object's alignment
      */
-    Alignment getAlignment();
+    TextAlignment getAlignment();
 }

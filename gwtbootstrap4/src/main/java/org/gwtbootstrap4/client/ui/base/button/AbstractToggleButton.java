@@ -39,9 +39,8 @@ import com.google.gwt.dom.client.Element;
  */
 public abstract class AbstractToggleButton extends AbstractIconButton implements HasDataToggle {
 
-    private final DataToggleMixin<AbstractToggleButton> toggleMixin = new DataToggleMixin<AbstractToggleButton>(this);
+    private final DataToggleMixin<AbstractToggleButton> toggleMixin = new DataToggleMixin<>(this);
     private final Text separator = new Text(" ");
-    private final Caret caret = new Caret();
 
     protected AbstractToggleButton() {
         this(ButtonType.DEFAULT);
@@ -53,18 +52,9 @@ public abstract class AbstractToggleButton extends AbstractIconButton implements
     }
 
     /**
-     * Toggles the display of the caret for the button
-     * @param toggleCaret show/hide the caret for the button
-     */
-    public void setToggleCaret(final boolean toggleCaret) {
-        caret.setVisible(toggleCaret);
-    }
-
-    /**
      * Specifies that this button acts as a toggle, for instance for a parent {@link org.gwtbootstrap4.client.ui.DropDown}
      * or {@link org.gwtbootstrap4.client.ui.ButtonGroup}
      * <p/>
-     * Adds a {@link Caret} as a child widget.
      *
      * @param toggle Kind of toggle
      */
@@ -73,18 +63,13 @@ public abstract class AbstractToggleButton extends AbstractIconButton implements
         toggleMixin.setDataToggle(toggle);
 
         // We defer to make sure the elements are available to manipulate their position
-        Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
-            @Override
-            public void execute() {
-                separator.removeFromParent();
-                caret.removeFromParent();
+        Scheduler.get().scheduleDeferred(() -> {
+            separator.removeFromParent();
 
-                if (toggle == Toggle.DROPDOWN) {
-                    addStyleName(Styles.DROPDOWN_TOGGLE);
+            if (toggle == Toggle.DROPDOWN) {
+                addStyleName(Styles.DROPDOWN_TOGGLE);
 
-                    add(separator, (Element) getElement());
-                    add(caret, (Element) getElement());
-                }
+                add(separator, (Element) getElement());
             }
         });
     }

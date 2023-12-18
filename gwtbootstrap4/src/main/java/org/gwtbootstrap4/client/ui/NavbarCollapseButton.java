@@ -53,10 +53,6 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
         button.setStyleName(Styles.NAVBAR_TOGGLE);
         button.setDataToggle(Toggle.COLLAPSE);
 
-        button.add(newBarIcon());
-        button.add(newBarIcon());
-        button.add(newBarIcon());
-
         initWidget(button);
     }
 
@@ -100,9 +96,4 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
         return pullMixin.getPull();
     }
 
-    private Span newBarIcon() {
-        final Span span = new Span();
-        span.setStyleName(Styles.ICON_BAR);
-        return span;
-    }
 }

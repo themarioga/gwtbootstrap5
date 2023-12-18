@@ -20,52 +20,23 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+import com.google.gwt.dom.client.Document;
 import org.gwtbootstrap4.client.ui.base.HasSize;
+import org.gwtbootstrap4.client.ui.base.HasValidationState;
+import org.gwtbootstrap4.client.ui.base.form.FormElementContainer;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap4.client.ui.constants.FormGroupSize;
 import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.WellSize;
-import org.gwtbootstrap4.client.ui.html.Div;
+import org.gwtbootstrap4.client.ui.constants.ValidationState;
 
 /**
- * Widget representing the Bootstrap Well
- * <p/>
- * <a href="http://getbootstrap.com/components/#wells">Bootstrap Documentation</a>
- * <p/>
- * <h3>UiBinder example</h3>
- * <p/>
- * <pre>
- * {@code
- * <b:Well>
- *    ...
- * </b:Well>
- * }
- * </pre>
- *
  * @author Sven Jacobs
- * @author Joshua Godi
  */
-public class Well extends Div implements HasSize<WellSize> {
+public class FormRow extends FormElementContainer {
 
-    /**
-     * Creates a Well with the default Bootstrap styling
-     */
-    public Well() {
-        setStyleName(Styles.WELL);
+    public FormRow() {
+        setElement(Document.get().createDivElement());
+        setStyleName(Styles.FORM_ROW);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setSize(final WellSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, WellSize.class, size);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public WellSize getSize() {
-        return WellSize.fromStyleName(getStyleName());
-    }
 }

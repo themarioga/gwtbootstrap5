@@ -29,10 +29,14 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ListGroupItemType implements Type, Style.HasCssName {
     DEFAULT(""),
+    PRIMARY("list-group-item-primary"),
+    SECONDARY("list-group-item-secondary"),
     SUCCESS("list-group-item-success"),
-    INFO("list-group-item-info"),
+    DANGER("list-group-item-danger"),
     WARNING("list-group-item-warning"),
-    DANGER("list-group-item-danger");
+    INFO("list-group-item-info"),
+    LIGHT("list-group-item-light"),
+    DARK("list-group-item-dark");
 
     private final String cssClass;
 

@@ -1,4 +1,4 @@
-package org.gwtbootstrap4.client.ui.constants;
+package org.gwtbootstrap4.client.ui;
 
 /*
  * #%L
@@ -20,31 +20,21 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
-
-import com.google.gwt.dom.client.Style;
+import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
+ * Nav container and base class for navigations.
+ *
  * @author Sven Jacobs
- * @author Joshua Godi
+ * @see Nav
+ * @see NavTabs
+ * @see NavPills
+ * @see NavItem
  */
-public enum WellSize implements Size, Style.HasCssName {
-    LARGE("well-lg"),
-    DEFAULT(""),
-    SMALL("well-sm");
+public class NavLink extends Anchor {
 
-    private final String cssClass;
-
-    private WellSize(final String cssClass) {
-        this.cssClass = cssClass;
+    public NavLink() {
+        setStyleName(Styles.NAV_LINK);
     }
 
-    @Override
-    public String getCssName() {
-        return cssClass;
-    }
-
-    public static WellSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, WellSize.class, DEFAULT);
-    }
 }

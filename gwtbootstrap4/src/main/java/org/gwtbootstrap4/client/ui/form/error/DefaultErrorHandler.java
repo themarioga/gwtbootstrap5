@@ -25,13 +25,13 @@ import java.util.List;
 import org.gwtbootstrap4.client.ui.HelpBlock;
 import org.gwtbootstrap4.client.ui.base.HasValidationState;
 import org.gwtbootstrap4.client.ui.base.ValueBoxBase;
-import org.gwtbootstrap4.client.ui.constants.ValidationState;
 
 import com.google.gwt.editor.client.EditorError;
 import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.event.logical.shared.AttachEvent.Handler;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+import org.gwtbootstrap4.client.ui.constants.ValidationState;
 
 /**
  * This is the default {@link ErrorHandler} implementation. The assumption is that every {@link ValueBoxBase}
@@ -63,18 +63,13 @@ public class DefaultErrorHandler implements ErrorHandler {
     /**
      * Default error handler.
      *
-     * @param parent the parent of this error handler.
+     * @param widget the parent of this error handler.
      */
     public DefaultErrorHandler(Widget widget) {
         super();
         assert widget != null;
         this.inputWidget = widget;
-        this.inputWidget.addAttachHandler(new Handler() {
-            @Override
-            public void onAttachOrDetach(AttachEvent event) {
-                init();
-            }
-        });
+        this.inputWidget.addAttachHandler(event -> init());
     }
 
     /** {@inheritDoc} */

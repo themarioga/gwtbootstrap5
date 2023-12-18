@@ -38,7 +38,7 @@ public class Divider extends Widget implements HasResponsiveness {
 
     public Divider() {
         setElement(Document.get().createLIElement());
-        setStyleName(Styles.DIVIDER);
+        setStyleName(Styles.DROPDOWN_DIVIDER);
     }
 
     @Override

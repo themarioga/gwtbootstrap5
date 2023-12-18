@@ -36,7 +36,6 @@ public class LinkedGroupItemText extends ComplexWidget implements HasWidgets, Ha
 
     public LinkedGroupItemText() {
         setElement(Document.get().createPElement());
-        setStyleName(Styles.LIST_GROUP_ITEM_TEXT);
     }
 
     public LinkedGroupItemText(final String html) {

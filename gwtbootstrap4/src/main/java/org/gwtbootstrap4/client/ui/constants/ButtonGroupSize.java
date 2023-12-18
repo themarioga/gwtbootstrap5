@@ -29,10 +29,9 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ButtonGroupSize implements Size, Style.HasCssName {
 
-    LARGE("btn-group-lg"),
     DEFAULT(""),
     SMALL("btn-group-sm"),
-    EXTRA_SMALL("btn-group-xs");
+    LARGE("btn-group-lg");
 
     private final String cssClass;
 

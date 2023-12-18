@@ -26,9 +26,9 @@ import org.gwtbootstrap4.client.ui.base.form.FormElementContainer;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.FormGroupSize;
 import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.ValidationState;
 
 import com.google.gwt.dom.client.Document;
+import org.gwtbootstrap4.client.ui.constants.ValidationState;
 
 /**
  * @author Sven Jacobs

@@ -30,8 +30,8 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ButtonSize implements Size, Style.HasCssName {
     DEFAULT(""),
-    LARGE("btn-lg"),
-    SMALL("btn-sm");
+    SMALL("btn-sm"),
+    LARGE("btn-lg");
 
     private final String cssClass;
 

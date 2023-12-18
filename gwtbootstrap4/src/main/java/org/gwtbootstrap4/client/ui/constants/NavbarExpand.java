@@ -24,15 +24,19 @@ import com.google.gwt.dom.client.Style;
 import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
 /**
+ * @author Sven Jacobs
  * @author Joshua Godi
  */
-public enum BlockQuoteStyle implements Type, Style.HasCssName {
-    DEFAULT("blockquote"),
-    REVERSE("blockquote-reverse");
+public enum NavbarExpand implements Style.HasCssName {
+    XS("navbar-expand"),
+    SM("navbar-expand-sm"),
+    MD("navbar-expand-md"),
+    LG("navbar-expand-lg"),
+    XL("navbar-expand-xl");
 
     private final String cssClass;
 
-    private BlockQuoteStyle(final String cssClass) {
+    private NavbarExpand(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -41,7 +45,7 @@ public enum BlockQuoteStyle implements Type, Style.HasCssName {
         return cssClass;
     }
 
-    public static BlockQuoteStyle fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, BlockQuoteStyle.class, DEFAULT);
+    public static NavbarExpand fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, NavbarExpand.class, XS);
     }
 }

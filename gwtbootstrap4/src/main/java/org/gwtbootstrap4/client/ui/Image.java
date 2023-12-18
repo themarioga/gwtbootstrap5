@@ -91,14 +91,6 @@ public class Image extends com.google.gwt.user.client.ui.Image implements HasTyp
         StyleHelper.setHiddenOn(this, deviceSize);
     }
 
-    public void setResponsive(final boolean responsive) {
-        StyleHelper.toggleStyleName(this, responsive, Styles.IMG_RESPONSIVE);
-    }
-
-    public void setAsMediaObject(final boolean asMediaObject) {
-        StyleHelper.toggleStyleName(this, asMediaObject, Styles.MEDIA_OBJECT);
-    }
-
     @Override
     public void setPull(final FloatCSS aFloatCSS) {
         pullMixin.setPull(aFloatCSS);
@@ -107,5 +99,9 @@ public class Image extends com.google.gwt.user.client.ui.Image implements HasTyp
     @Override
     public FloatCSS getPull() {
         return pullMixin.getPull();
+    }
+
+    public void setResponsive(final boolean responsive) {
+        StyleHelper.toggleStyleName(this, responsive, Styles.IMG_RESPONSIVE);
     }
 }

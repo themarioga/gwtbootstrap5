@@ -24,8 +24,8 @@ import org.gwtbootstrap4.client.ui.base.HasAlignment;
 import org.gwtbootstrap4.client.ui.base.HasEmphasis;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.HTMLMixin;
-import org.gwtbootstrap4.client.ui.constants.Alignment;
 import org.gwtbootstrap4.client.ui.constants.Emphasis;
+import org.gwtbootstrap4.client.ui.constants.TextAlignment;
 import org.gwtbootstrap4.client.ui.gwt.HTMLPanel;
 
 import com.google.gwt.dom.client.ParagraphElement;
@@ -63,13 +63,13 @@ public class Paragraph extends HTMLPanel implements HasAlignment, HasEmphasis {
     }
 
     @Override
-    public void setAlignment(final Alignment alignment) {
-        StyleHelper.addUniqueEnumStyleName(this, Alignment.class, alignment);
+    public void setAlignment(final TextAlignment alignment) {
+        StyleHelper.addUniqueEnumStyleName(this, TextAlignment.class, alignment);
     }
 
     @Override
-    public Alignment getAlignment() {
-        return Alignment.fromStyleName(getStyleName());
+    public TextAlignment getAlignment() {
+        return TextAlignment.fromStyleName(getStyleName());
     }
 
     @Override

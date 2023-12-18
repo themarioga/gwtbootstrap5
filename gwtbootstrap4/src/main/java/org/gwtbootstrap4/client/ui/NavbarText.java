@@ -25,7 +25,6 @@ import org.gwtbootstrap4.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
 import org.gwtbootstrap4.client.ui.constants.FloatCSS;
-import org.gwtbootstrap4.client.ui.constants.NavbarPull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 
 import com.google.gwt.dom.client.Document;
@@ -42,30 +41,6 @@ public class NavbarText extends ComplexWidget implements HasResponsiveness {
     public NavbarText() {
         setElement(Document.get().createPElement());
         setStyleName(Styles.NAVBAR_TEXT);
-    }
-
-    @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        NavbarPull navbarPull = NavbarPull.NONE;
-
-        if (aFloatCSS == FloatCSS.LEFT_XS) {
-            navbarPull = NavbarPull.LEFT;
-        } else {
-            navbarPull = NavbarPull.RIGHT;
-        }
-
-        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.class, navbarPull);
-    }
-
-    @Override
-    public FloatCSS getPull() {
-        final NavbarPull navbarPull = NavbarPull.fromStyleName(getStyleName());
-
-        if (navbarPull == NavbarPull.NONE) {
-            return FloatCSS.NONE_XS;
-        }
-
-        return navbarPull == NavbarPull.RIGHT ? FloatCSS.RIGHT_XS : FloatCSS.LEFT_XS;
     }
 
     @Override

@@ -68,15 +68,6 @@ public class ImageAnchor extends Anchor implements HasType<ImageType> {
     }
 
     /**
-     * Set the image as a media object
-     *
-     * @param asMediaObject boolean, whether or not the image has the media object styles
-     */
-    public void setAsMediaObject(final boolean asMediaObject) {
-        StyleHelper.toggleStyleName(this, asMediaObject, Styles.MEDIA_OBJECT);
-    }
-
-    /**
      * Set the URL of the image
      *
      * @param url String image url

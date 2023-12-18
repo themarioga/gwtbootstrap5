@@ -40,9 +40,7 @@ public class Container extends Div {
     public void setFluid(final boolean isFluid) {
         if (isFluid) {
             removeStyleName(Styles.CONTAINER);
-            addStyleName(Styles.CONTAINER_FLUID);
         } else {
-            removeStyleName(Styles.CONTAINER_FLUID);
             addStyleName(Styles.CONTAINER);
         }
     }

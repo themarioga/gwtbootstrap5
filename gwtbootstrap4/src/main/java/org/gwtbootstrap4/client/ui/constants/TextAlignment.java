@@ -27,7 +27,7 @@ import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
  * @author Sven Jacobs
  * @author Joshua Godi
  */
-public enum Text implements Style.HasCssName {
+public enum TextAlignment implements Style.HasCssName {
     LEFT_XS("text-left"),
     LEFT_SM("text-sm-left"),
     LEFT_MD("text-md-left"),
@@ -46,7 +46,7 @@ public enum Text implements Style.HasCssName {
 
     private final String cssClass;
 
-    Text(final String cssClass) {
+    TextAlignment(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -55,7 +55,7 @@ public enum Text implements Style.HasCssName {
         return cssClass;
     }
 
-    public static Text fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, Text.class, LEFT_XS);
+    public static TextAlignment fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, TextAlignment.class, LEFT_XS);
     }
 }

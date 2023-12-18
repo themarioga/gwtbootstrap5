@@ -30,8 +30,8 @@ import com.google.gwt.dom.client.Style;
 public enum ImageType implements Type, Style.HasCssName {
     DEFAULT(""),
     ROUNDED("rounded"),
-    CIRCLE("circle"),
-    THUMBNAIL("thumbnail");
+    CIRCLE("rounded-circle"),
+    THUMBNAIL("img-thumbnail");
 
     private final String cssClass;
 

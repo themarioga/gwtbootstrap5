@@ -28,8 +28,8 @@ import com.google.gwt.dom.client.Style;
  * @author Sven Jacobs
  */
 public enum NavbarType implements Type, Style.HasCssName {
-    DEFAULT("navbar-default"),
-    INVERSE("navbar-inverse");
+    DEFAULT("navbar-light"),
+    INVERSE("navbar-dark");
 
     private final String cssClass;
 

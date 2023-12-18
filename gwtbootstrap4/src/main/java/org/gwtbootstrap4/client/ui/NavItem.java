@@ -20,14 +20,24 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+import org.gwtbootstrap4.client.ui.base.HasJustified;
+import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.html.UnorderedList;
 
 /**
+ * Nav container and base class for navigations.
+ *
  * @author Sven Jacobs
+ * @see Nav
+ * @see NavTabs
+ * @see NavPills
+ * @see Affix
  */
-public class NavbarLink extends Anchor {
+public class NavItem extends ListItem {
 
-    public NavbarLink() {
-        setStyleName(Styles.NAVBAR_LINK);
+    public NavItem() {
+        setStyleName(Styles.NAV_ITEM);
     }
+
 }

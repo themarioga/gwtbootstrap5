@@ -30,13 +30,12 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ValidationState implements Style.HasCssName {
     NONE(""),
-    WARNING("has-warning"),
-    ERROR("has-error"),
-    SUCCESS("has-success");
+    SUCCESS("is-valid"),
+    ERROR("is-invalid");
 
     private final String cssClass;
 
-    private ValidationState(final String cssClass) {
+    ValidationState(final String cssClass) {
         this.cssClass = cssClass;
     }
 

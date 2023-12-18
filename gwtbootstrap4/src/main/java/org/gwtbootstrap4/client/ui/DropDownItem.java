@@ -21,18 +21,19 @@ package org.gwtbootstrap4.client.ui;
  */
 
 import org.gwtbootstrap4.client.ui.base.AbstractAnchorListItem;
+import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
  * @author Joshua Godi
  */
-public class DropdownItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
+public class DropDownItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
 
-    public DropdownItem() {
-        setStyleName("dropdown-item");
+    public DropDownItem() {
+        setStyleName(Styles.DROPDOWN_ITEM);
     }
 
-    public DropdownItem(final String text) {
-        setStyleName("dropdown-item");
+    public DropDownItem(final String text) {
+        super();
         setText(text);
     }
 

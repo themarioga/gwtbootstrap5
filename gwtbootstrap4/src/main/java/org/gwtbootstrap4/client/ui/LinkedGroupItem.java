@@ -57,6 +57,7 @@ public class LinkedGroupItem extends ComplexWidget implements HasClickHandlers, 
     public LinkedGroupItem(final String href) {
         setElement(Document.get().createAnchorElement());
         setStyleName(Styles.LIST_GROUP_ITEM);
+        setStyleName(Styles.LIST_GROUP_ITEM_ACTION);
         setHref(href);
         add(span);
     }
@@ -129,4 +130,13 @@ public class LinkedGroupItem extends ComplexWidget implements HasClickHandlers, 
     public ListGroupItemType getType() {
         return ListGroupItemType.fromStyleName(getStyleName());
     }
+
+    public void setFlush(boolean flush) {
+        if (flush) {
+            addStyleName(Styles.LIST_GROUP_FLUSH);
+        } else {
+            removeStyleName(Styles.LIST_GROUP_FLUSH);
+        }
+    }
+
 }

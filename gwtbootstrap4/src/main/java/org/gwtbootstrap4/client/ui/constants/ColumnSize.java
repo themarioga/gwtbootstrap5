@@ -27,18 +27,18 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ColumnSize implements Size, Style.HasCssName {
     // Extra small devices (<576px)
-    XS_1("col-xs-1"),
-    XS_2("col-xs-2"),
-    XS_3("col-xs-3"),
-    XS_4("col-xs-4"),
-    XS_5("col-xs-5"),
-    XS_6("col-xs-6"),
-    XS_7("col-xs-7"),
-    XS_8("col-xs-8"),
-    XS_9("col-xs-9"),
-    XS_10("col-xs-10"),
-    XS_11("col-xs-11"),
-    XS_12("col-xs-12"),
+    XS_1("col-1"),
+    XS_2("col-2"),
+    XS_3("col-3"),
+    XS_4("col-4"),
+    XS_5("col-5"),
+    XS_6("col-6"),
+    XS_7("col-7"),
+    XS_8("col-8"),
+    XS_9("col-9"),
+    XS_10("col-10"),
+    XS_11("col-11"),
+    XS_12("col-12"),
 
     // Small devices (>=576px)
     SM_1("col-sm-1"),

@@ -20,44 +20,17 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.HasPull;
 import org.gwtbootstrap4.client.ui.base.form.AbstractForm;
-import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.FloatCSS;
-import org.gwtbootstrap4.client.ui.constants.NavbarPull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
  * @author Sven Jacobs
  * @see Navbar
  */
-public class NavbarForm extends AbstractForm implements HasPull {
+public class NavbarForm extends AbstractForm {
 
     public NavbarForm() {
-        setStyleName(Styles.NAVBAR_FORM);
+        setStyleName(Styles.FORM_INLINE);
     }
 
-    @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        final NavbarPull navbarPull;
-
-        if (aFloatCSS == FloatCSS.LEFT_XS) {
-            navbarPull = NavbarPull.LEFT;
-        } else {
-            navbarPull = NavbarPull.RIGHT;
-        }
-
-        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.class, navbarPull);
-    }
-
-    @Override
-    public FloatCSS getPull() {
-        final NavbarPull navbarPull = NavbarPull.fromStyleName(getStyleName());
-
-        if (navbarPull == NavbarPull.NONE) {
-            return FloatCSS.NONE_XS;
-        }
-
-        return navbarPull == NavbarPull.RIGHT ? FloatCSS.RIGHT_XS : FloatCSS.LEFT_XL;
-    }
 }
