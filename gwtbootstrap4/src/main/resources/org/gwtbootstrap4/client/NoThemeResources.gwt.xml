@@ -22,6 +22,6 @@
     <public path="resource">
         <include name="css/*.css"/>
         <include name="js/*.js"/>
-        <include name="fonts/*"/>
+        <include name="webfonts/*"/>
     </public>
 </module>

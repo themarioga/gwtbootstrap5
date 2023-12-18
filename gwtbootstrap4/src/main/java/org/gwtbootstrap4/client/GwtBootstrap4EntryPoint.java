@@ -52,11 +52,12 @@ public class GwtBootstrap4EntryPoint implements EntryPoint {
     /** {@inheritDoc} */
     @Override
     public void onModuleLoad() {
-        ScriptInjector.fromString(GwtBootstrap4ClientBundle.INSTANCE.gwtBootstrap4().getText())
-                .setWindow(ScriptInjector.TOP_WINDOW)
-                .inject();
         if (!isjQueryLoaded()) {
             ScriptInjector.fromString(GwtBootstrap4ClientBundle.INSTANCE.jQuery().getText())
+                    .setWindow(ScriptInjector.TOP_WINDOW)
+                    .inject();
+
+            ScriptInjector.fromString(GwtBootstrap4ClientBundle.INSTANCE.jQueryMigrate().getText())
                     .setWindow(ScriptInjector.TOP_WINDOW)
                     .inject();
         }
@@ -66,6 +67,11 @@ public class GwtBootstrap4EntryPoint implements EntryPoint {
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
         }
+
+        ScriptInjector.fromString(GwtBootstrap4ClientBundle.INSTANCE.gwtBootstrap4().getText())
+                .setWindow(ScriptInjector.TOP_WINDOW)
+                .inject();
+
     }
     
 }

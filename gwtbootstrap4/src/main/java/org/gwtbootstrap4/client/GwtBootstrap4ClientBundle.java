@@ -29,14 +29,17 @@ import com.google.gwt.resources.client.TextResource;
  */
 public interface GwtBootstrap4ClientBundle extends ClientBundle {
 
-    static final GwtBootstrap4ClientBundle INSTANCE = GWT.create(GwtBootstrap4ClientBundle.class);
+    GwtBootstrap4ClientBundle INSTANCE = GWT.create(GwtBootstrap4ClientBundle.class);
 
     @Source("resource/js/gwtbootstrap4.js")
     TextResource gwtBootstrap4();
 
-    @Source("resource/js/jquery-1.12.4.min.cache.js")
+    @Source("resource/js/jquery-3.7.1.min.cache.js")
     TextResource jQuery();
 
-    @Source("resource/js/bootstrap-3.4.1.min.cache.js")
+    @Source("resource/js/jquery-migrate-3.4.0.min.cache.js")
+    TextResource jQueryMigrate();
+
+    @Source("resource/js/bootstrap-4.6.2.min.cache.js")
     TextResource bootstrap();
 }
