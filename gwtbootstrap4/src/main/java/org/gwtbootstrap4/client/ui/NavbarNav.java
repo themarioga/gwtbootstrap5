@@ -21,8 +21,8 @@ package org.gwtbootstrap4.client.ui;
  */
 
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.NavbarPull;
-import org.gwtbootstrap4.client.ui.constants.Pull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.UnorderedList;
 
@@ -42,10 +42,10 @@ public class NavbarNav extends UnorderedList {
     }
 
     @Override
-    public void setPull(final Pull pull) {
-        NavbarPull navbarPull = NavbarPull.NONE;
+    public void setPull(final FloatCSS aFloatCSS) {
+        NavbarPull navbarPull;
 
-        if (pull == Pull.LEFT) {
+        if (aFloatCSS == FloatCSS.LEFT_XS) {
             navbarPull = NavbarPull.LEFT;
         } else {
             navbarPull = NavbarPull.RIGHT;
@@ -55,13 +55,13 @@ public class NavbarNav extends UnorderedList {
     }
 
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         final NavbarPull navbarPull = NavbarPull.fromStyleName(getStyleName());
 
         if (navbarPull == NavbarPull.NONE) {
-            return Pull.NONE;
+            return FloatCSS.NONE_XS;
         }
 
-        return navbarPull == NavbarPull.RIGHT ? Pull.RIGHT : Pull.LEFT;
+        return navbarPull == NavbarPull.RIGHT ? FloatCSS.RIGHT_XS : FloatCSS.LEFT_XS;
     }
 }

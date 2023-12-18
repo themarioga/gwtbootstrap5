@@ -31,7 +31,7 @@ public final class Styles {
     public static final String ALERT_DISMISSABLE = "alert-dismissable";
     public static final String ALERT_LINK = "alert-link";
 
-    public static final String BADGE = "badge";
+    public static final String BADGE = "badge-pill";
 
     public static final String BREADCRUMB = "breadcrumb";
 
@@ -52,9 +52,6 @@ public final class Styles {
     public static final String CAROUSEL_INDICATORS = "carousel-indicators";
     public static final String CAROUSEL_INNER = "carousel-inner";
 
-    public static final String CHECKBOX = "checkbox";
-    public static final String CHECKBOX_INLINE = "checkbox-inline";
-
     public static final String CLEARFIX = "clearfix";
 
     public static final String CLOSE = "close";
@@ -65,13 +62,11 @@ public final class Styles {
     public static final String CONTAINER = "container";
     public static final String CONTAINER_FLUID = "container-fluid";
 
-    public static final String CONTROL_LABEL = "control-label";
+    public static final String CONTROL_LABEL = "col-form-label";
 
-    public static final String DIVIDER = "divider";
+    public static final String DIVIDER = "dropdown-divider";
 
     public static final String DISABLED = "disabled";
-
-    public static final String DL_HORIZONTAL = "dl-horizontal";
 
     public static final String DROP_UP = "dropup";
 
@@ -85,10 +80,14 @@ public final class Styles {
     public static final String FONT_AWESOME_BASE = "fa";
 
     public static final String FORM_CONTROL = "form-control";
-    public static final String FORM_CONTROL_STATIC = "form-control-static";
+    public static final String FORM_CONTROL_PLAINTEXT = "form-control-plaintext";
     public static final String FORM_GROUP = "form-group";
+    public static final String FORM_TEXT = "form-text";
+    public static final String FORM_ROW = "form-row";
 
-    public static final String HELP_BLOCK = "help-block";
+    public static final String FORM_CHECK = "form-check";
+    public static final String FORM_CHECK_LABEL = "form-check-label";
+    public static final String FORM_CHECK_INPUT = "form-check-input";
 
     public static final String ITEM = "item";
 
@@ -106,7 +105,7 @@ public final class Styles {
     public static final String ICON_PREV = "icon-prev";
     public static final String ICON_NEXT = "icon-next";
 
-    public static final String IMG_RESPONSIVE = "img-responsive";
+    public static final String IMG_RESPONSIVE = "img-fluid";
 
     public static final String IN = "in";
 
@@ -116,17 +115,19 @@ public final class Styles {
 
     public static final String JUMBOTRON = "jumbotron";
 
-    public static final String LABEL = "label";
+    public static final String LABEL = "badge";
 
     public static final String LEAD = "lead";
 
     public static final String LEFT = "left";
 
     public static final String LIST_INLINE = "list-inline";
+    public static final String LIST_INLINE_ITEM = "list-inline-item";
     public static final String LIST_GROUP = "list-group";
-    public static final String LIST_GROUP_ITEM = "list-group-item";
+    public static final String LIST_GROUP_ITEM = "list-group-item-action";
     public static final String LIST_GROUP_ITEM_HEADING = "list-group-item-heading";
     public static final String LIST_GROUP_ITEM_TEXT = "list-group-item-text";
+    public static final String LIST_GROUP_FLUSH = "list-group-flush";
 
     public static final String MEDIA_LIST = "media-list";
     public static final String MEDIA = "media";
@@ -163,15 +164,11 @@ public final class Styles {
 
     public static final String NEXT = "next";
 
-    public static final String PANEL = "panel";
-    public static final String PANEL_HEADING = "panel-heading";
-    public static final String PANEL_GROUP = "panel-group";
-    public static final String PANEL_TITLE = "panel-title";
-    public static final String PANEL_BODY = "panel-body";
-    public static final String PANEL_COLLAPSE = "panel-collapse";
-    public static final String PANEL_FOOTER = "panel-footer";
-
-    public static final String PAGE_HEADER = "page-header";
+    public static final String CARD = "card";
+    public static final String CARD_HEADING = "card-header";
+    public static final String CARD_TITLE = "card-title";
+    public static final String CARD_BODY = "card-body";
+    public static final String CARD_FOOTER = "card-footer";
 
     public static final String PAGER = "pager";
 
@@ -183,12 +180,9 @@ public final class Styles {
 
     public static final String PROGRESS = "progress";
     public static final String PROGRESS_BAR = "progress-bar";
-
-    public static final String PULL_LEFT = "pull-left";
-    public static final String PULL_RIGHT = "pull-right";
+    public static final String PROGRESS_BAR_ANIMATED = "progress-bar-animated";
 
     public static final String RADIO = "radio";
-    public static final String RADIO_INLINE = "radio-inline";
 
     public static final String RIGHT = "right";
 

@@ -28,7 +28,7 @@ import org.gwtbootstrap4.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
-import org.gwtbootstrap4.client.ui.constants.Pull;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.Toggle;
 import org.gwtbootstrap4.client.ui.html.Span;
@@ -91,12 +91,12 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
     }
 
     @Override
-    public void setPull(final Pull pull) {
-        pullMixin.setPull(pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        pullMixin.setPull(aFloatCSS);
     }
 
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         return pullMixin.getPull();
     }
 

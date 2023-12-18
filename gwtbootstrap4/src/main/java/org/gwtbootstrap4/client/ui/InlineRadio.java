@@ -181,7 +181,7 @@ public class InlineRadio extends Radio {
     @UiConstructor
     public InlineRadio(String name) {
         super(DOM.createLabel(), Document.get().createRadioInputElement(name));
-        setStyleName(Styles.RADIO_INLINE);
+        setStyleName(Styles.FORM_CHECK);
 
         getElement().appendChild(inputElem);
         getElement().appendChild(labelElem);

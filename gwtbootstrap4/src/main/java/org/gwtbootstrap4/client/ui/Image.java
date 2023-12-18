@@ -26,8 +26,8 @@ import org.gwtbootstrap4.client.ui.base.HasType;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.ImageType;
-import org.gwtbootstrap4.client.ui.constants.Pull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 
 import com.google.gwt.resources.client.ImageResource;
@@ -100,12 +100,12 @@ public class Image extends com.google.gwt.user.client.ui.Image implements HasTyp
     }
 
     @Override
-    public void setPull(final Pull pull) {
-        pullMixin.setPull(pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        pullMixin.setPull(aFloatCSS);
     }
 
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         return pullMixin.getPull();
     }
 }

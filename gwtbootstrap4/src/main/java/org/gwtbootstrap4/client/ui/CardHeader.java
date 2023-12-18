@@ -40,14 +40,14 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * @author Joshua Godi
  */
-public class PanelHeader extends Div implements HasWidgets, HasText, HasDataToggle, HasDataTarget, HasDataParent {
-    private final DataParentMixin<PanelHeader> parentMixin = new DataParentMixin<PanelHeader>(this);
-    private final DataTargetMixin<PanelHeader> targetMixin = new DataTargetMixin<PanelHeader>(this);
-    private final DataToggleMixin<PanelHeader> toggleMixin = new DataToggleMixin<PanelHeader>(this);
+public class CardHeader extends Div implements HasWidgets, HasText, HasDataToggle, HasDataTarget, HasDataParent {
+    private final DataParentMixin<CardHeader> parentMixin = new DataParentMixin<CardHeader>(this);
+    private final DataTargetMixin<CardHeader> targetMixin = new DataTargetMixin<CardHeader>(this);
+    private final DataToggleMixin<CardHeader> toggleMixin = new DataToggleMixin<CardHeader>(this);
     private final Text text = new Text();
 
-    public PanelHeader() {
-        setStyleName(Styles.PANEL_HEADING);
+    public CardHeader() {
+        setStyleName(Styles.CARD_HEADING);
     }
 
     /**

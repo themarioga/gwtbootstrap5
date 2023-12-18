@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui.constants;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2023 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,22 +20,20 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
+import com.google.gwt.dom.client.Style;
 import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
-
-/**
- * @author Sven Jacobs
- * @author Joshua Godi
- */
-public enum ButtonSize implements Size, Style.HasCssName {
-    DEFAULT(""),
-    LARGE("btn-lg"),
-    SMALL("btn-sm");
+public enum ResponsivenessNone implements Type, Style.HasCssName {
+    XS("d-none"),
+    SM("d-sm-none"),
+    MD("d-md-none"),
+    LG("d-lg-none"),
+    XL("d-xl-none"),
+    PRINT("d-print-none");
 
     private final String cssClass;
 
-    private ButtonSize(final String cssClass) {
+    ResponsivenessNone(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -44,7 +42,8 @@ public enum ButtonSize implements Size, Style.HasCssName {
         return cssClass;
     }
 
-    public static ButtonSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ButtonSize.class, DEFAULT);
+    public static ResponsivenessNone fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ResponsivenessNone.class, XS);
     }
+
 }

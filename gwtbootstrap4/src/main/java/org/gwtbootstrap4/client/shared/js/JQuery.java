@@ -50,13 +50,6 @@ public class JQuery {
     public static native JQuery jQuery(String selector);
 
     /**
-     * Bootstrap button() method
-     * @param method the method string
-     * @return JQuery object for chaining purposes
-     */
-    public native JQuery button(String method);
-
-    /**
      * jQuery html() method
      * @param htmlString A string of HTML to set as the content of each matched element
      * @return JQuery object for chaining purposes

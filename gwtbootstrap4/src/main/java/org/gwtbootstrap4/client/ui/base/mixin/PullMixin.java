@@ -22,7 +22,7 @@ package org.gwtbootstrap4.client.ui.base.mixin;
 
 import org.gwtbootstrap4.client.ui.base.HasPull;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.Pull;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 
 import com.google.gwt.user.client.ui.UIObject;
 
@@ -36,12 +36,12 @@ public class PullMixin<T extends UIObject & HasPull> extends AbstractMixin imple
     }
 
     @Override
-    public void setPull(final Pull pull) {
-        StyleHelper.addUniqueEnumStyleName(uiObject, Pull.class, pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        StyleHelper.addUniqueEnumStyleName(uiObject, FloatCSS.class, aFloatCSS);
     }
 
     @Override
-    public Pull getPull() {
-        return Pull.fromStyleName(uiObject.getStyleName());
+    public FloatCSS getPull() {
+        return FloatCSS.fromStyleName(uiObject.getStyleName());
     }
 }

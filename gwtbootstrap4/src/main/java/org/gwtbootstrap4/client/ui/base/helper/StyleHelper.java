@@ -21,10 +21,11 @@ package org.gwtbootstrap4.client.ui.base.helper;
  */
 
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
-import org.gwtbootstrap4.client.ui.constants.Responsiveness;
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.UIObject;
+import org.gwtbootstrap4.client.ui.constants.ResponsivenessBlock;
+import org.gwtbootstrap4.client.ui.constants.ResponsivenessNone;
 
 /**
  * Helper methods regarding CSS styling of UIObjects.
@@ -149,23 +150,26 @@ public final class StyleHelper {
         final String[] deviceString = deviceSize.name().split("_");
 
         for (final String device : deviceString) {
-            // Case back to basic enum (PRINT, XS, SM, MD, LG)
+            // Case back to basic enum (PRINT, XS, SM, MD, LG, XL)
             final DeviceSize size = DeviceSize.valueOf(device);
             switch (size) {
                 case PRINT:
-                    addEnumStyleName(uiObject, Responsiveness.HIDDEN_PRINT);
+                    addEnumStyleName(uiObject, ResponsivenessNone.PRINT);
                     break;
                 case XS:
-                    addEnumStyleName(uiObject, Responsiveness.HIDDEN_XS);
+                    addEnumStyleName(uiObject, ResponsivenessNone.XS);
                     break;
                 case SM:
-                    addEnumStyleName(uiObject, Responsiveness.HIDDEN_SM);
+                    addEnumStyleName(uiObject, ResponsivenessNone.SM);
                     break;
                 case MD:
-                    addEnumStyleName(uiObject, Responsiveness.HIDDEN_MD);
+                    addEnumStyleName(uiObject, ResponsivenessNone.MD);
                     break;
                 case LG:
-                    addEnumStyleName(uiObject, Responsiveness.HIDDEN_LG);
+                    addEnumStyleName(uiObject, ResponsivenessNone.LG);
+                    break;
+                case XL:
+                    addEnumStyleName(uiObject, ResponsivenessNone.XL);
                     break;
                 default:
                     break;
@@ -186,23 +190,26 @@ public final class StyleHelper {
         final String[] deviceString = deviceSize.name().split("_");
 
         for (final String device : deviceString) {
-            // Case back to basic enum (PRINT, XS, SM, MD, LG)
+            // Case back to basic enum (PRINT, XS, SM, MD, LG, XL)
             final DeviceSize size = DeviceSize.valueOf(device);
             switch (size) {
                 case PRINT:
-                    addEnumStyleName(uiObject, Responsiveness.VISIBLE_PRINT);
+                    addEnumStyleName(uiObject, ResponsivenessBlock.PRINT);
                     break;
                 case XS:
-                    addEnumStyleName(uiObject, Responsiveness.VISIBLE_XS);
+                    addEnumStyleName(uiObject, ResponsivenessBlock.XS);
                     break;
                 case SM:
-                    addEnumStyleName(uiObject, Responsiveness.VISIBLE_SM);
+                    addEnumStyleName(uiObject, ResponsivenessBlock.SM);
                     break;
                 case MD:
-                    addEnumStyleName(uiObject, Responsiveness.VISIBLE_MD);
+                    addEnumStyleName(uiObject, ResponsivenessBlock.MD);
                     break;
                 case LG:
-                    addEnumStyleName(uiObject, Responsiveness.VISIBLE_LG);
+                    addEnumStyleName(uiObject, ResponsivenessBlock.LG);
+                    break;
+                case XL:
+                    addEnumStyleName(uiObject, ResponsivenessBlock.XL);
                     break;
                 default:
                     break;

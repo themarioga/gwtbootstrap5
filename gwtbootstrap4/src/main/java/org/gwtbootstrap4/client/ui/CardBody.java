@@ -24,11 +24,11 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
 
 /**
- * @author Grant Slender
+ * @author Joshua Godi
  */
-public class PanelGroup extends Div {
+public class CardBody extends Div {
 
-    public PanelGroup() {
-        setStyleName(Styles.PANEL_GROUP);
+    public CardBody() {
+        setStyleName(Styles.CARD_BODY);
     }
 }

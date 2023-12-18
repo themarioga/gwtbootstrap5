@@ -20,13 +20,13 @@ package org.gwtbootstrap4.client.ui.base;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Pull;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 
 /**
  * @author Sven Jacobs
  */
 public interface HasPull {
-    void setPull(Pull pull);
+    void setPull(FloatCSS aFloatCSS);
 
-    Pull getPull();
+    FloatCSS getPull();
 }

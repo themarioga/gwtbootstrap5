@@ -20,22 +20,33 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
-
 import com.google.gwt.dom.client.Style;
+import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
 /**
  * @author Sven Jacobs
  * @author Joshua Godi
  */
-public enum ButtonSize implements Size, Style.HasCssName {
-    DEFAULT(""),
-    LARGE("btn-lg"),
-    SMALL("btn-sm");
+public enum Text implements Style.HasCssName {
+    LEFT_XS("text-left"),
+    LEFT_SM("text-sm-left"),
+    LEFT_MD("text-md-left"),
+    LEFT_LG("text-lg-left"),
+    LEFT_XL("text-xl-left"),
+    RIGHT_XS("text-right"),
+    RIGHT_SM("text-sm-right"),
+    RIGHT_MD("text-md-right"),
+    RIGHT_LG("text-lg-right"),
+    RIGHT_XL("text-xl-right"),
+    CENTER_XS("text-center"),
+    CENTER_SM("text-sm-center"),
+    CENTER_MD("text-md-center"),
+    CENTER_LG("text-lg-center"),
+    CENTER_XL("text-xl-center");
 
     private final String cssClass;
 
-    private ButtonSize(final String cssClass) {
+    Text(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -44,7 +55,7 @@ public enum ButtonSize implements Size, Style.HasCssName {
         return cssClass;
     }
 
-    public static ButtonSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ButtonSize.class, DEFAULT);
+    public static Text fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, Text.class, LEFT_XS);
     }
 }

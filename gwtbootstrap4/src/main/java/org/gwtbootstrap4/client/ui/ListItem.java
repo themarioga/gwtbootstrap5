@@ -57,6 +57,7 @@ public class ListItem extends AbstractListItem implements HasWidgets, HasText, H
      */
     public ListItem(final String text) {
         this();
+        setStyleName(Styles.LIST_INLINE_ITEM);
         setText(text);
     }
 

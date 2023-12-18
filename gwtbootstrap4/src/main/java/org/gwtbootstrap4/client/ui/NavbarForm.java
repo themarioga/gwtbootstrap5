@@ -23,8 +23,8 @@ package org.gwtbootstrap4.client.ui;
 import org.gwtbootstrap4.client.ui.base.HasPull;
 import org.gwtbootstrap4.client.ui.base.form.AbstractForm;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.NavbarPull;
-import org.gwtbootstrap4.client.ui.constants.Pull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
@@ -38,10 +38,10 @@ public class NavbarForm extends AbstractForm implements HasPull {
     }
 
     @Override
-    public void setPull(final Pull pull) {
+    public void setPull(final FloatCSS aFloatCSS) {
         final NavbarPull navbarPull;
 
-        if (pull == Pull.LEFT) {
+        if (aFloatCSS == FloatCSS.LEFT_XS) {
             navbarPull = NavbarPull.LEFT;
         } else {
             navbarPull = NavbarPull.RIGHT;
@@ -51,13 +51,13 @@ public class NavbarForm extends AbstractForm implements HasPull {
     }
 
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         final NavbarPull navbarPull = NavbarPull.fromStyleName(getStyleName());
 
         if (navbarPull == NavbarPull.NONE) {
-            return Pull.NONE;
+            return FloatCSS.NONE_XS;
         }
 
-        return navbarPull == NavbarPull.RIGHT ? Pull.RIGHT : Pull.LEFT;
+        return navbarPull == NavbarPull.RIGHT ? FloatCSS.RIGHT_XS : FloatCSS.LEFT_XL;
     }
 }

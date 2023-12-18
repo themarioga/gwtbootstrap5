@@ -23,11 +23,8 @@ package org.gwtbootstrap4.client.ui.base;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.DataToggleMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
-import org.gwtbootstrap4.client.ui.constants.ButtonGroupSize;
-import org.gwtbootstrap4.client.ui.constants.DeviceSize;
-import org.gwtbootstrap4.client.ui.constants.Pull;
-import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.Toggle;
+import org.gwtbootstrap4.client.ui.constants.*;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.gwt.FlowPanel;
 
 import com.google.gwt.user.client.ui.HasName;
@@ -120,12 +117,12 @@ public abstract class AbstractButtonGroup extends FlowPanel implements HasName, 
     }
 
     @Override
-    public void setPull(final Pull pull) {
-        pullMixin.setPull(pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        pullMixin.setPull(aFloatCSS);
     }
 
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         return pullMixin.getPull();
     }
 

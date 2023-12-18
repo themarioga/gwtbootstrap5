@@ -31,9 +31,9 @@ import com.google.gwt.dom.client.Style;
  */
 public enum FormGroupSize implements Size, Style.HasCssName {
 
-    LARGE("form-group-lg"),
     DEFAULT(""),
-    SMALL("form-group-sm");
+    LARGE("form-control-lg"),
+    SMALL("form-control-sm");
 
     private final String cssClass;
 

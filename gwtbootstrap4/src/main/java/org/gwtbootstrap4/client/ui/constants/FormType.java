@@ -30,8 +30,7 @@ import com.google.gwt.dom.client.Style;
  */
 public enum FormType implements Type, Style.HasCssName {
     DEFAULT(""),
-    INLINE("form-inline"),
-    HORIZONTAL("form-horizontal");
+    INLINE("form-inline");
 
     private final String cssClass;
 

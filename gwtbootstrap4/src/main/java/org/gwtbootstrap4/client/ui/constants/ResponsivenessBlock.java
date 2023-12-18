@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui.constants;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2023 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,29 +20,20 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
+import com.google.gwt.dom.client.Style;
 import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
-
-/**
- * @author Joshua Godi
- */
-public enum Responsiveness implements Type, Style.HasCssName {
-    DEFAULT(""),
-    VISIBLE_PRINT("visible-print"),
-    VISIBLE_XS("visible-xs"),
-    VISIBLE_SM("visible-sm"),
-    VISIBLE_MD("visible-md"),
-    VISIBLE_LG("visible-lg"),
-    HIDDEN_PRINT("hidden-print"),
-    HIDDEN_XS("hidden-xs"),
-    HIDDEN_SM("hidden-sm"),
-    HIDDEN_MD("hidden-md"),
-    HIDDEN_LG("hidden-lg");
+public enum ResponsivenessBlock implements Type, Style.HasCssName {
+    XS("d-block"),
+    SM("d-sm-block"),
+    MD("d-md-block"),
+    LG("d-lg-block"),
+    XL("d-xl-block"),
+    PRINT("d-print-block");
 
     private final String cssClass;
 
-    private Responsiveness(final String cssClass) {
+    ResponsivenessBlock(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -51,7 +42,8 @@ public enum Responsiveness implements Type, Style.HasCssName {
         return cssClass;
     }
 
-    public static Responsiveness fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, Responsiveness.class, DEFAULT);
+    public static ResponsivenessBlock fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ResponsivenessBlock.class, XS);
     }
+
 }

@@ -32,7 +32,9 @@ public enum TableType implements Type, Style.HasCssName {
     STRIPED("table-striped"),
     BORDERED("table-bordered"),
     HOVER("table-hover"),
-    CONDENSED("table-condensed");
+    CONDENSED("table-sm"),
+    RESPONSIVE("table-responsive"),
+    INVERSE("table-inverse");
 
     private final String cssClass;
 

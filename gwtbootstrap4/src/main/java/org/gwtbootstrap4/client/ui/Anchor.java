@@ -57,12 +57,12 @@ import org.gwtbootstrap4.client.ui.base.mixin.IconTextMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap4.client.ui.constants.Attributes;
 import org.gwtbootstrap4.client.ui.constants.BadgePosition;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.IconFlip;
 import org.gwtbootstrap4.client.ui.constants.IconPosition;
 import org.gwtbootstrap4.client.ui.constants.IconRotate;
 import org.gwtbootstrap4.client.ui.constants.IconSize;
 import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Pull;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.Toggle;
 
@@ -470,15 +470,15 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final Pull pull) {
-        pullMixin.setPull(pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        pullMixin.setPull(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         return pullMixin.getPull();
     }
 

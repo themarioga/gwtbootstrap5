@@ -37,7 +37,7 @@ public class Description extends ComplexWidget {
     }
 
     public void setHorizontal(final boolean horizontal) {
-        setStyleName(Styles.DL_HORIZONTAL, horizontal);
+        setStyleName(Styles.ROW, horizontal);
     }
 
     @Override

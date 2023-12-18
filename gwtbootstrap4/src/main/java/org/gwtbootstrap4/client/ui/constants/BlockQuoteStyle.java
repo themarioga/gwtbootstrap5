@@ -1,4 +1,4 @@
-package org.gwtbootstrap4.client.ui;
+package org.gwtbootstrap4.client.ui.constants;
 
 /*
  * #%L
@@ -20,26 +20,28 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Styles;
+import com.google.gwt.dom.client.Style;
+import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
 /**
- * @author Grant Slender
  * @author Joshua Godi
  */
-public class PanelCollapse extends Collapse {
+public enum BlockQuoteStyle implements Type, Style.HasCssName {
+    DEFAULT("blockquote"),
+    REVERSE("blockquote-reverse");
 
-    public PanelCollapse() {
-        addStyleName(Styles.PANEL_COLLAPSE);
+    private final String cssClass;
 
-        // Default hidden
-        setToggle(false);
+    private BlockQuoteStyle(final String cssClass) {
+        this.cssClass = cssClass;
     }
 
-    /**
-     * @deprecated use {@link #isShown()} instead.
-     */
-    @Deprecated
-    public boolean isIn() {
-        return isShown();
+    @Override
+    public String getCssName() {
+        return cssClass;
+    }
+
+    public static BlockQuoteStyle fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, BlockQuoteStyle.class, DEFAULT);
     }
 }

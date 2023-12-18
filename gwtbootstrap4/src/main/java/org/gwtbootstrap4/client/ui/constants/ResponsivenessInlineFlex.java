@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui.constants;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2023 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,22 +20,20 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
+import com.google.gwt.dom.client.Style;
 import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
-
-/**
- * @author Sven Jacobs
- * @author Joshua Godi
- */
-public enum ButtonSize implements Size, Style.HasCssName {
-    DEFAULT(""),
-    LARGE("btn-lg"),
-    SMALL("btn-sm");
+public enum ResponsivenessInlineFlex implements Type, Style.HasCssName {
+    XS("d-inline-flex"),
+    SM("d-sm-inline-flex"),
+    MD("d-md-inline-flex"),
+    LG("d-lg-inline-flex"),
+    XL("d-xl-inline-flex"),
+    PRINT("d-print-inline-flex");
 
     private final String cssClass;
 
-    private ButtonSize(final String cssClass) {
+    ResponsivenessInlineFlex(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -44,7 +42,8 @@ public enum ButtonSize implements Size, Style.HasCssName {
         return cssClass;
     }
 
-    public static ButtonSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ButtonSize.class, DEFAULT);
+    public static ResponsivenessInlineFlex fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ResponsivenessInlineFlex.class, XS);
     }
+
 }

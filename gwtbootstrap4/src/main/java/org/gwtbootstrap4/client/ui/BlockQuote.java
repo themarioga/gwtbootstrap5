@@ -23,6 +23,7 @@ package org.gwtbootstrap4.client.ui;
 import org.gwtbootstrap4.client.ui.base.ComplexWidget;
 
 import com.google.gwt.dom.client.Document;
+import org.gwtbootstrap4.client.ui.constants.BlockQuoteStyle;
 
 /**
  * @author Joshua Godi
@@ -32,4 +33,9 @@ public class BlockQuote extends ComplexWidget {
     public BlockQuote() {
         setElement(Document.get().createBlockQuoteElement());
     }
+
+    public void setQuoteStyle(BlockQuoteStyle blockQuoteStyle) {
+        setStyleName(blockQuoteStyle.getCssName());
+    }
+
 }

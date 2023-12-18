@@ -139,7 +139,7 @@ public class InlineCheckBox extends CheckBox {
 
     public InlineCheckBox() {
         super(DOM.createLabel(), Document.get().createCheckInputElement());
-        setStyleName(Styles.CHECKBOX_INLINE);
+        setStyleName(Styles.FORM_CHECK);
 
         getElement().appendChild(inputElem);
         getElement().appendChild(labelElem);

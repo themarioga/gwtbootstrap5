@@ -200,8 +200,8 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
         if (getParent() != null) {
             if (getParent() instanceof LinkedGroupItem) {
                 addStyleName(Styles.LIST_GROUP_ITEM_HEADING);
-            } else if (getParent() instanceof PanelHeader) {
-                addStyleName(Styles.PANEL_TITLE);
+            } else if (getParent() instanceof CardHeader) {
+                addStyleName(Styles.CARD_TITLE);
             } else if (getParent() instanceof MediaBody) {
                 addStyleName(Styles.MEDIA_HEADING);
             }

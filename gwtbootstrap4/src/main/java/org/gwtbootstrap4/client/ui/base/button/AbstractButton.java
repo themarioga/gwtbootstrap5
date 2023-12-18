@@ -22,7 +22,6 @@ package org.gwtbootstrap4.client.ui.base.button;
 
 import java.util.List;
 
-import org.gwtbootstrap4.client.shared.js.JQuery;
 import org.gwtbootstrap4.client.ui.base.ComplexWidget;
 import org.gwtbootstrap4.client.ui.base.HasActive;
 import org.gwtbootstrap4.client.ui.base.HasDataTarget;
@@ -73,29 +72,6 @@ import com.google.gwt.user.client.ui.Widget;
 public abstract class AbstractButton extends ComplexWidget implements HasEnabled, HasActive, HasType<ButtonType>,
         HasSize<ButtonSize>, HasDataTarget, HasClickHandlers, Focusable, HasAllMouseHandlers {
 
-    public class ButtonStateHandler {
-        private ButtonStateHandler() {
-        }
-
-        public void loading() {
-            button(getElement(), "loading");
-        }
-
-        public void reset() {
-            button(getElement(), "reset");
-        }
-
-        /**
-         * Resets button to specified text state.
-         *
-         * @param state Text state
-         */
-        public void reset(final String state) {
-            button(getElement(), state);
-        }
-    }
-
-    private final ButtonStateHandler buttonStateHandler = new ButtonStateHandler();
     private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<AbstractButton>(this);
     private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<AbstractButton>(this);
     private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<AbstractButton>(this);
@@ -281,14 +257,6 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
         }
     }
 
-    public void toggle() {
-        button(getElement(), "toggle");
-    }
-
-    public ButtonStateHandler state() {
-        return buttonStateHandler;
-    }
-
     public void click() {
         final NativeEvent event = Document.get().createClickEvent(0, 0, 0, 0, 0, false, false, false, false);
         DomEvent.fireNativeEvent(event, this);
@@ -298,7 +266,4 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
 
     // @formatter:off
 
-    private void button(final Element e, final String arg) {
-        JQuery.jQuery(e).button(arg);
-    }
 }

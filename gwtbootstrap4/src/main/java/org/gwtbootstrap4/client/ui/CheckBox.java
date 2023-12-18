@@ -56,6 +56,8 @@ import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.HasWordWrap;
 import com.google.gwt.user.client.ui.UIObject;
 
+import java.text.NumberFormat;
+
 /**
  * A standard check box widget.
  * 
@@ -186,11 +188,14 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
 
     public CheckBox() {
         this(DOM.createDiv(), Document.get().createCheckInputElement());
-        setStyleName(Styles.CHECKBOX);
+        setStyleName(Styles.FORM_CHECK);
 
         LabelElement label = Document.get().createLabelElement();
         label.appendChild(inputElem);
         label.appendChild(labelElem);
+
+        labelElem.setClassName(Styles.FORM_CHECK_LABEL);
+        inputElem.setClassName(Styles.FORM_CHECK_INPUT);
 
         getElement().appendChild(label);
     }

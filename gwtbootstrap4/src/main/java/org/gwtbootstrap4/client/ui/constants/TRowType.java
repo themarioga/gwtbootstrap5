@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui.constants;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2014 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,24 +20,23 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
-
 import com.google.gwt.dom.client.Style;
+import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
 /**
  * @author Joshua Godi
  */
-public enum PanelType implements Type, Style.HasCssName {
-    DEFAULT("panel-default"),
-    PRIMARY("panel-primary"),
-    SUCCESS("panel-success"),
-    INFO("panel-info"),
-    WARNING("panel-warning"),
-    DANGER("panel-danger");
+public enum TRowType implements Type, Style.HasCssName {
+    DEFAULT(""),
+    ACTIVE("table-active"),
+    SUCCESS("table-success"),
+    WARNING("table-warning"),
+    DANGER("table-danger"),
+    INFO("table-info");
 
     private final String cssClass;
 
-    private PanelType(final String cssClass) {
+    private TRowType(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -46,7 +45,7 @@ public enum PanelType implements Type, Style.HasCssName {
         return cssClass;
     }
 
-    public static PanelType fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, PanelType.class, DEFAULT);
+    public static TRowType fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, TRowType.class, DEFAULT);
     }
 }

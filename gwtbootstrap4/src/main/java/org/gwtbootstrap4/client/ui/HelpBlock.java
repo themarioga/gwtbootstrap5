@@ -33,7 +33,7 @@ import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.DomEvent;
 
 /**
- * Help block. Call {@link #setError(String)} to set ther error state of this
+ * Help block. Call {@link #setError(String)} to set the error state of this
  * {@link HelpBlock}.
  * 
  * @author Joshua Godi
@@ -52,17 +52,14 @@ public class HelpBlock extends AbstractTextWidget {
      */
     public HelpBlock() {
         super(Document.get().createSpanElement());
-        setStyleName(Styles.HELP_BLOCK);
-        addHandler(new ChangeHandler() {
-            @Override
-            public void onChange(ChangeEvent event) {
-                if (iconElement != null) {
-                    iconElement.removeFromParent();
-                }
-                if (error && iconType != null) {
-                    iconElement = createIconElement();
-                    getElement().insertFirst(iconElement);
-                }
+        setStyleName(Styles.FORM_TEXT);
+        addHandler(event -> {
+            if (iconElement != null) {
+                iconElement.removeFromParent();
+            }
+            if (error && iconType != null) {
+                iconElement = createIconElement();
+                getElement().insertFirst(iconElement);
             }
         }, ChangeEvent.getType());
     }

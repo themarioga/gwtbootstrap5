@@ -20,7 +20,7 @@ package org.gwtbootstrap4.client.ui.base.helper;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Pull;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.junit.Test;
 
 import static org.gwtbootstrap4.client.ui.base.helper.EnumHelper.fromStyleName;
@@ -35,12 +35,12 @@ public class EnumHelperTest {
 
     @Test
     public void testFromStyleName() {
-        assertThat(fromStyleName("123 pull-left abc", Pull.class, null), is(Pull.LEFT));
-        assertThat(fromStyleName("123 pull-right abc", Pull.class, null), is(Pull.RIGHT));
-        assertThat(fromStyleName("pull-left pull-right abc", Pull.class, null), is(Pull.LEFT));
-        assertThat(fromStyleName("123 abc", Pull.class, null), is(nullValue()));
-        assertThat(fromStyleName("123 abc", Pull.class, Pull.LEFT), is(Pull.LEFT));
+        assertThat(fromStyleName("123 float-left abc", FloatCSS.class, null), is(FloatCSS.LEFT_XS));
+        assertThat(fromStyleName("123 float-right abc", FloatCSS.class, null), is(FloatCSS.RIGHT_XS));
+        assertThat(fromStyleName("float-left float-right abc", FloatCSS.class, null), is(FloatCSS.LEFT_XS));
+        assertThat(fromStyleName("123 abc", FloatCSS.class, null), is(nullValue()));
+        assertThat(fromStyleName("123 abc", FloatCSS.class, FloatCSS.LEFT_XS), is(FloatCSS.LEFT_XS));
         assertThat(fromStyleName("123 abc", null, null), is(nullValue()));
-        assertThat(fromStyleName(null, Pull.class, null), is(nullValue()));
+        assertThat(fromStyleName(null, FloatCSS.class, null), is(nullValue()));
     }
 }

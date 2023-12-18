@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui.constants;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2023 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,22 +20,20 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
+import com.google.gwt.dom.client.Style;
 import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
-
-/**
- * @author Sven Jacobs
- * @author Joshua Godi
- */
-public enum Pull implements Style.HasCssName {
-    NONE(""),
-    LEFT(Styles.PULL_LEFT),
-    RIGHT(Styles.PULL_RIGHT);
+public enum ResponsivenessTable implements Type, Style.HasCssName {
+    XS("d-table"),
+    SM("d-sm-table"),
+    MD("d-md-table"),
+    LG("d-lg-table"),
+    XL("d-xl-table"),
+    PRINT("d-print-table");
 
     private final String cssClass;
 
-    private Pull(final String cssClass) {
+    ResponsivenessTable(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -44,7 +42,8 @@ public enum Pull implements Style.HasCssName {
         return cssClass;
     }
 
-    public static Pull fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, Pull.class, NONE);
+    public static ResponsivenessTable fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ResponsivenessTable.class, XS);
     }
+
 }

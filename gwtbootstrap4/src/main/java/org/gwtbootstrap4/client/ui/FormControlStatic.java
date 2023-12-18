@@ -32,7 +32,7 @@ public class FormControlStatic extends AbstractTextWidget {
 
     public FormControlStatic() {
         super(Document.get().createPElement());
-        setStyleName(Styles.FORM_CONTROL_STATIC);
+        setStyleName(Styles.FORM_CONTROL_PLAINTEXT);
     }
 
     public FormControlStatic(final String text) {

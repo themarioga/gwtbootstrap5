@@ -28,14 +28,26 @@ import com.google.gwt.dom.client.Style;
  * @author Sven Jacobs
  * @author Joshua Godi
  */
-public enum ButtonSize implements Size, Style.HasCssName {
-    DEFAULT(""),
-    LARGE("btn-lg"),
-    SMALL("btn-sm");
+public enum FloatCSS implements Style.HasCssName {
+    NONE_XS("float-none"),
+    NONE_SM("float-sm-none"),
+    NONE_MD("float-md-none"),
+    NONE_LG("float-lg-none"),
+    NONE_XL("float-xl-none"),
+    LEFT_XS("float-left"),
+    LEFT_SM("float-sm-left"),
+    LEFT_MD("float-md-left"),
+    LEFT_LG("float-lg-left"),
+    LEFT_XL("float-xl-left"),
+    RIGHT_XS("float-right"),
+    RIGHT_SM("float-sm-right"),
+    RIGHT_MD("float-md-right"),
+    RIGHT_LG("float-lg-right"),
+    RIGHT_XL("float-xl-right");
 
     private final String cssClass;
 
-    private ButtonSize(final String cssClass) {
+    FloatCSS(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -44,7 +56,7 @@ public enum ButtonSize implements Size, Style.HasCssName {
         return cssClass;
     }
 
-    public static ButtonSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ButtonSize.class, DEFAULT);
+    public static FloatCSS fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, FloatCSS.class, NONE_XS);
     }
 }

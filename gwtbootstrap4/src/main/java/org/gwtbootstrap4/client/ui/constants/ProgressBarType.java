@@ -29,10 +29,10 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ProgressBarType implements Type, Style.HasCssName {
     DEFAULT(""),
-    SUCCESS("progress-bar-success"),
-    INFO("progress-bar-info"),
-    WARNING("progress-bar-warning"),
-    DANGER("progress-bar-danger");
+    SUCCESS("bg-success"),
+    INFO("bg-info"),
+    WARNING("bg-warning"),
+    DANGER("bg-danger");
 
     private final String cssClass;
 

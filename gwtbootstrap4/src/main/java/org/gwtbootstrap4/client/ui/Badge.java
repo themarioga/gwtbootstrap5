@@ -46,7 +46,8 @@ public class Badge extends ComplexWidget implements HasWidgets, HasText {
 
     public Badge() {
         setElement(Document.get().createSpanElement());
-        setStyleName(Styles.BADGE);
+        addStyleName(Styles.LABEL);
+        addStyleName(Styles.BADGE);
     }
 
     public Badge(final String text) {

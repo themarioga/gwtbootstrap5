@@ -29,7 +29,7 @@ import org.gwtbootstrap4.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
-import org.gwtbootstrap4.client.ui.constants.Pull;
+import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.gwt.Widget;
 import org.gwtbootstrap4.client.ui.impl.SimpleRadioButtonImpl;
 
@@ -159,15 +159,15 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final Pull pull) {
-        pullMixin.setPull(pull);
+    public void setPull(final FloatCSS aFloatCSS) {
+        pullMixin.setPull(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public Pull getPull() {
+    public FloatCSS getPull() {
         return pullMixin.getPull();
     }
 

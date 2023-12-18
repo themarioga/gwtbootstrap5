@@ -26,9 +26,10 @@ import org.gwtbootstrap4.client.ui.html.Div;
 /**
  * @author Joshua Godi
  */
-public class PanelBody extends Div {
+public class Card extends Div {
 
-    public PanelBody() {
-        setStyleName(Styles.PANEL_BODY);
+    public Card() {
+        setStyleName(Styles.CARD);
     }
+
 }
