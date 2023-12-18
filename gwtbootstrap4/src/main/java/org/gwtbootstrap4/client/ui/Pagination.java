@@ -92,24 +92,18 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
         }
 
         final AnchorListItem prev = addPreviousLink();
-        prev.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(final ClickEvent event) {
-                pager.previousPage();
-                updatePaginationState(pager);
-            }
+        prev.addClickHandler(event -> {
+            pager.previousPage();
+            updatePaginationState(pager);
         });
         prev.setEnabled(pager.hasPreviousPage());
 
         for (int i = 0; i < pager.getPageCount(); i++) {
             final int display = i + 1;
             final AnchorListItem page = new AnchorListItem(String.valueOf(display));
-            page.addClickHandler(new ClickHandler() {
-                @Override
-                public void onClick(final ClickEvent event) {
-                    pager.setPage(display - 1);
-                    updatePaginationState(pager);
-                }
+            page.addClickHandler(event -> {
+                pager.setPage(display - 1);
+                updatePaginationState(pager);
             });
 
             if (i == pager.getPage()) {
@@ -120,12 +114,9 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
         }
 
         final AnchorListItem next = addNextLink();
-        next.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(final ClickEvent event) {
-                pager.nextPage();
-                updatePaginationState(pager);
-            }
+        next.addClickHandler(event -> {
+            pager.nextPage();
+            updatePaginationState(pager);
         });
         next.setEnabled(pager.hasNextPage());
     }

@@ -64,15 +64,15 @@ public class ValueListBox<T> extends com.google.gwt.user.client.ui.ValueListBox<
         HasResponsiveness, HasPlaceholder, HasSize<InputSize>, HasEditorErrors<T>, HasErrorHandler, HasValidators<T>,
         HasBlankValidator<T> {
 
-    private final IdMixin<ValueListBox<T>> idMixin = new IdMixin<ValueListBox<T>>(this);
+    private final IdMixin<ValueListBox<T>> idMixin = new IdMixin<>(this);
 
-    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<T>(this);
+    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<>(this);
 
-    private final BlankValidatorMixin<ValueListBox<T>, T> validatorMixin = new BlankValidatorMixin<ValueListBox<T>, T>(
+    private final BlankValidatorMixin<ValueListBox<T>, T> validatorMixin = new BlankValidatorMixin<>(
             this, errorHandlerMixin.getErrorHandler());
 
     public ValueListBox(final Renderer<T> renderer) {
-        this(renderer, new SimpleKeyProvider<T>());
+        this(renderer, new SimpleKeyProvider<>());
     }
 
     public ValueListBox(final Renderer<T> renderer, final ProvidesKey<T> keyProvider) {

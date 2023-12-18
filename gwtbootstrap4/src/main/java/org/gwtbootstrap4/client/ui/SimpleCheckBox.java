@@ -75,9 +75,9 @@ public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox
         return checkBox;
     }
 
-    private final IdMixin<SimpleCheckBox> idMixin = new IdMixin<SimpleCheckBox>(this);
-    private final PullMixin<SimpleCheckBox> pullMixin = new PullMixin<SimpleCheckBox>(this);
-    private final EnabledMixin<SimpleCheckBox> enabledMixin = new EnabledMixin<SimpleCheckBox>(this);
+    private final IdMixin<SimpleCheckBox> idMixin = new IdMixin<>(this);
+    private final PullMixin<SimpleCheckBox> pullMixin = new PullMixin<>(this);
+    private final EnabledMixin<SimpleCheckBox> enabledMixin = new EnabledMixin<>(this);
 
     /**
      * Creates a new simple checkbox.

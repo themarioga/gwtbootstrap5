@@ -30,7 +30,6 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
  * An anchor that contains an image as the click action, used in Media Objects
  *
  * @author Joshua Godi
- * @see org.gwtbootstrap4.client.ui.MediaList
  */
 public class ImageAnchor extends Anchor implements HasType<ImageType> {
     private final Image image = new Image();

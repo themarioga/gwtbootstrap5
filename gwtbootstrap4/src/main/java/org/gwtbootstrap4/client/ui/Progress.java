@@ -32,7 +32,7 @@ import org.gwtbootstrap4.client.ui.html.Div;
  * @author Joshua Godi
  */
 public class Progress extends Div implements HasType<ProgressType>, HasActive {
-    private final ActiveMixin<Progress> activeMixin = new ActiveMixin<Progress>(this);
+    private final ActiveMixin<Progress> activeMixin = new ActiveMixin<>(this);
 
     public Progress() {
         setStyleName(Styles.PROGRESS);

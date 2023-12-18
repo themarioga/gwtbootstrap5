@@ -20,8 +20,6 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.FloatCSS;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.UnorderedList;
 

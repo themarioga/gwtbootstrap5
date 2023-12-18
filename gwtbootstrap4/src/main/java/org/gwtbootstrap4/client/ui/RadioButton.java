@@ -61,7 +61,7 @@ import com.google.gwt.user.client.Event;
 public class RadioButton extends Radio implements HasActive,
         HasType<ButtonType>, HasSize<ButtonSize>, HasIcon, HasIconPosition {
 
-    private final ActiveMixin<RadioButton> activeMixin = new ActiveMixin<RadioButton>(this);
+    private final ActiveMixin<RadioButton> activeMixin = new ActiveMixin<>(this);
 
     private IconPosition iconPosition = IconPosition.LEFT;
     private Icon icon;
@@ -85,7 +85,7 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     /**
-     * @see #RadioButtonToggle(String, SafeHtml)
+     * @see #RadioButton(String, SafeHtml)
      *
      * @param name
      *            the group name with which to associate the radio button
@@ -102,7 +102,7 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     /**
-     * @see #RadioButtonToggle(String, SafeHtml)
+     * @see #RadioButton(String, SafeHtml)
      *
      * @param name
      *            the group name with which to associate the radio button
@@ -138,7 +138,7 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     /**
-     * @see #RadioButtonToggle(String, SafeHtml)
+     * @see #RadioButton(String, SafeHtml)
      *
      * @param name
      *            the group name with which to associate the radio button
@@ -155,7 +155,7 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     /**
-     * @see #RadioButtonToggle(String, SafeHtml)
+     * @see #RadioButton(String, SafeHtml)
      *
      * @param name
      *            the group name with which to associate the radio button
@@ -219,21 +219,11 @@ public class RadioButton extends Radio implements HasActive,
         // Use a ClickHandler since Bootstrap's jQuery does not trigger native
         // change events:
         // http://learn.jquery.com/events/triggering-event-handlers/
-        addClickHandler(new ClickHandler() {
+        addClickHandler(event -> {
+            final boolean oldValue = getValue();
 
-            @Override
-            public void onClick(ClickEvent event) {
-                final boolean oldValue = getValue();
-
-                Scheduler.get().scheduleDeferred(new ScheduledCommand() {
-                    @Override
-                    public void execute() {
-                        ValueChangeEvent.fireIfNotEqual(RadioButton.this,
-                                oldValue, getValue());
-                    }
-                });
-            }
-
+            Scheduler.get().scheduleDeferred(() -> ValueChangeEvent.fireIfNotEqual(RadioButton.this,
+                    oldValue, getValue()));
         });
     }
 

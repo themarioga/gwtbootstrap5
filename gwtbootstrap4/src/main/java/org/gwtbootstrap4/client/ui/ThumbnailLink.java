@@ -63,8 +63,8 @@ import com.google.gwt.user.client.ui.Focusable;
 public class ThumbnailLink extends ComplexWidget implements HasClickHandlers, HasDoubleClickHandlers, HasHref,
         HasDataToggle, HasTargetHistoryToken, Focusable, HasTarget {
 
-    private final DataToggleMixin<ThumbnailLink> toggleMixin = new DataToggleMixin<ThumbnailLink>(this);
-    private final AttributeMixin<ThumbnailLink> attributeMixin = new AttributeMixin<ThumbnailLink>(this);
+    private final DataToggleMixin<ThumbnailLink> toggleMixin = new DataToggleMixin<>(this);
+    private final AttributeMixin<ThumbnailLink> attributeMixin = new AttributeMixin<>(this);
     private final FocusableMixin<ThumbnailLink> focusableMixin;
     private String targetHistoryToken;
 
@@ -76,7 +76,7 @@ public class ThumbnailLink extends ComplexWidget implements HasClickHandlers, Ha
     public ThumbnailLink(final String href) {
         setElement(Document.get().createAnchorElement());
         setHref(href);
-        focusableMixin = new FocusableMixin<ThumbnailLink>(this);
+        focusableMixin = new FocusableMixin<>(this);
     }
 
     /**

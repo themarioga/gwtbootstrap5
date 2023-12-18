@@ -39,7 +39,7 @@ import com.google.gwt.safehtml.shared.SafeUri;
 public class Image extends com.google.gwt.user.client.ui.Image implements HasType<ImageType>, HasResponsiveness,
         HasPull {
 
-    private final PullMixin<Image> pullMixin = new PullMixin<Image>(this);
+    private final PullMixin<Image> pullMixin = new PullMixin<>(this);
 
     public Image() {
         super();

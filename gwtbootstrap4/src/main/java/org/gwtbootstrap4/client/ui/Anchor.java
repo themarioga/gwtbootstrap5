@@ -101,7 +101,7 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
     }
 
     /**
-     * Creates an achor widget with the desired HREF and text
+     * Creates an anchor widget with the desired HREF and text
      *
      * @param text text for the anchor
      * @param href href for the anchor

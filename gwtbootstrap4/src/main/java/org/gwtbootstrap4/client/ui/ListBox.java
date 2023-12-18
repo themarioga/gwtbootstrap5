@@ -32,7 +32,7 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
  */
 public class ListBox extends com.google.gwt.user.client.ui.ListBox implements HasId {
 
-    private final IdMixin<ListBox> idMixin = new IdMixin<ListBox>(this);
+    private final IdMixin<ListBox> idMixin = new IdMixin<>(this);
 
     /**
      * Creates an empty list box in single selection mode.

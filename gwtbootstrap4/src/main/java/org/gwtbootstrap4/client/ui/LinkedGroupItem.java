@@ -48,7 +48,7 @@ import com.google.gwt.user.client.History;
 public class LinkedGroupItem extends ComplexWidget implements HasClickHandlers, HasDoubleClickHandlers, HasHref,
         HasTargetHistoryToken, HasActive, HasType<ListGroupItemType> {
 
-    private final ActiveMixin<LinkedGroupItem> activeMixin = new ActiveMixin<LinkedGroupItem>(this);
+    private final ActiveMixin<LinkedGroupItem> activeMixin = new ActiveMixin<>(this);
 
     private final Span span = new Span();
 

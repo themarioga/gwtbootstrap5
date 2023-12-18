@@ -57,7 +57,7 @@ public class FormLabel extends AbstractTextWidget {
                     iconElement.removeFromParent();
                 }
                 String html = getHTML();
-                if (showRequiredIndicator && html != null && !"".equals(html)) {
+                if (showRequiredIndicator && html != null && !html.isEmpty()) {
                     iconElement = createIconElement();
                     getElement().appendChild(iconElement);
                 }

@@ -58,7 +58,7 @@ import com.google.gwt.user.client.Event;
 public class CheckBoxButton extends CheckBox implements HasActive,
         HasType<ButtonType>, HasSize<ButtonSize>, HasIcon, HasIconPosition {
 
-    private final ActiveMixin<CheckBoxButton> activeMixin = new ActiveMixin<CheckBoxButton>(this);
+    private final ActiveMixin<CheckBoxButton> activeMixin = new ActiveMixin<>(this);
 
     private IconPosition iconPosition = IconPosition.LEFT;
     private Icon icon;

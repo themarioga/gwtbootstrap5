@@ -76,9 +76,9 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
         return radioButton;
     }
 
-    private final IdMixin<SimpleRadioButton> idMixin = new IdMixin<SimpleRadioButton>(this);
-    private final PullMixin<SimpleRadioButton> pullMixin = new PullMixin<SimpleRadioButton>(this);
-    private final EnabledMixin<SimpleRadioButton> enabledMixin = new EnabledMixin<SimpleRadioButton>(this);
+    private final IdMixin<SimpleRadioButton> idMixin = new IdMixin<>(this);
+    private final PullMixin<SimpleRadioButton> pullMixin = new PullMixin<>(this);
+    private final EnabledMixin<SimpleRadioButton> enabledMixin = new EnabledMixin<>(this);
 
     /**
      * Creates a new radio associated with a particular group name. All radio

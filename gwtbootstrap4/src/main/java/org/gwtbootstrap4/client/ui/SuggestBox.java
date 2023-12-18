@@ -9,9 +9,9 @@ package org.gwtbootstrap4.client.ui;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -68,20 +68,20 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  * <br/>
  * The default style is inherited from the {@link Styles#DROPDOWN_MENU}. Styling of the suggestions items need
  * a bit of css in order to be pleasing to the eye.
- * 
+ *
  * <pre>
  * {@code
  * .dropdown-menu .item {
  *     padding: 5px;
  * }
- *  
+ *
  * .dropdown-menu .item-selected {
  *     background-color: #eee;
  * }
- * 
+ *
  * }
  * </pre>
- * 
+ *
  * @author Steven Jardine
  */
 public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox implements HasId, HasResponsiveness, HasPlaceholder,
@@ -106,29 +106,25 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
          * @param box the box the SuggestBox.
          */
         private void resizePopup(final com.google.gwt.user.client.ui.SuggestBox box) {
-            Scheduler.get().scheduleDeferred(new ScheduledCommand() {
-                @Override
-                public void execute() {
-                    PopupPanel panel = getPopupPanel();
-                    if (box.isAttached())
-                    {
-                      Element e = box.getElement();
-                      panel.setWidth((e.getAbsoluteRight() - e.getAbsoluteLeft() - 2) + Unit.PX.getType());
-                      panel.setPopupPosition(e.getAbsoluteLeft(), e.getAbsoluteBottom());
-                    }
-                    else
-                    {
-                      panel.hide();
-                    }  
+            Scheduler.get().scheduleDeferred(() -> {
+                PopupPanel panel = getPopupPanel();
+                if (box.isAttached()) {
+                    Element e = box.getElement();
+                    panel.setWidth((e.getAbsoluteRight() - e.getAbsoluteLeft() - 2) + Unit.PX.getType());
+                    panel.setPopupPosition(e.getAbsoluteLeft(), e.getAbsoluteBottom());
+                } else {
+                    panel.hide();
                 }
             });
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         */
         @Override
         protected void showSuggestions(final com.google.gwt.user.client.ui.SuggestBox suggestBox,
-                final Collection<? extends Suggestion> suggestions, final boolean isDisplayStringHTML,
-                final boolean isAutoSelectEnabled, final SuggestionCallback callback) {
+                                       final Collection<? extends Suggestion> suggestions, final boolean isDisplayStringHTML,
+                                       final boolean isAutoSelectEnabled, final SuggestionCallback callback) {
             super.showSuggestions(suggestBox, suggestions, isDisplayStringHTML, isAutoSelectEnabled, callback);
             resizePopup(suggestBox);
             if (popupResizeHandler == null) {
@@ -147,10 +143,10 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
                 Window.addResizeHandler(popupResizeHandler);
             }
             // Try and set the z-index of the popup to the same as the SuggestBox.
-            if (!suggestBox.getElement().getStyle().getZIndex().equals("")) {
+            if (!suggestBox.getElement().getStyle().getZIndex().isEmpty()) {
                 try {
                     getPopupPanel().getElement().getStyle()
-                            .setZIndex(Integer.valueOf(suggestBox.getElement().getStyle().getZIndex()));
+                            .setZIndex(Integer.parseInt(suggestBox.getElement().getStyle().getZIndex()));
                 } catch (Exception e) {
                     // Do nothing. We tried....
                 }
@@ -158,14 +154,14 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         }
     }
 
-    private final EnabledMixin<SuggestBox> enabledMixin = new EnabledMixin<SuggestBox>(this);
+    private final EnabledMixin<SuggestBox> enabledMixin = new EnabledMixin<>(this);
 
-    private final ErrorHandlerMixin<String> errorHandlerMixin = new ErrorHandlerMixin<String>(this);
+    private final ErrorHandlerMixin<String> errorHandlerMixin = new ErrorHandlerMixin<>(this);
 
     private final IdMixin<SuggestBox> idMixin = new IdMixin<SuggestBox>(this);
 
-    private final BlankValidatorMixin<SuggestBox, String> validatorMixin = new BlankValidatorMixin<SuggestBox, String>(this,
-        errorHandlerMixin.getErrorHandler());
+    private final BlankValidatorMixin<SuggestBox, String> validatorMixin = new BlankValidatorMixin<>(this,
+            errorHandlerMixin.getErrorHandler());
 
     /**
      * Constructor for {@link SuggestBox}. Creates a {@link MultiWordSuggestOracle} and {@link TextBox} to use
@@ -189,7 +185,7 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
      * by the {@link SuggestBox}.
      *
      * @param oracle supplies suggestions based upon the current contents of the text widget
-     * @param box the text widget
+     * @param box    the text widget
      */
     public SuggestBox(SuggestOracle oracle, ValueBoxBase<String> box) {
         this(oracle, box, new CustomSuggestionDisplay());
@@ -199,8 +195,8 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
      * Constructor for {@link SuggestBox}. The text box will be removed from it's current location and wrapped
      * by the {@link SuggestBox}.
      *
-     * @param oracle supplies suggestions based upon the current contents of the text widget
-     * @param box the text widget
+     * @param oracle         supplies suggestions based upon the current contents of the text widget
+     * @param box            the text widget
      * @param suggestDisplay the class used to display suggestions
      */
     public SuggestBox(SuggestOracle oracle, ValueBoxBase<String> box, SuggestionDisplay suggestDisplay) {
@@ -208,37 +204,49 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         setStyleName(Styles.FORM_CONTROL);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HandlerRegistration addValidationChangedHandler(ValidationChangedHandler handler) {
         return validatorMixin.addValidationChangedHandler(handler);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addValidator(Validator<String> validator) {
         validatorMixin.addValidator(validator);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean getAllowBlank() {
         return validatorMixin.getAllowBlank();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getAutoComplete() {
         return getElement().getAttribute(AUTO_COMPLETE);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ErrorHandler getErrorHandler() {
         return errorHandlerMixin.getErrorHandler();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ErrorHandlerType getErrorHandlerType() {
         return errorHandlerMixin.getErrorHandlerType();
@@ -252,13 +260,17 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         return idMixin.getId();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPlaceholder() {
         return getElement().getAttribute(PLACEHOLDER);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public InputSize getSize() {
         return InputSize.fromStyleName(getStyleName());
@@ -269,7 +281,9 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         return validatorMixin.getValidateOnBlur();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isEnabled() {
         return enabledMixin.isEnabled();
@@ -282,7 +296,7 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         Integer zIndex = null;
         Widget widget = this;
         while (zIndex == null && widget != null) {
-            if (!widget.getElement().getStyle().getZIndex().equals("")) {
+            if (!widget.getElement().getStyle().getZIndex().isEmpty()) {
                 try {
                     zIndex = Integer.valueOf(widget.getElement().getStyle().getZIndex());
                     zIndex += 10;
@@ -297,7 +311,9 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean removeValidator(Validator<String> validator) {
         return validatorMixin.removeValidator(validator);
@@ -313,50 +329,66 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         validatorMixin.setAllowBlank(allowBlank);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setAutoComplete(final boolean autoComplete) {
         getElement().setAttribute(AUTO_COMPLETE, autoComplete ? ON : OFF);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setEnabled(final boolean enabled) {
         enabledMixin.setEnabled(enabled);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setErrorHandler(ErrorHandler handler) {
         errorHandlerMixin.setErrorHandler(handler);
         validatorMixin.setErrorHandler(handler);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setErrorHandlerType(ErrorHandlerType type) {
         errorHandlerMixin.setErrorHandlerType(type);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setHiddenOn(final DeviceSize deviceSize) {
         StyleHelper.setHiddenOn(this, deviceSize);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setId(final String id) {
         idMixin.setId(id);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setPlaceholder(final String placeHolder) {
         getElement().setAttribute(PLACEHOLDER, placeHolder != null ? placeHolder : "");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setSize(final InputSize size) {
         StyleHelper.addUniqueEnumStyleName(this, InputSize.class, size);
@@ -372,25 +404,33 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
         validatorMixin.setValidators(validators);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setVisibleOn(final DeviceSize deviceSize) {
         StyleHelper.setVisibleOn(this, deviceSize);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void showErrors(List<EditorError> errors) {
         errorHandlerMixin.showErrors(errors);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean validate() {
         return validatorMixin.validate();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean validate(boolean show) {
         return validatorMixin.validate(show);

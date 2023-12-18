@@ -37,8 +37,8 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class CarouselIndicator extends ComplexWidget implements HasDataTarget, HasActive {
 
-    private final DataTargetMixin<CarouselIndicator> targetMixin = new DataTargetMixin<CarouselIndicator>(this);
-    private final ActiveMixin<CarouselIndicator> activeMixin = new ActiveMixin<CarouselIndicator>(this);
+    private final DataTargetMixin<CarouselIndicator> targetMixin = new DataTargetMixin<>(this);
+    private final ActiveMixin<CarouselIndicator> activeMixin = new ActiveMixin<>(this);
 
     public CarouselIndicator() {
         setElement(Document.get().createLIElement());
