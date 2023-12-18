@@ -79,14 +79,14 @@ import java.util.List;
 public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandlers, HasDoubleClickHandlers, HasHref, HasDataToggle, HasDataParent,
         HasTargetHistoryToken, HasHTML, HasIcon, HasIconPosition, Focusable, HasDataTarget, HasTarget, HasPull, HasBadge {
 
-    private final PullMixin<Anchor> pullMixin = new PullMixin<Anchor>(this);
-    private final DataToggleMixin<Anchor> toggleMixin = new DataToggleMixin<Anchor>(this);
-    private final DataParentMixin<Anchor> parentMixin = new DataParentMixin<Anchor>(this);
-    private final IconTextMixin<Anchor> iconTextMixin = new IconTextMixin<Anchor>(this);
-    private final DataTargetMixin<Anchor> targetMixin = new DataTargetMixin<Anchor>(this);
-    private final AttributeMixin<Anchor> attributeMixin = new AttributeMixin<Anchor>(this);
-    private final FocusableMixin<Anchor> focusableMixin = new FocusableMixin<Anchor>(this);
-    private final EnabledMixin<Anchor> enabledMixin = new EnabledMixin<Anchor>(this);
+    private final PullMixin<Anchor> pullMixin = new PullMixin<>(this);
+    private final DataToggleMixin<Anchor> toggleMixin = new DataToggleMixin<>(this);
+    private final DataParentMixin<Anchor> parentMixin = new DataParentMixin<>(this);
+    private final IconTextMixin<Anchor> iconTextMixin = new IconTextMixin<>(this);
+    private final DataTargetMixin<Anchor> targetMixin = new DataTargetMixin<>(this);
+    private final AttributeMixin<Anchor> attributeMixin = new AttributeMixin<>(this);
+    private final FocusableMixin<Anchor> focusableMixin = new FocusableMixin<>(this);
+    private final EnabledMixin<Anchor> enabledMixin = new EnabledMixin<>(this);
     private String targetHistoryToken;
 
     /**

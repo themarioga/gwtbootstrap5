@@ -46,7 +46,6 @@ import org.gwtbootstrap4.client.ui.form.validator.ValidationChangedEvent.Validat
 import org.gwtbootstrap4.client.ui.form.validator.Validator;
 
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style.Display;
 import com.google.gwt.dom.client.Style.Unit;
@@ -158,7 +157,7 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
 
     private final ErrorHandlerMixin<String> errorHandlerMixin = new ErrorHandlerMixin<>(this);
 
-    private final IdMixin<SuggestBox> idMixin = new IdMixin<SuggestBox>(this);
+    private final IdMixin<SuggestBox> idMixin = new IdMixin<>(this);
 
     private final BlankValidatorMixin<SuggestBox, String> validatorMixin = new BlankValidatorMixin<>(this,
             errorHandlerMixin.getErrorHandler());

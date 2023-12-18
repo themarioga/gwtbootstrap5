@@ -54,10 +54,8 @@ public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox
     /**
      * Creates a SimpleCheckBox widget that wraps an existing &lt;input
      * type='checkbox'&gt; element.
-     * 
      * This element must already be attached to the document. If the element is
      * removed from the document, you must call
-     * {@link RootPanel#detachNow(Widget)}.
      * 
      * @param element
      *            the element to be wrapped

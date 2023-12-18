@@ -55,10 +55,8 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
     /**
      * Creates a SimpleRadioButton widget that wraps an existing &lt;input
      * type='radio'&gt; element.
-     * 
      * This element must already be attached to the document. If the element is
      * removed from the document, you must call
-     * {@link RootPanel#detachNow(Widget)}.
      * 
      * @param element
      *            the element to be wrapped
@@ -84,7 +82,6 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
      * Creates a new radio associated with a particular group name. All radio
      * buttons associated with the same group name belong to a
      * mutually-exclusive set.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      * 
