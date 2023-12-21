@@ -90,6 +90,14 @@ public class Carousel extends Div {
         this.wrap = wrap;
     }
 
+    public void setFade(final boolean fade) {
+        if (fade) {
+            addStyleName(Styles.CAROUSEL_FADE);
+        } else {
+            removeStyleName(Styles.CAROUSEL_FADE);
+        }
+    }
+
     /**
      * Causes the carousel to cycle
      */

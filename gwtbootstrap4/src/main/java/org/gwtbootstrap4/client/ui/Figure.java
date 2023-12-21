@@ -20,10 +20,7 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.RowContentJustifyAlign;
-import org.gwtbootstrap4.client.ui.constants.RowContentVerticalAlign;
 import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.html.Div;
 
 /**
  * A row of Bootstrap's fluid grid system.
@@ -32,26 +29,11 @@ import org.gwtbootstrap4.client.ui.html.Div;
  * @author Joshua Godi
  * @see Column
  */
-public class Row extends Div {
+public class Figure extends org.gwtbootstrap4.client.ui.html.Figure {
 
-    public Row() {
-        setStyleName(Styles.ROW);
+    public Figure() {
+        setStyleName(Styles.FIGURE);
     }
 
-    public void setContentVerticalAlign(RowContentVerticalAlign rowContentVerticalAlign) {
-        setStyleName(rowContentVerticalAlign.getCssName());
-    }
-
-    public RowContentVerticalAlign getContentVerticalAlign() {
-        return RowContentVerticalAlign.fromStyleName(getStyleName());
-    }
-
-    public void setContentJustifyAlign(RowContentJustifyAlign rowContentJustifyAlign) {
-        setStyleName(rowContentJustifyAlign.getCssName());
-    }
-
-    public RowContentJustifyAlign getContentJustifyAlign() {
-        return RowContentJustifyAlign.fromStyleName(getStyleName());
-    }
 
 }

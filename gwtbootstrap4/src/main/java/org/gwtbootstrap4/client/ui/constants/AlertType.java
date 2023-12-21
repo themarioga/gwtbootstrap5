@@ -30,10 +30,14 @@ import com.google.gwt.dom.client.Style;
  */
 public enum AlertType implements Type, Style.HasCssName {
     DEFAULT(""),
+    PRIMARY("alert-primary"),
+    SECONDARY("alert-secondary"),
     SUCCESS("alert-success"),
-    INFO("alert-info"),
+    DANGER("alert-danger"),
     WARNING("alert-warning"),
-    DANGER("alert-danger");
+    INFO("alert-info"),
+    LIGHT("alert-light"),
+    DARK("alert-dark");
 
     private final String cssClass;
 

@@ -75,7 +75,7 @@ public class UnorderedList extends ComplexWidget {
      * @param unstyled boolean true/false to make unstyled
      */
     public void setUnstyled(final boolean unstyled) {
-        setStyleName(Styles.UNSTYLED, unstyled);
+        setStyleName(Styles.LIST_UNSTYLED, unstyled);
     }
 
     /**
@@ -84,7 +84,7 @@ public class UnorderedList extends ComplexWidget {
      * @return true/false for unstyled or not
      */
     public boolean isUnstyled() {
-        return StyleHelper.containsStyle(Styles.UNSTYLED, getStyleName());
+        return StyleHelper.containsStyle(Styles.LIST_UNSTYLED, getStyleName());
     }
 
     /**

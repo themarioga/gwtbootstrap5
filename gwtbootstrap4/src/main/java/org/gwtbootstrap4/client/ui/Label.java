@@ -124,4 +124,8 @@ public class Label extends AbstractTextWidget implements HasType<LabelType>, Has
     public HandlerRegistration addMouseWheelHandler(final MouseWheelHandler handler) {
         return addDomHandler(handler, MouseWheelEvent.getType());
     }
+
+    public void setTruncated() {
+        addStyleName(Styles.TEXT_TRUNCATE);
+    }
 }

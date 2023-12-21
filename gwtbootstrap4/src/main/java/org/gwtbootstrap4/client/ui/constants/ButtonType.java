@@ -28,13 +28,26 @@ import com.google.gwt.dom.client.Style;
  * @author Sven Jacobs
  */
 public enum ButtonType implements Type, Style.HasCssName {
-    DEFAULT("btn-secondary"),
+    DEFAULT("btn-link"),
+
     PRIMARY("btn-primary"),
+    SECONDARY("btn-secondary"),
     SUCCESS("btn-success"),
-    INFO("btn-info"),
-    WARNING("btn-warning"),
     DANGER("btn-danger"),
-    LINK("btn-link");
+    WARNING("btn-warning"),
+    INFO("btn-info"),
+    LIGHT("btn-light"),
+    DARK("btn-dark"),
+
+    PRIMARY_OUTLINE("btn-outline-primary"),
+    SECONDARY_OUTLINE("btn-outline-secondary"),
+    SUCCESS_OUTLINE("btn-outline-success"),
+    DANGER_OUTLINE("btn-outline-danger"),
+    WARNING_OUTLINE("btn-outline-warning"),
+    INFO_OUTLINE("btn-outline-info"),
+    LIGHT_OUTLINE("btn-outline-light"),
+    DARK_OUTLINE("btn-outline-dark"),
+    LINK_OUTLINE("btn-outline-link");
 
     private final String cssClass;
 

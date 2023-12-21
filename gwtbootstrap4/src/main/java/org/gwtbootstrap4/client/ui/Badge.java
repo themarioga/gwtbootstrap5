@@ -21,6 +21,8 @@ package org.gwtbootstrap4.client.ui;
  */
 
 import org.gwtbootstrap4.client.ui.base.ComplexWidget;
+import org.gwtbootstrap4.client.ui.base.HasType;
+import org.gwtbootstrap4.client.ui.constants.BadgeType;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Text;
 
@@ -41,7 +43,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
  *
  * @author Sven Jacobs
  */
-public class Badge extends ComplexWidget implements HasWidgets, HasText {
+public class Badge extends ComplexWidget implements HasWidgets, HasText, HasType<BadgeType> {
     private final Text text = new Text();
 
     public Badge() {
@@ -71,4 +73,15 @@ public class Badge extends ComplexWidget implements HasWidgets, HasText {
         this.text.setText(text);
         insert(this.text, 0);
     }
+
+    @Override
+    public void setType(BadgeType type) {
+        addStyleName(type.getCssName());
+    }
+
+    @Override
+    public BadgeType getType() {
+        return BadgeType.fromStyleName(getStyleName());
+    }
+
 }

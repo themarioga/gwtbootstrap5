@@ -23,6 +23,7 @@ package org.gwtbootstrap4.client.ui.gwt;
 import org.gwtbootstrap4.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
+import org.gwtbootstrap4.client.ui.constants.TableResponsiveness;
 import org.gwtbootstrap4.client.ui.constants.TableType;
 
 import com.google.gwt.core.client.GWT;
@@ -123,6 +124,10 @@ public class DataGrid<T> extends com.google.gwt.user.cellview.client.DataGrid<T>
         StyleHelper.setHiddenOn(this, deviceSize);
     }
 
+    public void setResponsive(TableResponsiveness tableResponsiveness) {
+        StyleHelper.addEnumStyleName(this, tableResponsiveness);
+    }
+
     public void setStriped(final boolean striped) {
         if (striped) {
             addToDataGrid(TableType.STRIPED);
@@ -139,6 +144,14 @@ public class DataGrid<T> extends com.google.gwt.user.cellview.client.DataGrid<T>
         }
     }
 
+    public void setBorderless(final boolean borderless) {
+        if (borderless) {
+            addToDataGrid(TableType.BORDERLESS);
+        } else {
+            removeFromDataGrid(TableType.BORDERLESS);
+        }
+    }
+
     public void setCondensed(final boolean condensed) {
         if (condensed) {
             addToDataGrid(TableType.CONDENSED);
@@ -152,6 +165,22 @@ public class DataGrid<T> extends com.google.gwt.user.cellview.client.DataGrid<T>
             addToDataGrid(TableType.HOVER);
         } else {
             removeFromDataGrid(TableType.HOVER);
+        }
+    }
+
+    public void setInverse(final boolean inverse) {
+        if (inverse) {
+            addToDataGrid(TableType.INVERSE);
+        } else {
+            removeFromDataGrid(TableType.INVERSE);
+        }
+    }
+
+    public void setDark(final boolean dark) {
+        if (dark) {
+            addToDataGrid(TableType.DARK);
+        } else {
+            removeFromDataGrid(TableType.DARK);
         }
     }
 

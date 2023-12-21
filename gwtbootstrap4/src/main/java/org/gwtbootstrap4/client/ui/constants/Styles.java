@@ -27,28 +27,41 @@ public final class Styles {
 
     public static final String ACTIVE = "active";
 
+    public static final String ACCORDION = "accordion";
+
     public static final String ALERT = "alert";
     public static final String ALERT_LINK = "alert-link";
+    public static final String ALERT_HEADING = "alert-heading";
+    public static final String ALERT_DISMISSIBLE = "alert-dismissible";
 
     public static final String BADGE = "badge-pill";
 
     public static final String BLOCKQUOTE = "blockquote";
 
     public static final String BREADCRUMB = "breadcrumb";
+    public static final String BREADCRUMB_ITEM = "breadcrumb-item";
 
     public static final String BTN = "btn";
     public static final String BTN_BLOCK = "btn-block";
     public static final String BTN_GROUP = "btn-group";
     public static final String BTN_GROUP_VERTICAL = "btn-group-vertical";
+    public static final String BTN_GROUP_TOGGLE = "btn-group-toggle";
     public static final String BTN_TOOLBAR = "btn-toolbar";
 
     public static final String CAPTION = "caption";
 
     public static final String CAROUSEL = "carousel";
     public static final String CAROUSEL_CAPTION = "carousel-caption";
-    public static final String CAROUSEL_CONTROL = "carousel-control";
+    public static final String CAROUSEL_FADE = "carousel-fade";
     public static final String CAROUSEL_INDICATORS = "carousel-indicators";
+    public static final String CAROUSEL_ITEM = "carousel-item";
     public static final String CAROUSEL_INNER = "carousel-inner";
+
+    public static final String CAROUSEL_CONTROL = "carousel-control";
+    public static final String CAROUSEL_CONTROL_PREV = "carousel-control-prev";
+    public static final String CAROUSEL_CONTROL_NEXT = "carousel-control-next";
+    public static final String CAROUSEL_CONTROL_PREV_ICON = "carousel-control-prev-icon";
+    public static final String CAROUSEL_CONTROL_NEXT_ICON = "carousel-control-next-icon";
 
     public static final String CLEARFIX = "clearfix";
 
@@ -56,8 +69,6 @@ public final class Styles {
 
     public static final String COLLAPSE = "collapse";
     public static final String COLLAPSING = "collapsing";
-
-    public static final String CONTAINER = "container";
 
     public static final String CONTROL_LABEL = "col-form-label";
 
@@ -74,20 +85,25 @@ public final class Styles {
 
     public static final String FADE = "fade";
 
+    public static final String FIGURE = "figure";
+    public static final String FIGURE_CAPTION = "figure-caption";
+    public static final String FIGURE_IMAGE = "figure-img";
+
     public static final String FONT_AWESOME_BASE = "fa";
 
-    public static final String FORM_CONTROL = "form-control";
-    public static final String FORM_CONTROL_PLAINTEXT = "form-control-plaintext";
     public static final String FORM_GROUP = "form-group";
     public static final String FORM_TEXT = "form-text";
     public static final String FORM_ROW = "form-row";
     public static final String FORM_INLINE = "form-inline";
 
+    public static final String FORM_CONTROL = "form-control";
+    public static final String FORM_CONTROL_PLAINTEXT = "form-control-plaintext";
+    public static final String FORM_CONTROL_FILE = "form-control-file";
+    public static final String FORM_CONTROL_RANGE = "form-control-range";
+
     public static final String FORM_CHECK = "form-check";
     public static final String FORM_CHECK_LABEL = "form-check-label";
     public static final String FORM_CHECK_INPUT = "form-check-input";
-
-    public static final String ITEM = "item";
 
     public static final String ICON_BORDER = "fa-border";
     public static final String ICON_STACK = "fa-stack";
@@ -97,10 +113,6 @@ public final class Styles {
     public static final String ICON_STACK_BASE = "fa-stack-2x";
     public static final String ICON_STACK_TOP = "fa-stack-1x";
     public static final String ICON_INVERSE = "fa-inverse";
-    public static final String ICON_PREV = "fa-arrow-left";
-    public static final String ICON_NEXT = "fa-arrow-right";
-
-    public static final String IMG_RESPONSIVE = "img-fluid";
 
     public static final String IN = "in";
 
@@ -112,14 +124,13 @@ public final class Styles {
 
     public static final String LEAD = "lead";
 
-    public static final String LEFT = "left";
-
     public static final String LIST_INLINE = "list-inline";
     public static final String LIST_INLINE_ITEM = "list-inline-item";
     public static final String LIST_GROUP = "list-group";
     public static final String LIST_GROUP_ITEM = "list-group-item";
     public static final String LIST_GROUP_ITEM_ACTION = "list-group-item-action";
     public static final String LIST_GROUP_FLUSH = "list-group-flush";
+    public static final String LIST_UNSTYLED = "list-unstyled";
 
     public static final String MEDIA = "media";
     public static final String MEDIA_BODY = "media-body";
@@ -149,8 +160,11 @@ public final class Styles {
     public static final String CARD = "card";
     public static final String CARD_HEADING = "card-header";
     public static final String CARD_TITLE = "card-title";
+    public static final String CARD_SUBTITLE = "card-subtitle";
     public static final String CARD_BODY = "card-body";
     public static final String CARD_FOOTER = "card-footer";
+    public static final String CARD_TEXT = "card-text";
+    public static final String CARD_IMG_OVERLAY = "card-img-overlay";
 
     public static final String PAGINATION = "pagination";
     public static final String PAGINATION_ITEM = "page-item";
@@ -164,8 +178,6 @@ public final class Styles {
 
     public static final String RADIO = "radio";
 
-    public static final String RIGHT = "right";
-
     public static final String ROW = "row";
 
     public static final String SLIDE = "slide";
@@ -178,7 +190,10 @@ public final class Styles {
 
     public static final String TABLE = "table";
 
-    public static final String UNSTYLED = "unstyled";
+    public static final String TEXT_NOWRAP = "text-nowrap";
+    public static final String TEXT_TRUNCATE = "text-truncate";
+
+    public static final String WIDTH = "width";
 
     private Styles() {
     }

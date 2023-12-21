@@ -20,7 +20,9 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.base.HasSize;
+import org.gwtbootstrap4.client.ui.constants.ButtonSize;
+import org.gwtbootstrap4.client.ui.constants.ContainerSize;
 import org.gwtbootstrap4.client.ui.html.Div;
 
 /**
@@ -31,18 +33,19 @@ import org.gwtbootstrap4.client.ui.html.Div;
  * @see Row
  * @see Column
  */
-public class Container extends Div {
+public class Container extends Div implements HasSize<ContainerSize> {
 
     public Container() {
-        setStyleName(Styles.CONTAINER);
+        setStyleName(ContainerSize.DEFAULT.getCssName());
     }
 
-    public void setFluid(final boolean isFluid) {
-        if (isFluid) {
-            removeStyleName(Styles.CONTAINER);
-        } else {
-            addStyleName(Styles.CONTAINER);
-        }
+    @Override
+    public void setSize(ContainerSize size) {
+        setStyleName(size.getCssName());
     }
 
+    @Override
+    public ContainerSize getSize() {
+        return ContainerSize.fromStyleName(getStyleName());
+    }
 }

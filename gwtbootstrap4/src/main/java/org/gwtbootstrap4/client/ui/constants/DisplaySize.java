@@ -26,21 +26,16 @@ import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 /**
  * @author Joshua Godi
  */
-public enum TRowType implements Type, Style.HasCssName {
+public enum DisplaySize implements Style.HasCssName {
     DEFAULT(""),
-    ACTIVE("table-active"),
-    PRIMARY("table-primary"),
-    SECONDARY("table-secondary"),
-    SUCCESS("table-success"),
-    DANGER("table-danger"),
-    WARNING("table-warning"),
-    INFO("table-info"),
-    LIGHT("table-light"),
-    DARK("table-dark");
+    D_1("display-1"),
+    D_2("display-2"),
+    D_3("display-3"),
+    D_4("display-3");
 
     private final String cssClass;
 
-    TRowType(final String cssClass) {
+    DisplaySize(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -49,7 +44,8 @@ public enum TRowType implements Type, Style.HasCssName {
         return cssClass;
     }
 
-    public static TRowType fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, TRowType.class, DEFAULT);
+    public static DisplaySize fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, DisplaySize.class, DEFAULT);
     }
+
 }

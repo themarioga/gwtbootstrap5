@@ -58,15 +58,6 @@ public class ImageAnchor extends Anchor implements HasType<ImageType> {
     }
 
     /**
-     * Set the image as responsive
-     *
-     * @param responsive boolean, whether or not the image has the responsive styles
-     */
-    public void setResponsive(final boolean responsive) {
-        StyleHelper.toggleStyleName(this, responsive, Styles.IMG_RESPONSIVE);
-    }
-
-    /**
      * Set the URL of the image
      *
      * @param url String image url

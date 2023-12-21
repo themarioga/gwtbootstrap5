@@ -1,4 +1,4 @@
-package org.gwtbootstrap4.client.ui.constants;
+package org.gwtbootstrap4.client.ui.html;
 
 /*
  * #%L
@@ -20,32 +20,17 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
-
-import com.google.gwt.dom.client.Style;
+import com.google.gwt.dom.client.Document;
+import org.gwtbootstrap4.client.ui.base.ComplexWidget;
 
 /**
+ * Simple {@code <div>} tag
+ *
  * @author Joshua Godi
  */
-public enum ImageType implements Type, Style.HasCssName {
-    DEFAULT(""),
-    ROUNDED("rounded"),
-    CIRCLE("rounded-circle"),
-    THUMBNAIL("img-thumbnail"),
-    FLUID("img-fluid");
+public class Figure extends ComplexWidget {
 
-    private final String cssClass;
-
-    private ImageType(final String cssClass) {
-        this.cssClass = cssClass;
-    }
-
-    @Override
-    public String getCssName() {
-        return cssClass;
-    }
-
-    public static ImageType fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ImageType.class, DEFAULT);
+    public Figure() {
+        setElement(Document.get().createElement("figure"));
     }
 }

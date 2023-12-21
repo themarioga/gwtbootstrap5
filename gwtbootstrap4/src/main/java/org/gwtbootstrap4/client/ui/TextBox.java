@@ -54,4 +54,8 @@ public class TextBox extends TextBoxBase {
     public void clear() {
         super.setValue(null);
     }
+
+    public void setTruncated() {
+        addStyleName(Styles.TEXT_TRUNCATE);
+    }
 }

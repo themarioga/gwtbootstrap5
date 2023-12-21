@@ -23,6 +23,8 @@ package org.gwtbootstrap4.client.ui.gwt;
 import org.gwtbootstrap4.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.DeviceSize;
+import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.constants.TableResponsiveness;
 import org.gwtbootstrap4.client.ui.constants.TableType;
 
 import com.google.gwt.core.client.GWT;
@@ -125,7 +127,7 @@ public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<
     public CellTable(final int pageSize, final Resources resources, final ProvidesKey<T> keyProvider,
                      final Widget loadingIndicator, final boolean enableColGroup, final boolean attachLoadingPanel) {
         super(pageSize, resources, keyProvider, loadingIndicator, enableColGroup, attachLoadingPanel);
-        StyleHelper.addEnumStyleName(this, TableType.DEFAULT);
+        addStyleName(Styles.TABLE);
     }
 
     private static Resources getDefaultResources() {
@@ -146,6 +148,10 @@ public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<
         StyleHelper.setHiddenOn(this, deviceSize);
     }
 
+    public void setResponsive(TableResponsiveness tableResponsiveness) {
+        StyleHelper.addEnumStyleName(this, tableResponsiveness);
+    }
+
     public void setStriped(final boolean striped) {
         if (striped) {
             StyleHelper.addEnumStyleName(this, TableType.STRIPED);
@@ -162,6 +168,14 @@ public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<
         }
     }
 
+    public void setBorderless(final boolean borderless) {
+        if (borderless) {
+            StyleHelper.addEnumStyleName(this, TableType.BORDERLESS);
+        } else {
+            StyleHelper.removeEnumStyleName(this, TableType.BORDERLESS);
+        }
+    }
+
     public void setCondensed(final boolean condensed) {
         if (condensed) {
             StyleHelper.addEnumStyleName(this, TableType.CONDENSED);
@@ -175,6 +189,22 @@ public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<
             StyleHelper.addEnumStyleName(this, TableType.HOVER);
         } else {
             StyleHelper.removeEnumStyleName(this, TableType.HOVER);
+        }
+    }
+
+    public void setInverse(final boolean inverse) {
+        if (inverse) {
+            StyleHelper.addEnumStyleName(this, TableType.INVERSE);
+        } else {
+            StyleHelper.removeEnumStyleName(this, TableType.INVERSE);
+        }
+    }
+
+    public void setDark(final boolean dark) {
+        if (dark) {
+            StyleHelper.addEnumStyleName(this, TableType.DARK);
+        } else {
+            StyleHelper.removeEnumStyleName(this, TableType.DARK);
         }
     }
 

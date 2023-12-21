@@ -29,11 +29,11 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ContextualBackground implements Style.HasCssName {
     DEFAULT(""),
-    DANGER("bg-danger"),
-    INFO("bg-info"),
     PRIMARY("bg-primary"),
     SUCCESS("bg-success"),
-    WARNING("bg-warning");
+    WARNING("bg-warning"),
+    DANGER("bg-danger"),
+    INFO("bg-info");
 
     public static ContextualBackground fromStyleName(final String styleName) {
         return EnumHelper.fromStyleName(styleName, ContextualBackground.class, DEFAULT);

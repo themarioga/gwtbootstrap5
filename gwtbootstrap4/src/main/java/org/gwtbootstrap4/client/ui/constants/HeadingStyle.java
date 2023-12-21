@@ -20,36 +20,24 @@ package org.gwtbootstrap4.client.ui.constants;
  * #L%
  */
 
-import com.google.gwt.dom.client.Style;
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
-
 /**
  * @author Joshua Godi
  */
-public enum TRowType implements Type, Style.HasCssName {
-    DEFAULT(""),
-    ACTIVE("table-active"),
-    PRIMARY("table-primary"),
-    SECONDARY("table-secondary"),
-    SUCCESS("table-success"),
-    DANGER("table-danger"),
-    WARNING("table-warning"),
-    INFO("table-info"),
-    LIGHT("table-light"),
-    DARK("table-dark");
+public enum HeadingStyle {
+    H1("h1"),
+    H2("h2"),
+    H3("h3"),
+    H4("h4"),
+    H5("h5"),
+    H6("h6");
 
     private final String cssClass;
 
-    TRowType(final String cssClass) {
+    HeadingStyle(final String cssClass) {
         this.cssClass = cssClass;
     }
 
-    @Override
-    public String getCssName() {
+    public String getCssClass() {
         return cssClass;
-    }
-
-    public static TRowType fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, TRowType.class, DEFAULT);
     }
 }

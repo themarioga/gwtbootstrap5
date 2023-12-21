@@ -20,8 +20,9 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.RowContentJustifyAlign;
-import org.gwtbootstrap4.client.ui.constants.RowContentVerticalAlign;
+import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtbootstrap4.client.ui.base.HasSize;
+import org.gwtbootstrap4.client.ui.constants.RowColSize;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
 
@@ -32,26 +33,28 @@ import org.gwtbootstrap4.client.ui.html.Div;
  * @author Joshua Godi
  * @see Column
  */
-public class Row extends Div {
+public class RowCols extends Div implements HasSize<RowColSize> {
 
-    public Row() {
+    public RowCols() {
         setStyleName(Styles.ROW);
+        addStyleName(RowColSize.DEFAULT.getCssName());
     }
 
-    public void setContentVerticalAlign(RowContentVerticalAlign rowContentVerticalAlign) {
-        setStyleName(rowContentVerticalAlign.getCssName());
+    @UiConstructor
+    public RowCols(RowColSize rowColSize) {
+        setStyleName(Styles.ROW);
+        addStyleName(rowColSize.getCssName());
     }
 
-    public RowContentVerticalAlign getContentVerticalAlign() {
-        return RowContentVerticalAlign.fromStyleName(getStyleName());
+    @Override
+    public void setSize(RowColSize size) {
+        setStyleName(Styles.ROW);
+        addStyleName(size.getCssName());
     }
 
-    public void setContentJustifyAlign(RowContentJustifyAlign rowContentJustifyAlign) {
-        setStyleName(rowContentJustifyAlign.getCssName());
-    }
-
-    public RowContentJustifyAlign getContentJustifyAlign() {
-        return RowContentJustifyAlign.fromStyleName(getStyleName());
+    @Override
+    public RowColSize getSize() {
+        return RowColSize.fromStyleName(getStyleName());
     }
 
 }

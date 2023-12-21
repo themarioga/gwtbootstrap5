@@ -31,4 +31,13 @@ public class CardBody extends Div {
     public CardBody() {
         setStyleName(Styles.CARD_BODY);
     }
+
+    public void setOverlay(boolean overlay) {
+        if (overlay) {
+            addStyleName(Styles.CARD_IMG_OVERLAY);
+        } else {
+            removeStyleName(Styles.CARD_IMG_OVERLAY);
+        }
+    }
+
 }

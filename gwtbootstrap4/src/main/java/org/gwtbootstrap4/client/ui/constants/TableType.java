@@ -28,13 +28,14 @@ import com.google.gwt.dom.client.Style;
  * @author Joshua Godi
  */
 public enum TableType implements Type, Style.HasCssName {
-    DEFAULT("table"),
+    DEFAULT(""),
     STRIPED("table-striped"),
     BORDERED("table-bordered"),
+    BORDERLESS("table-borderless"),
     HOVER("table-hover"),
     CONDENSED("table-sm"),
-    RESPONSIVE("table-responsive"),
-    INVERSE("table-inverse");
+    INVERSE("table-inverse"),
+    DARK("table-dark");
 
     private final String cssClass;
 

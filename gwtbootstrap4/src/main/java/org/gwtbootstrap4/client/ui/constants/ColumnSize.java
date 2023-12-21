@@ -27,6 +27,7 @@ import com.google.gwt.dom.client.Style;
  */
 public enum ColumnSize implements Size, Style.HasCssName {
     // Extra small devices (<576px)
+    XS_DEFAULT("col"),
     XS_1("col-1"),
     XS_2("col-2"),
     XS_3("col-3"),
@@ -41,6 +42,7 @@ public enum ColumnSize implements Size, Style.HasCssName {
     XS_12("col-12"),
 
     // Small devices (>=576px)
+    SM_DEFAULT("col-sm"),
     SM_1("col-sm-1"),
     SM_2("col-sm-2"),
     SM_3("col-sm-3"),
@@ -55,6 +57,7 @@ public enum ColumnSize implements Size, Style.HasCssName {
     SM_12("col-sm-12"),
 
     // Medium devices (>=768px)
+    MD_DEFAULT("col-md"),
     MD_1("col-md-1"),
     MD_2("col-md-2"),
     MD_3("col-md-3"),
@@ -69,6 +72,7 @@ public enum ColumnSize implements Size, Style.HasCssName {
     MD_12("col-md-12"),
 
     // Large devices (>=992px)
+    LG_DEFAULT("col-lg"),
     LG_1("col-lg-1"),
     LG_2("col-lg-2"),
     LG_3("col-lg-3"),
@@ -83,6 +87,7 @@ public enum ColumnSize implements Size, Style.HasCssName {
     LG_12("col-lg-12"),
 
     // Large devices (>=1200px)
+    XL_DEFAULT("col-xl"),
     XL_1("col-xl-1"),
     XL_2("col-xl-2"),
     XL_3("col-xl-3"),

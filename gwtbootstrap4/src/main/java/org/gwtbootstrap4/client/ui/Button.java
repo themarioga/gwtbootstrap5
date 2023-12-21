@@ -26,6 +26,7 @@ import org.gwtbootstrap4.client.ui.constants.IconType;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.dom.client.ClickHandler;
+import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
  * Button based on {@code <button>} element with different types and sizes.
@@ -74,5 +75,13 @@ public class Button extends AbstractToggleButton {
     @Override
     protected Element createElement() {
         return Document.get().createPushButtonElement().cast();
+    }
+
+    public void setNoWrap(boolean noWrap) {
+        if (noWrap) {
+            addStyleName(Styles.TEXT_NOWRAP);
+        } else {
+            removeStyleName(Styles.TEXT_NOWRAP);
+        }
     }
 }

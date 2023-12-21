@@ -68,15 +68,15 @@ public class CarouselControl extends ComplexWidget implements HasHref, HasText {
     public void setPrev(final boolean prev) {
         getElement().removeAttribute(Attributes.DATA_SLIDE);
         getElement().setAttribute(Attributes.DATA_SLIDE, Carousel.PREV);
-        StyleHelper.toggleStyleName(this, prev, Styles.LEFT);
-        icon.addStyleName(Styles.ICON_PREV);
+        StyleHelper.toggleStyleName(this, prev, Styles.CAROUSEL_CONTROL_PREV);
+        icon.addStyleName(Styles.CAROUSEL_CONTROL_PREV_ICON);
     }
 
     public void setNext(final boolean next) {
         getElement().removeAttribute(Attributes.DATA_SLIDE);
         getElement().setAttribute(Attributes.DATA_SLIDE, Carousel.NEXT);
-        StyleHelper.toggleStyleName(this, next, Styles.RIGHT);
-        icon.addStyleName(Styles.ICON_NEXT);
+        StyleHelper.toggleStyleName(this, next, Styles.CAROUSEL_CONTROL_NEXT);
+        icon.addStyleName(Styles.CAROUSEL_CONTROL_NEXT_ICON);
     }
 
     @Override

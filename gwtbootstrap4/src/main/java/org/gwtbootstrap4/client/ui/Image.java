@@ -101,7 +101,4 @@ public class Image extends com.google.gwt.user.client.ui.Image implements HasTyp
         return pullMixin.getPull();
     }
 
-    public void setResponsive(final boolean responsive) {
-        StyleHelper.toggleStyleName(this, responsive, Styles.IMG_RESPONSIVE);
-    }
 }

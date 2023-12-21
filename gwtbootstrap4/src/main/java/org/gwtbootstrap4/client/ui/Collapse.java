@@ -94,6 +94,14 @@ public class Collapse extends Div {
         }
     }
 
+    public void setHorizontal(final boolean horizontal) {
+        if (horizontal) {
+            addStyleName(Styles.WIDTH);
+        } else {
+            removeStyleName(Styles.WIDTH);
+        }
+    }
+
     /**
      * Causes the collapse to show or hide
      */

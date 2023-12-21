@@ -28,7 +28,9 @@ import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
  */
 public enum THeadType implements Type, Style.HasCssName {
     DEFAULT("thead-default"),
-    INVERSE("thead-inverse");
+    INVERSE("thead-inverse"),
+    LIGHT("thead-light"),
+    DARK("thead-dark");
 
     private final String cssClass;
 
