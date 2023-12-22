@@ -7,13 +7,13 @@
     <groupId>org.gwtbootstrap4</groupId>
     <artifactId>gwtbootstrap4-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>GwtBootstrap4 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>http://gwtbootstrap4.org</url>
 
     <prerequisites>
-        <maven>3.2.1</maven>
+        <maven>3.8.1</maven>
     </prerequisites>
 
     <scm>
@@ -31,6 +31,17 @@
     </licenses>
 
     <developers>
+        <developer>
+            <id>themarioga</id>
+            <name>Mario Gonzalez</name>
+            <email>mario.gonzalez@i2e.es</email>
+            <url>http://i2e.es/</url>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>UTC+1</timezone>
+        </developer>
         <developer>
             <id>svenjacobs</id>
             <name>Sven Jacobs</name>
@@ -69,7 +80,7 @@
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
