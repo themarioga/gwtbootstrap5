@@ -14,6 +14,7 @@ You will be able to easily add GWTBootstrap4 to your project by including the li
 
 ### ToDo
 * Toasts
+* Utilities
 
 ### Final Release
 * 0.0.1 - Released on 22 December 2023.
