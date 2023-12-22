@@ -74,6 +74,14 @@ public class ProgressBar extends Div implements HasType<ProgressBarType> {
         return ProgressBarType.fromStyleName(getStyleName());
     }
 
+    public void setStriped(boolean isStriped) {
+        if (isStriped) {
+            addStyleName(Styles.PROGRESS_BAR_STRIPPED);
+        } else {
+            removeStyleName(Styles.PROGRESS_BAR_STRIPPED);
+        }
+    }
+
     public void setAnimated(boolean isAnimated) {
         if (isAnimated) {
             addStyleName(Styles.PROGRESS_BAR_ANIMATED);

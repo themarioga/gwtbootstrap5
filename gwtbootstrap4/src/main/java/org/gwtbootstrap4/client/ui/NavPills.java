@@ -20,8 +20,6 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.HasStacked;
-import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 
 /**
@@ -32,6 +30,14 @@ public class NavPills extends Nav {
 
     public NavPills() {
         addStyleName(Styles.NAV_PILLS);
+    }
+
+    public void setFill(boolean isFill) {
+        if (isFill) {
+            addStyleName(Styles.NAV_FILL);
+        } else {
+            removeStyleName(Styles.NAV_FILL);
+        }
     }
 
 }

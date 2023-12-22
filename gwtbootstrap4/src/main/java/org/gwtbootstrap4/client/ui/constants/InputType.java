@@ -38,7 +38,8 @@ public enum InputType implements Type {
     SEARCH("search"),
     TEL("tel"),
     TEXT("text"),
-    COLOR("color");
+    COLOR("color"),
+    RANGE("range");
 
     private final String type;
 

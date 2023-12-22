@@ -33,4 +33,21 @@ public class ModalDialog extends FlowPanel {
     public ModalDialog() {
         setStyleName(Styles.MODAL_DIALOG);
     }
+
+    void setScrollable(boolean isScrollable) {
+        if (isScrollable) {
+            addStyleName(Styles.MODAL_DIALOG_SCROLLABLE);
+        } else {
+            removeStyleName(Styles.MODAL_DIALOG_SCROLLABLE);
+        }
+    }
+
+    void setCentered(boolean isCentered) {
+        if (isCentered) {
+            addStyleName(Styles.MODAL_DIALOG_CENTERED);
+        } else {
+            removeStyleName(Styles.MODAL_DIALOG_CENTERED);
+        }
+    }
+
 }

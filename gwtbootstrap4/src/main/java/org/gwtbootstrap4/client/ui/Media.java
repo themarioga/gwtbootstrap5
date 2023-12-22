@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2014 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,27 +20,21 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
 
 /**
- * A lightweight, flexible component to showcase key content.
+ * Creates a div with the media body styles for use with Media Objects
  *
- * @author Sven Jacobs
  * @author Joshua Godi
  */
-public class Jumbotron extends Div {
+public class Media extends Div {
 
-    public Jumbotron() {
-        setStyleName(Styles.JUMBOTRON);
+    /**
+     * Creates the default widget with the default styles
+     */
+    public Media() {
+        setStyleName(Styles.MEDIA);
     }
-
-    public void setFluid(boolean isFluid) {
-        if (isFluid) {
-            addStyleName(Styles.JUMBOTRON_FLUID);
-        } else {
-            removeStyleName(Styles.JUMBOTRON_FLUID);
-        }
-    }
-
 }

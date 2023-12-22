@@ -1,15 +1,9 @@
-# GwtBootstrap4 [![Build Status](https://travis-ci.org/gwtbootstrap4/gwtbootstrap4.svg?branch=master)](https://travis-ci.org/gwtbootstrap4/gwtbootstrap4) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.gwtbootstrap4/gwtbootstrap4/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/org.gwtbootstrap4/gwtbootstrap4/)
-
-## NOTE: This project is inactive.
-
-
 GWTBootstrap4 is a wrapper for [Twitter Bootstrap](http://getbootstrap.com/), which helps you develop responsive, mobile first HTML, CSS, and JS projects on the web using Java and Google Web Toolkit (GWT). 
 
 ### Add GWTBootstrap4 to your project
-You can easily add GWTBootstrap4 to your project by including the library as a Maven dependency.
+You will be able to easily add GWTBootstrap4 to your project by including the library as a Maven dependency.
 
 ```xml
-
 <dependency>
   <groupId>org.gwtbootstrap4org.gwtbootstrap4</groupId>
   <artifactId>gwtbootstrap4</artifactId>
@@ -17,11 +11,13 @@ You can easily add GWTBootstrap4 to your project by including the library as a M
   <scope>provided</scope>
 </dependency>
 ```
+
+### ToDo
+* Toasts
+
 ### Final Release
-* 1.0.1 - Released on 14 November 2019.
-  * Based on Bootstrap v3.4.1
-* 1.0.0 - Released on 26 August 2019. 
-  * Based on Bootstrap v3.4.0
+* 0.0.1 - Released on 22 December 2023.
+  * Based on Bootstrap v4.6.2
 * [Demo](http://gwtbootstrap4.github.io/gwtbootstrap4-demo/) - The GWTBootstrap4 1.0.0 Demo.
 * [API Docs](http://gwtbootstrap4.github.io/gwtbootstrap4-demo/apidocs) - The GWTBootstrap4 1.0.0 API Javadoc.
 * [Supported Features](https://github.com/gwtbootstrap4/gwtbootstrap4/wiki/Supported-Features) - Current releases supported features.

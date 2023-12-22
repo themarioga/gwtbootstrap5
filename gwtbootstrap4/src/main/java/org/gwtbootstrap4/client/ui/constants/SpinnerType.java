@@ -1,4 +1,4 @@
-package org.gwtbootstrap4.client.ui;
+package org.gwtbootstrap4.client.ui.constants;
 
 /*
  * #%L
@@ -20,27 +20,28 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.html.Div;
+import com.google.gwt.dom.client.Style;
+import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
 /**
- * A lightweight, flexible component to showcase key content.
- *
  * @author Sven Jacobs
- * @author Joshua Godi
  */
-public class Jumbotron extends Div {
+public enum SpinnerType implements Type, Style.HasCssName {
+    BORDER("label-default"),
+    GROW("label-primary");
 
-    public Jumbotron() {
-        setStyleName(Styles.JUMBOTRON);
+    private final String cssClass;
+
+    SpinnerType(final String cssClass) {
+        this.cssClass = cssClass;
     }
 
-    public void setFluid(boolean isFluid) {
-        if (isFluid) {
-            addStyleName(Styles.JUMBOTRON_FLUID);
-        } else {
-            removeStyleName(Styles.JUMBOTRON_FLUID);
-        }
+    @Override
+    public String getCssName() {
+        return cssClass;
     }
 
+    public static SpinnerType fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, SpinnerType.class, BORDER);
+    }
 }

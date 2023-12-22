@@ -119,6 +119,7 @@ public final class Styles {
     public static final String INPUT_GROUP = "input-group";
 
     public static final String JUMBOTRON = "jumbotron";
+    public static final String JUMBOTRON_FLUID = "jumbotron-fluid";
 
     public static final String LABEL = "badge";
 
@@ -138,15 +139,19 @@ public final class Styles {
     public static final String MODAL = "modal";
     public static final String MODAL_BODY = "modal-body";
     public static final String MODAL_CONTENT = "modal-content";
-    public static final String MODAL_DIALOG = "modal-dialog";
     public static final String MODAL_FOOTER = "modal-footer";
     public static final String MODAL_HEADER = "modal-header";
     public static final String MODAL_TITLE = "modal-title";
+
+    public static final String MODAL_DIALOG = "modal-dialog";
+    public static final String MODAL_DIALOG_SCROLLABLE = "modal-dialog";
+    public static final String MODAL_DIALOG_CENTERED = "modal-centered";
 
     public static final String NAV = "nav";
     public static final String NAV_ITEM = "nav-item";
     public static final String NAV_LINK = "nav-link";
     public static final String NAV_JUSTIFIED = "nav-justified";
+    public static final String NAV_FILL = "nav-fill";
     public static final String NAV_PILLS = "nav-pills";
     public static final String NAV_TABS = "nav-tabs";
 
@@ -174,6 +179,7 @@ public final class Styles {
 
     public static final String PROGRESS = "progress";
     public static final String PROGRESS_BAR = "progress-bar";
+    public static final String PROGRESS_BAR_STRIPPED = "progress-bar-striped";
     public static final String PROGRESS_BAR_ANIMATED = "progress-bar-animated";
 
     public static final String RADIO = "radio";
@@ -181,6 +187,9 @@ public final class Styles {
     public static final String ROW = "row";
 
     public static final String SLIDE = "slide";
+
+    public static final String SPINNER_BORDER_SM = "spinner-border-sm";
+    public static final String SPINNER_GROW_SM = "spinner-grow-sm";
 
     public static final String SR_ONLY = "sr-only";
 
