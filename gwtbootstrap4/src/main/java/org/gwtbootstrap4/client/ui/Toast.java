@@ -52,20 +52,44 @@ public class Toast extends Div {
         init(getId());
     }
 
-    public void setAnimation(boolean isAnimated) {
+    public void setAnimation(boolean isAnimated, boolean triggerChange) {
         getElement().setAttribute("data-animation", String.valueOf(isAnimated));
+
+        if (triggerChange) {
+            setAttribute(getId(), "animation", String.valueOf(isAnimated));
+        }
     }
 
-    public void setDelay(int delayMs) {
+    public void setDelay(int delayMs, boolean triggerChange) {
         getElement().setAttribute("data-delay", String.valueOf(delayMs));
+
+        if (triggerChange) {
+            setAttribute(getId(), "delay", String.valueOf(delayMs));
+        }
     }
 
-    public void setAutohide(boolean hasAutohide) {
+    public void setAutohide(boolean hasAutohide, boolean triggerChange) {
         getElement().setAttribute("data-autohide", String.valueOf(hasAutohide));
+
+        if (triggerChange) {
+            setAttribute(getId(), "autohide", String.valueOf(hasAutohide));
+        }
     }
 
     public static void show(ToastRole toastRole, String title, String subtitle, String msg) {
         Toast toast = new Toast(toastRole, title, subtitle, msg);
+
+        RootPanel.get().add(toast);
+
+        toast.init();
+
+        toast.show();
+    }
+
+    public static void show(ToastRole toastRole, String title, String subtitle, String msg, int delay) {
+        Toast toast = new Toast(toastRole, title, subtitle, msg);
+
+        toast.setDelay(delay, false);
 
         RootPanel.get().add(toast);
 
@@ -79,9 +103,9 @@ public class Toast extends Div {
         getElement().setAttribute("aria-live", toastRole.getAriaLive());
         getElement().setAttribute("aria-atomic", "true");
 
-        setAnimation(true);
-        setDelay(5000);
-        setAutohide(true);
+        setAnimation(true, false);
+        setDelay(5000, false);
+        setAutohide(true, false);
     }
 
     private static Div generateToastHeader(String title, String subtitle) {
@@ -125,6 +149,10 @@ public class Toast extends Div {
 
     private native void init(String elementId) /*-{
         $wnd.jQuery("#" + elementId).toast();
+    }-*/;
+
+    private native void setAttribute(String elementId, String attribute, String value) /*-{
+        $wnd.jQuery("#" + elementId).toast({attribute: value});
     }-*/;
 
     private native void show(String elementId) /*-{

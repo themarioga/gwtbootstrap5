@@ -28,7 +28,9 @@ import com.google.gwt.dom.client.Style;
  * @author Sven Jacobs
  */
 public enum ButtonType implements Type, Style.HasCssName {
-    DEFAULT("btn-link"),
+    DEFAULT("btn-default"),
+
+    LINK("btn-link"),
 
     PRIMARY("btn-primary"),
     SECONDARY("btn-secondary"),
