@@ -119,8 +119,9 @@ public final class Styles {
     public static final String IN = "in";
 
     public static final String INPUT_GROUP = "input-group";
-    public static final String INPUT_GROUP_PREPEND = "input-prepend";
-    public static final String INPUT_GROUP_APPEND = "input-append";
+    public static final String INPUT_GROUP_PREPEND = "input-group-prepend";
+    public static final String INPUT_GROUP_APPEND = "input-group-append";
+    public static final String INPUT_GROUP_TEXT = "input-group-text";
 
     public static final String JUMBOTRON = "jumbotron";
     public static final String JUMBOTRON_FLUID = "jumbotron-fluid";
