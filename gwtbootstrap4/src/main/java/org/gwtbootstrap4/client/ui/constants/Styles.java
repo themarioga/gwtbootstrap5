@@ -105,6 +105,8 @@ public final class Styles {
     public static final String FORM_CHECK_LABEL = "form-check-label";
     public static final String FORM_CHECK_INPUT = "form-check-input";
 
+    public static final String HIDE = "hide";
+
     public static final String ICON_BORDER = "fa-border";
     public static final String ICON_STACK = "fa-stack";
     public static final String ICON_SPIN = "fa-spin";
@@ -201,6 +203,10 @@ public final class Styles {
 
     public static final String TEXT_NOWRAP = "text-nowrap";
     public static final String TEXT_TRUNCATE = "text-truncate";
+
+    public static final String TOAST = "toast";
+    public static final String TOAST_HAEDER = "toast-header";
+    public static final String TOAST_BODY = "toast-body";
 
     public static final String WIDTH = "width";
 
