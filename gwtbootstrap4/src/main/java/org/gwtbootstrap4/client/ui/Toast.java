@@ -20,10 +20,12 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+import com.google.gwt.user.client.ui.RootPanel;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.ToastRole;
 import org.gwtbootstrap4.client.ui.gwt.HTMLPanel;
 import org.gwtbootstrap4.client.ui.html.Div;
+import org.gwtbootstrap4.client.ui.html.Small;
 import org.gwtbootstrap4.client.ui.html.Span;
 import org.gwtbootstrap4.client.ui.html.Strong;
 
@@ -40,7 +42,13 @@ public class Toast extends Div {
         add(generateToastHeader(title, subtitle));
 
         add(generateToastBody(msg));
+    }
 
+    public void init() {
+        init(getId());
+    }
+
+    public void show() {
         init(getId());
     }
 
@@ -54,6 +62,16 @@ public class Toast extends Div {
 
     public void setAutohide(boolean hasAutohide) {
         getElement().setAttribute("data-autohide", String.valueOf(hasAutohide));
+    }
+
+    public static void show(ToastRole toastRole, String title, String subtitle, String msg) {
+        Toast toast = new Toast(toastRole, title, subtitle, msg);
+
+        RootPanel.get().add(toast);
+
+        toast.init();
+
+        toast.show();
     }
 
     private void setToastAttributes(ToastRole toastRole) {
@@ -70,14 +88,18 @@ public class Toast extends Div {
         Div header = new Div();
         header.setStyleName(Styles.TOAST_HAEDER);
 
-        Strong titleElement = new Strong();
-        titleElement.setStyleName("mr-auto");
-        titleElement.setText(title);
-        header.add(titleElement);
+        if (title != null && !title.isEmpty()) {
+            Strong titleElement = new Strong();
+            titleElement.setStyleName("mr-auto");
+            titleElement.setText(title);
+            header.add(titleElement);
+        }
 
-        Strong subtitleElement = new Strong();
-        subtitleElement.setText(subtitle);
-        header.add(subtitleElement);
+        if (subtitle != null && !subtitle.isEmpty()) {
+            Small subtitleElement = new Small();
+            subtitleElement.setText(subtitle);
+            header.add(subtitleElement);
+        }
 
         Button closeButton = new Button();
         closeButton.getElement().setAttribute("type", "button");
@@ -103,6 +125,10 @@ public class Toast extends Div {
 
     private native void init(String elementId) /*-{
         $wnd.jQuery("#" + elementId).toast();
+    }-*/;
+
+    private native void show(String elementId) /*-{
+        $wnd.jQuery("#" + elementId).toast("show");
     }-*/;
 
 }
