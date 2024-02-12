@@ -55,16 +55,7 @@ import org.gwtbootstrap4.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.FocusableMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.IconTextMixin;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
-import org.gwtbootstrap4.client.ui.constants.Attributes;
-import org.gwtbootstrap4.client.ui.constants.BadgePosition;
-import org.gwtbootstrap4.client.ui.constants.FloatCSS;
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconPosition;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.Toggle;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import java.util.List;
 
@@ -156,6 +147,21 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
     @Override
     public void setIcon(final IconType iconType) {
         iconTextMixin.setIcon(iconType);
+    }
+
+    @Override
+    public void setIconBrand(IconTypeBrands iconType) {
+
+    }
+
+    @Override
+    public void setIconSolid(IconTypeSolid iconType) {
+
+    }
+
+    @Override
+    public void setIconRegular(IconTypeRegular iconType) {
+
     }
 
     /**

@@ -21,13 +21,7 @@ package org.gwtbootstrap4.client.ui.base;
  */
 
 import org.gwtbootstrap4.client.ui.Anchor;
-import org.gwtbootstrap4.client.ui.constants.BadgePosition;
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconPosition;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Toggle;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -220,6 +214,24 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
     /** {@inheritDoc} */
     @Override
     public void setIcon(final IconType iconType) {
+        anchor.setIcon(iconType);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setIconBrand(final IconTypeBrands iconType) {
+        anchor.setIconBrand(iconType);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setIconSolid(final IconTypeSolid iconType) {
+        anchor.setIconSolid(iconType);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setIconRegular(final IconTypeRegular iconType) {
         anchor.setIcon(iconType);
     }
 

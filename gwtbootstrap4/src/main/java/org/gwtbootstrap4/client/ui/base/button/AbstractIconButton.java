@@ -24,13 +24,7 @@ import org.gwtbootstrap4.client.ui.base.HasBadge;
 import org.gwtbootstrap4.client.ui.base.HasIcon;
 import org.gwtbootstrap4.client.ui.base.HasIconPosition;
 import org.gwtbootstrap4.client.ui.base.mixin.IconTextMixin;
-import org.gwtbootstrap4.client.ui.constants.BadgePosition;
-import org.gwtbootstrap4.client.ui.constants.ButtonType;
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconPosition;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.user.client.ui.HasText;
 
@@ -63,6 +57,21 @@ public abstract class AbstractIconButton extends AbstractButton implements HasTe
 
     @Override
     public void setIcon(final IconType iconType) {
+        iconTextMixin.setIcon(iconType);
+    }
+
+    @Override
+    public void setIconBrand(final IconTypeBrands iconType) {
+        iconTextMixin.setIconBrand(iconType);
+    }
+
+    @Override
+    public void setIconSolid(final IconTypeSolid iconType) {
+        iconTextMixin.setIconSolid(iconType);
+    }
+
+    @Override
+    public void setIconRegular(final IconTypeRegular iconType) {
         iconTextMixin.setIcon(iconType);
     }
 

@@ -25,13 +25,7 @@ import org.gwtbootstrap4.client.ui.base.HasEmphasis;
 import org.gwtbootstrap4.client.ui.base.HasSize;
 import org.gwtbootstrap4.client.ui.base.HasType;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.ElementTags;
-import org.gwtbootstrap4.client.ui.constants.Emphasis;
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -44,30 +38,43 @@ import com.google.gwt.uibinder.client.UiConstructor;
  * Simple put, an icon.
  *
  * @author Sven Jacobs
- * @see org.gwtbootstrap4.client.ui.constants.IconType
+ * @see IconType
  * @see org.gwtbootstrap4.client.ui.constants.IconSize
  */
 public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<IconSize>, HasEmphasis, HasClickHandlers {
 
+    @UiConstructor
     public Icon() {
         setElement(Document.get().createElement(ElementTags.I));
         addStyleName(Styles.FONT_AWESOME_BASE);
     }
 
-    @UiConstructor
-    public Icon(final IconType type) {
-        this();
-        setType(type);
-    }
-
     @Override
     public void setType(final IconType type) {
-        StyleHelper.addUniqueEnumStyleName(this, IconType.class, type);
+        if (type instanceof IconTypeBrands) {
+            StyleHelper.addUniqueEnumStyleName(this, IconTypeBrands.class, type);
+        } else if (type instanceof IconTypeSolid) {
+            StyleHelper.addUniqueEnumStyleName(this, IconTypeSolid.class, type);
+        } else if (type instanceof IconTypeRegular) {
+            StyleHelper.addUniqueEnumStyleName(this, IconTypeRegular.class, type);
+        }
     }
 
     @Override
     public IconType getType() {
         return IconType.fromStyleName(getStyleName());
+    }
+
+    public void setTypeBrands(IconTypeBrands type) {
+        setType(type);
+    }
+
+    public void setTypeSolid(IconTypeSolid type) {
+        setType(type);
+    }
+
+    public void setTypeRegular(IconTypeRegular type) {
+        setType(type);
     }
 
     public void setBorder(final boolean border) {

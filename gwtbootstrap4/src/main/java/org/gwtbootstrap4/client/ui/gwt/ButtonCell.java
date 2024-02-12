@@ -20,10 +20,7 @@ package org.gwtbootstrap4.client.ui.gwt;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.ButtonSize;
-import org.gwtbootstrap4.client.ui.constants.ButtonType;
-import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;

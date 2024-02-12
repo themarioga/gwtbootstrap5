@@ -29,12 +29,7 @@ import org.gwtbootstrap4.client.ui.base.ComplexWidget;
 import org.gwtbootstrap4.client.ui.base.HasBadge;
 import org.gwtbootstrap4.client.ui.base.HasIcon;
 import org.gwtbootstrap4.client.ui.base.HasIconPosition;
-import org.gwtbootstrap4.client.ui.constants.BadgePosition;
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconPosition;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
+import org.gwtbootstrap4.client.ui.constants.*;
 import org.gwtbootstrap4.client.ui.html.Text;
 
 /**
@@ -88,6 +83,21 @@ public class IconTextMixin<T extends ComplexWidget & HasText & HasIcon & HasIcon
     public void setIcon(final IconType iconType) {
         this.iconType = iconType;
         render();
+    }
+
+    @Override
+    public void setIconBrand(IconTypeBrands iconType) {
+        setIcon(iconType);
+    }
+
+    @Override
+    public void setIconSolid(IconTypeSolid iconType) {
+        setIcon(iconType);
+    }
+
+    @Override
+    public void setIconRegular(IconTypeRegular iconType) {
+        setIcon(iconType);
     }
 
     @Override

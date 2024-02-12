@@ -20,10 +20,7 @@ package org.gwtbootstrap4.client.ui.base;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.constants.IconFlip;
-import org.gwtbootstrap4.client.ui.constants.IconRotate;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 /**
  * Interface for all the properties of Icons
@@ -33,6 +30,12 @@ import org.gwtbootstrap4.client.ui.constants.IconType;
  */
 public interface HasIcon {
     void setIcon(IconType iconType);
+
+    void setIconBrand(IconTypeBrands iconType);
+
+    void setIconSolid(IconTypeSolid iconType);
+
+    void setIconRegular(IconTypeRegular iconType);
 
     IconType getIcon();
 
