@@ -23,11 +23,7 @@ package org.gwtbootstrap4.client.ui;
 import org.gwtbootstrap4.client.ui.base.ComplexWidget;
 import org.gwtbootstrap4.client.ui.base.HasType;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap4.client.ui.constants.Attributes;
-import org.gwtbootstrap4.client.ui.constants.ElementTags;
-import org.gwtbootstrap4.client.ui.constants.NavbarPosition;
-import org.gwtbootstrap4.client.ui.constants.NavbarType;
-import org.gwtbootstrap4.client.ui.constants.Styles;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Document;
 
@@ -46,6 +42,7 @@ public class Navbar extends ComplexWidget implements HasType<NavbarType> {
         setElement(Document.get().createElement(ElementTags.NAV));
         setStyleName(Styles.NAVBAR);
         setType(NavbarType.DEFAULT);
+        setExpand(NavbarExpand.LG);
         getElement().setAttribute(Attributes.ROLE, NAVIGATION);
     }
 
@@ -57,6 +54,14 @@ public class Navbar extends ComplexWidget implements HasType<NavbarType> {
     @Override
     public NavbarType getType() {
         return NavbarType.fromStyleName(getStyleName());
+    }
+
+    public void setExpand(NavbarExpand expand) {
+        StyleHelper.addUniqueEnumStyleName(this, NavbarExpand.class, expand);
+    }
+
+    public NavbarExpand getExpand() {
+        return NavbarExpand.fromStyleName(getStyleName());
     }
 
     public void setPosition(final NavbarPosition type) {
