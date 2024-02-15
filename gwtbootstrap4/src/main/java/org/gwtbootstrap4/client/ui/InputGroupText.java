@@ -32,4 +32,10 @@ public class InputGroupText extends Span {
         setStyleName(Styles.INPUT_GROUP_TEXT);
     }
 
+    public InputGroupText(String html) {
+        super(html);
+
+        setStyleName(Styles.INPUT_GROUP_TEXT);
+    }
+
 }

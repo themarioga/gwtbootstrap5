@@ -27,14 +27,11 @@ import org.gwtbootstrap4.client.ui.base.HasPull;
 import org.gwtbootstrap4.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.PullMixin;
-import org.gwtbootstrap4.client.ui.constants.DeviceSize;
-import org.gwtbootstrap4.client.ui.constants.FloatCSS;
-import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.Toggle;
-import org.gwtbootstrap4.client.ui.html.Span;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import org.gwtbootstrap4.client.ui.html.Span;
 
 /**
  * Special button to toggle collapsible area of {@link Navbar}.
@@ -50,8 +47,12 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
 
     public NavbarCollapseButton() {
         button = new Button();
-        button.setStyleName(Styles.NAVBAR_TOGGLE);
+        button.setStyleName(Styles.NAVBAR_TOGGLER);
         button.setDataToggle(Toggle.COLLAPSE);
+
+        Span navbarIcon = new Span();
+        navbarIcon.setStyleName(Styles.NAVBAR_TOGGLER_ICON);
+        button.add(navbarIcon);
 
         initWidget(button);
     }
@@ -74,6 +75,42 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
     @Override
     public String getDataTarget() {
         return button.getDataTarget();
+    }
+
+    public void setAriaControls(final String ariaControls) {
+        if (ariaControls != null) {
+            button.getElement().setAttribute(Attributes.ARIA_CONTROLS, ariaControls);
+        } else {
+            button.getElement().removeAttribute(Attributes.ARIA_CONTROLS);
+        }
+    }
+
+    public String getAriaControls() {
+        return button.getElement().getAttribute(Attributes.ARIA_CONTROLS);
+    }
+
+    public void setAriaExpanded(final String ariaExpanded) {
+        if (ariaExpanded != null) {
+            button.getElement().setAttribute(Attributes.ARIA_EXPANDED, ariaExpanded);
+        } else {
+            button.getElement().removeAttribute(Attributes.ARIA_EXPANDED);
+        }
+    }
+
+    public String getAriaExpanded() {
+        return button.getElement().getAttribute(Attributes.ARIA_EXPANDED);
+    }
+
+    public void setAriaLabel(final String ariaLabel) {
+        if (ariaLabel != null) {
+            button.getElement().setAttribute(Attributes.ARIA_LABEL, ariaLabel);
+        } else {
+            button.getElement().removeAttribute(Attributes.ARIA_LABEL);
+        }
+    }
+
+    public String getAriaLabel() {
+        return button.getElement().getAttribute(Attributes.ARIA_LABEL);
     }
 
     @Override

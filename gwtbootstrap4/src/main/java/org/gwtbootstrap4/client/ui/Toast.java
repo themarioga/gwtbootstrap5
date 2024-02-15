@@ -20,7 +20,6 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import com.google.gwt.user.client.ui.RootPanel;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.ToastRole;
 import org.gwtbootstrap4.client.ui.gwt.HTMLPanel;
@@ -30,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Span;
 import org.gwtbootstrap4.client.ui.html.Strong;
 
 public class Toast extends Div {
+
+    public static final int DEFAULT_DELAY_MS = 5000;
 
     public Toast(ToastRole toastRole, String title, String subtitle, String msg) {
         setId(HTMLPanel.createUniqueId());
@@ -49,7 +50,7 @@ public class Toast extends Div {
     }
 
     public void show() {
-        init(getId());
+        show(getId());
     }
 
     public void setAnimation(boolean isAnimated, boolean triggerChange) {
@@ -76,35 +77,13 @@ public class Toast extends Div {
         }
     }
 
-    public static void show(ToastRole toastRole, String title, String subtitle, String msg) {
-        Toast toast = new Toast(toastRole, title, subtitle, msg);
-
-        RootPanel.get().add(toast);
-
-        toast.init();
-
-        toast.show();
-    }
-
-    public static void show(ToastRole toastRole, String title, String subtitle, String msg, int delay) {
-        Toast toast = new Toast(toastRole, title, subtitle, msg);
-
-        toast.setDelay(delay, false);
-
-        RootPanel.get().add(toast);
-
-        toast.init();
-
-        toast.show();
-    }
-
     private void setToastAttributes(ToastRole toastRole) {
         getElement().setAttribute("role", toastRole.getRole());
         getElement().setAttribute("aria-live", toastRole.getAriaLive());
         getElement().setAttribute("aria-atomic", "true");
 
         setAnimation(true, false);
-        setDelay(5000, false);
+        setDelay(DEFAULT_DELAY_MS, false);
         setAutohide(true, false);
     }
 

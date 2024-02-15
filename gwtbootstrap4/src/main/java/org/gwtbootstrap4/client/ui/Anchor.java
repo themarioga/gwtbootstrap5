@@ -151,17 +151,17 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
 
     @Override
     public void setIconBrand(IconTypeBrands iconType) {
-
+        setIcon(iconType);
     }
 
     @Override
     public void setIconSolid(IconTypeSolid iconType) {
-
+        setIcon(iconType);
     }
 
     @Override
     public void setIconRegular(IconTypeRegular iconType) {
-
+        setIcon(iconType);
     }
 
     /**

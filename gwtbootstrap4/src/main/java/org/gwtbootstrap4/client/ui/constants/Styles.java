@@ -89,6 +89,8 @@ public final class Styles {
     public static final String FIGURE_CAPTION = "figure-caption";
     public static final String FIGURE_IMAGE = "figure-img";
 
+    public static final String FLEX_COLUMN = "flex-column";
+
     public static final String FONT_AWESOME_BASE = "fa";
 
     public static final String FORM_GROUP = "form-group";
@@ -165,7 +167,8 @@ public final class Styles {
     public static final String NAVBAR_COLLAPSE = "navbar-collapse";
     public static final String NAVBAR_NAV = "navbar-nav";
     public static final String NAVBAR_TEXT = "navbar-text";
-    public static final String NAVBAR_TOGGLE = "navbar-toggler";
+    public static final String NAVBAR_TOGGLER = "navbar-toggler";
+    public static final String NAVBAR_TOGGLER_ICON = "navbar-toggler-icon";
 
     public static final String CARD = "card";
     public static final String CARD_HEADING = "card-header";

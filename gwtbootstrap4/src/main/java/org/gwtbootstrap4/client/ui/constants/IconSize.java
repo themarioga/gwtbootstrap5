@@ -33,7 +33,8 @@ public enum IconSize implements Size, Style.HasCssName {
     TIMES2("fa-2x"),
     TIMES3("fa-3x"),
     TIMES4("fa-4x"),
-    TIMES5("fa-5x");
+    TIMES5("fa-5x"),
+    ADJUSTED("fas");
 
     private final String cssClass;
 

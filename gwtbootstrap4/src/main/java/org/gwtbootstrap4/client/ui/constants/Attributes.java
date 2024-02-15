@@ -37,6 +37,10 @@ public class Attributes {
     public static final String DATA_RIDE = "data-ride";
     public static final String DATA_SLIDE = "data-slide";
 
+    public static final String ARIA_CONTROLS = "aria-controls";
+    public static final String ARIA_EXPANDED = "aria-expanded";
+    public static final String ARIA_LABEL = "aria-label";
+
     public static final String FOR = "for";
 
     public static final String ROLE = "role";

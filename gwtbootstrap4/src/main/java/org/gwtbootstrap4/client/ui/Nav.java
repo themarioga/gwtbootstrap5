@@ -36,6 +36,8 @@ import org.gwtbootstrap4.client.ui.html.UnorderedList;
 public class Nav extends UnorderedList implements HasJustified {
 
     public Nav() {
+        super();
+
         setStyleName(Styles.NAV);
     }
 
@@ -52,4 +54,17 @@ public class Nav extends UnorderedList implements HasJustified {
     public boolean isJustified() {
         return StyleHelper.containsStyle(getStyleName(), Styles.NAV_JUSTIFIED);
     }
+
+    public void setVertical(final boolean vertical) {
+        if (vertical) {
+            addStyleName(Styles.FLEX_COLUMN);
+        } else {
+            removeStyleName(Styles.NAV_JUSTIFIED);
+        }
+    }
+
+    public boolean isVertical() {
+        return StyleHelper.containsStyle(getStyleName(), Styles.FLEX_COLUMN);
+    }
+
 }
