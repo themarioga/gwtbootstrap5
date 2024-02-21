@@ -30,6 +30,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class PaginationLink extends Anchor {
 
     public PaginationLink() {
+        super();
+
         setStyleName(Styles.PAGINATION_LINK);
     }
 

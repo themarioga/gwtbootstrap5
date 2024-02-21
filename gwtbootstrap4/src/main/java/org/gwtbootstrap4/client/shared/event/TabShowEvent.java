@@ -20,7 +20,7 @@ package org.gwtbootstrap4.client.shared.event;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.TabListItem;
+import org.gwtbootstrap4.client.ui.NavTabItem;
 
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.user.client.Event;
@@ -32,20 +32,20 @@ public class TabShowEvent extends GwtEvent<TabShowHandler> implements TabEvent {
 
     private static final Type<TabShowHandler> TYPE = new Type<TabShowHandler>();
 
-    private final TabListItem tab;
+    private final NavTabItem tab;
     private final Event nativeEvent;
 
     public static Type<TabShowHandler> getType() {
         return TYPE;
     }
 
-    public TabShowEvent(final TabListItem tab, final Event nativeEvent) {
+    public TabShowEvent(final NavTabItem tab, final Event nativeEvent) {
         this.tab = tab;
         this.nativeEvent = nativeEvent;
     }
 
     @Override
-    public TabListItem getTab() {
+    public NavTabItem getTab() {
         return tab;
     }
 

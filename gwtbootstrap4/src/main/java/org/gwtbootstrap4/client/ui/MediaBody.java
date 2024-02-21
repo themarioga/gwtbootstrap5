@@ -35,6 +35,8 @@ public class MediaBody extends Div {
      * Creates the default widget with the default styles
      */
     public MediaBody() {
+        super();
+
         setStyleName(Styles.MEDIA_BODY);
     }
 }

@@ -20,7 +20,6 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import com.google.gwt.user.client.ui.WidgetCollection;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.OrderedList;
 
@@ -30,7 +29,10 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Joshua Godi
  */
 public class Breadcrumbs extends OrderedList {
+
     public Breadcrumbs() {
+        super();
+
         setStyleName(Styles.BREADCRUMB);
     }
 

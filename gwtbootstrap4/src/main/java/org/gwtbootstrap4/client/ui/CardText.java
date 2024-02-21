@@ -28,6 +28,8 @@ public class CardText extends TextBox {
 
     @UiConstructor
     public CardText() {
+        super();
+
         addStyleName(Styles.CARD_TEXT);
     }
 

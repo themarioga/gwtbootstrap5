@@ -51,6 +51,8 @@ public class Carousel extends Div {
     private boolean wrap = true;
 
     public Carousel() {
+        super();
+
         // Set the default styles
         setStyleName(Styles.CAROUSEL);
         addStyleName(Styles.SLIDE);

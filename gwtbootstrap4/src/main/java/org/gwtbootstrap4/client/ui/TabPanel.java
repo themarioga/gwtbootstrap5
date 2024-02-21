@@ -52,6 +52,8 @@ public class TabPanel extends Div implements HasTabPosition {
      * Creates the widget with the default styles
      */
     public TabPanel() {
+        super();
+
         setStyleName(Styles.TABBABLE);
     }
 

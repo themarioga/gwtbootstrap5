@@ -39,6 +39,8 @@ public class Navbar extends ComplexWidget implements HasType<NavbarType> {
     private static final String NAVIGATION = "navigation";
 
     public Navbar() {
+        super();
+
         setElement(Document.get().createElement(ElementTags.NAV));
         setStyleName(Styles.NAVBAR);
         setType(NavbarType.DEFAULT);

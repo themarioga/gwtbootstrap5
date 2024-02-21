@@ -28,6 +28,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class NavbarBrand extends Anchor {
 
     public NavbarBrand() {
+        super();
+
         setStyleName(Styles.NAVBAR_BRAND);
     }
 }

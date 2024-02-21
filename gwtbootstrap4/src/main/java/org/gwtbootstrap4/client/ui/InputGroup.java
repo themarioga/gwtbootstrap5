@@ -37,6 +37,8 @@ import org.gwtbootstrap4.client.ui.gwt.FlowPanel;
 public class InputGroup extends FlowPanel implements HasSize<InputGroupSize> {
 
     public InputGroup() {
+        super();
+
         setStyleName(Styles.INPUT_GROUP);
     }
 

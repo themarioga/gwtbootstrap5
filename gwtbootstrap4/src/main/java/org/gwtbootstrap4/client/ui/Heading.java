@@ -87,6 +87,8 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      */
     @UiConstructor
     public Heading(final HeadingSize size) {
+        super();
+
         setElement(Document.get().createHElement(size.getHeadingSize()));
     }
 

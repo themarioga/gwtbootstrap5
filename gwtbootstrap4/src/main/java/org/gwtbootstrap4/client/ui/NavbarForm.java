@@ -30,6 +30,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class NavbarForm extends AbstractForm {
 
     public NavbarForm() {
+        super();
+
         setStyleName(Styles.FORM_INLINE);
     }
 

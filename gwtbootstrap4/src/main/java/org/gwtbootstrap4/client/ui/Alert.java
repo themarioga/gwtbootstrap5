@@ -63,6 +63,8 @@ public class Alert extends Div implements HasWidgets, HasText, HasType<AlertType
      * Builds a default alert
      */
     public Alert() {
+        super();
+
         setStyleName(Styles.ALERT);
         setType(AlertType.WARNING);
         closeButton.setDataDismiss(ButtonDismiss.ALERT);

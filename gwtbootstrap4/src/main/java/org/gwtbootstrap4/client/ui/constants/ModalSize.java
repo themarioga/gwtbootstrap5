@@ -1,4 +1,4 @@
-package org.gwtbootstrap4.client.shared.event;
+package org.gwtbootstrap4.client.ui.constants;
 
 /*
  * #%L
@@ -20,15 +20,30 @@ package org.gwtbootstrap4.client.shared.event;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.NavTabItem;
+import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.user.client.Event;
+import com.google.gwt.dom.client.Style;
 
 /**
- * @author Joshua Godi
+ * @author Jay Hodgson
  */
-public interface TabEvent {
-    NavTabItem getTab();
+public enum ModalSize implements Style.HasCssName {
+    SMALL("modal-sm"),
+    MEDIUM(""),
+    LARGE("modal-lg");
 
-    Event getNativeEvent();
+    private final String cssClass;
+
+    private ModalSize(final String cssClass) {
+        this.cssClass = cssClass;
+    }
+
+    @Override
+    public String getCssName() {
+        return cssClass;
+    }
+
+    public static ModalSize fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ModalSize.class, MEDIUM);
+    }
 }

@@ -35,6 +35,8 @@ public class Lead extends ComplexWidget implements HasWidgets, HasText {
     private final Text text = new Text();
 
     public Lead() {
+        super();
+
         setElement(Document.get().createPElement());
         setStyleName(Styles.LEAD);
     }

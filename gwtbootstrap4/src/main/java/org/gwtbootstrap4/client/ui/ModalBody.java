@@ -31,6 +31,8 @@ import org.gwtbootstrap4.client.ui.gwt.FlowPanel;
 public class ModalBody extends FlowPanel implements ModalComponent {
 
     public ModalBody() {
+        super();
+
         setStyleName(Styles.MODAL_BODY);
     }
 }

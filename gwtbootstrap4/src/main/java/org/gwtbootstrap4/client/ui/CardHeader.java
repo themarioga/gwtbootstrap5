@@ -47,6 +47,8 @@ public class CardHeader extends Div implements HasWidgets, HasText, HasDataToggl
     private final Text text = new Text();
 
     public CardHeader() {
+        super();
+
         setStyleName(Styles.CARD_HEADING);
     }
 

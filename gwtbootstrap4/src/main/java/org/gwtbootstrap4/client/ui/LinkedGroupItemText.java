@@ -35,6 +35,8 @@ public class LinkedGroupItemText extends ComplexWidget implements HasWidgets, Ha
     private final HTMLMixin<LinkedGroupItemText> htmlMixin = new HTMLMixin<LinkedGroupItemText>(this);
 
     public LinkedGroupItemText() {
+        super();
+
         setElement(Document.get().createPElement());
     }
 

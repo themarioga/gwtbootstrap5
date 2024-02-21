@@ -55,6 +55,8 @@ public class LinkedGroupItem extends ComplexWidget implements HasClickHandlers, 
     private String targetHistoryToken;
 
     public LinkedGroupItem(final String href) {
+        super();
+
         setElement(Document.get().createAnchorElement());
         setStyleName(Styles.LIST_GROUP_ITEM);
         setStyleName(Styles.LIST_GROUP_ITEM_ACTION);

@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class Caption extends Div {
 
     public Caption() {
+        super();
+
         addStyleName(Styles.CAPTION);
     }
 }

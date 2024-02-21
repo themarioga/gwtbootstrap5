@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class NavTabs extends Nav {
 
     public NavTabs() {
+        super();
+
         addStyleName(Styles.NAV_TABS);
     }
 }

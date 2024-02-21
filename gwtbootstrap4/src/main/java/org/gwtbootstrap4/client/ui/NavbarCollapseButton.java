@@ -46,6 +46,8 @@ public class NavbarCollapseButton extends Composite implements HasDataTarget, Ha
     private final Button button;
 
     public NavbarCollapseButton() {
+        super();
+
         button = new Button();
         button.setStyleName(Styles.NAVBAR_TOGGLER);
         button.setDataToggle(Toggle.COLLAPSE);

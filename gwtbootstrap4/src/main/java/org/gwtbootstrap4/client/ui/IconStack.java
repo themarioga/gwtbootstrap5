@@ -38,6 +38,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class IconStack extends ComplexPanel implements HasSize<IconSize>, HasResponsiveness {
 
     public IconStack() {
+        super();
+
         setElement(Document.get().createSpanElement());
         getElement().addClassName(Styles.ICON_STACK);
     }

@@ -36,6 +36,8 @@ public class ProgressBar extends Div implements HasType<ProgressBarType> {
     private final Span span = new Span();
 
     public ProgressBar() {
+        super();
+
         // Default style
         setStyleName(Styles.PROGRESS_BAR);
 

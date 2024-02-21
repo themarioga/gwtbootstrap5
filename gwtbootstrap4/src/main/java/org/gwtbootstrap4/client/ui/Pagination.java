@@ -38,6 +38,8 @@ import com.google.gwt.user.cellview.client.SimplePager;
 public class Pagination extends UnorderedList implements HasResponsiveness, HasPaginationSize {
 
     public Pagination() {
+        super();
+
         setStyleName(Styles.PAGINATION);
     }
 

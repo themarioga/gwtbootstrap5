@@ -33,6 +33,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class Description extends ComplexWidget {
 
     public Description() {
+        super();
+
         setElement(Document.get().createDLElement());
     }
 

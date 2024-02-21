@@ -51,6 +51,7 @@ public class Button extends AbstractToggleButton {
      * Creates button with DEFAULT type.
      */
     public Button() {
+        super();
     }
 
     /**
@@ -59,6 +60,7 @@ public class Button extends AbstractToggleButton {
      * @param text Text contents of button
      */
     public Button(final String text) {
+        this();
         setText(text);
     }
 

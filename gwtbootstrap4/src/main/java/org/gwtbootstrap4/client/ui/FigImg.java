@@ -33,6 +33,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class FigImg extends Image {
 
     public FigImg() {
+        super();
+
         setStyleName(Styles.FIGURE_IMAGE);
     }
 

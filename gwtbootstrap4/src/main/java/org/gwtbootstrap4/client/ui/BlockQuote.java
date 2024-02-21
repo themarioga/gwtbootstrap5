@@ -31,6 +31,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class BlockQuote extends ComplexWidget {
 
     public BlockQuote() {
+        super();
+
         setElement(Document.get().createBlockQuoteElement());
         setStyleName(Styles.BLOCKQUOTE);
     }

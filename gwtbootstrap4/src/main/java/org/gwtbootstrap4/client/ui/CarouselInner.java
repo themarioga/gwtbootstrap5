@@ -32,6 +32,8 @@ public class CarouselInner extends Div {
     private static final String LISTBOX = "listbox";
 
     public CarouselInner() {
+        super();
+
         setStyleName(Styles.CAROUSEL_INNER);
         getElement().setAttribute(Attributes.ROLE, LISTBOX);
     }

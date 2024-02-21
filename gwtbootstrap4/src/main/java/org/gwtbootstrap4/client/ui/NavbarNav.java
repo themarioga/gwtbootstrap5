@@ -34,6 +34,8 @@ import org.gwtbootstrap4.client.ui.html.UnorderedList;
 public class NavbarNav extends UnorderedList {
 
     public NavbarNav() {
+        super();
+
         setStyleName(Styles.NAV);
         addStyleName(Styles.NAVBAR_NAV);
     }

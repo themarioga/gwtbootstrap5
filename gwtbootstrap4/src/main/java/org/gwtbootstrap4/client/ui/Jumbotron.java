@@ -32,6 +32,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class Jumbotron extends Div {
 
     public Jumbotron() {
+        super();
+
         setStyleName(Styles.JUMBOTRON);
     }
 

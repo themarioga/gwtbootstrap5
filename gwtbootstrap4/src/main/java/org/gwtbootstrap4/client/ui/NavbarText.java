@@ -39,6 +39,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class NavbarText extends ComplexWidget implements HasResponsiveness {
 
     public NavbarText() {
+        super();
+
         setElement(Document.get().createPElement());
         setStyleName(Styles.NAVBAR_TEXT);
     }

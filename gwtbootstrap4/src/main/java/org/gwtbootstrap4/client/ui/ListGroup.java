@@ -32,6 +32,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class ListGroup extends UnorderedList {
 
     public ListGroup() {
+        super();
+
         setStyleName(Styles.LIST_GROUP);
     }
 

@@ -50,6 +50,8 @@ public class TabContent extends Div {
      * Creates the default widget with the default styles
      */
     public TabContent() {
+        super();
+
         setStyleName(Styles.TAB_CONTENT);
     }
 

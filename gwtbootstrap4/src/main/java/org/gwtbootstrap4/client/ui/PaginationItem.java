@@ -30,6 +30,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class PaginationItem extends ListItem {
 
     public PaginationItem() {
+        super();
+
         setStyleName(Styles.PAGINATION_ITEM);
     }
 

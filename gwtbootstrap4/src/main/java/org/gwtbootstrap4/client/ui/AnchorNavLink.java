@@ -4,7 +4,7 @@ package org.gwtbootstrap4.client.ui;
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 - 2014 GwtBootstrap4
+ * Copyright (C) 2013 - 2024 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,30 +20,26 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.EnumHelper;
+import org.gwtbootstrap4.client.ui.base.HasActive;
+import org.gwtbootstrap4.client.ui.base.mixin.ActiveMixin;
+import org.gwtbootstrap4.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Style;
+public class AnchorNavLink extends Anchor implements HasActive {
 
-/**
- * @author Jay Hodgson
- */
-public enum ModalSize implements Style.HasCssName {
-    SMALL("modal-sm"),
-    MEDIUM(""),
-    LARGE("modal-lg");
+    private final ActiveMixin<AnchorNavLink> activeMixin = new ActiveMixin<>(this);
 
-    private final String cssClass;
-
-    private ModalSize(final String cssClass) {
-        this.cssClass = cssClass;
+    public AnchorNavLink() {
+        addStyleName(Styles.NAV_LINK);
     }
 
     @Override
-    public String getCssName() {
-        return cssClass;
+    public void setActive(boolean active) {
+        activeMixin.setActive(active);
     }
 
-    public static ModalSize fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ModalSize.class, MEDIUM);
+    @Override
+    public boolean isActive() {
+        return activeMixin.isActive();
     }
+
 }

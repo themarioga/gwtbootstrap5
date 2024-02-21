@@ -194,6 +194,8 @@ public final class Styles {
 
     public static final String ROW = "row";
 
+    public static final String SHOW = "show";
+
     public static final String SLIDE = "slide";
 
     public static final String SPINNER_BORDER_SM = "spinner-border-sm";

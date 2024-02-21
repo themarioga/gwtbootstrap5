@@ -71,6 +71,8 @@ public class Column extends Div {
      * @see #addSize(ColumnSize...)
      */
     public Column(final ColumnSize firstSize, final ColumnSize... otherSizes) {
+        super();
+
         setSize(firstSize, otherSizes);
     }
 
@@ -86,6 +88,8 @@ public class Column extends Div {
      */
     @UiConstructor
     public Column(final String size) {
+        super();
+
         setSize(size);
     }
 

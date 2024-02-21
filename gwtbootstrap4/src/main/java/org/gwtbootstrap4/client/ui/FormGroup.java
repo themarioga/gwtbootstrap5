@@ -36,6 +36,8 @@ import org.gwtbootstrap4.client.ui.constants.ValidationState;
 public class FormGroup extends FormElementContainer implements HasSize<FormGroupSize>, HasValidationState {
 
     public FormGroup() {
+        super();
+
         setElement(Document.get().createDivElement());
         setStyleName(Styles.FORM_GROUP);
     }

@@ -29,11 +29,14 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class DropDownItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
 
     public DropDownItem() {
+        super();
+
         setStyleName(Styles.DROPDOWN_ITEM);
     }
 
     public DropDownItem(final String text) {
         super();
+
         setText(text);
     }
 

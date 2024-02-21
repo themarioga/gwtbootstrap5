@@ -41,6 +41,8 @@ public class Form extends AbstractForm implements HasType<FormType> {
     }
 
     public Form(final FormType type) {
+        super();
+
         setType(type);
     }
 

@@ -32,8 +32,9 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class Figure extends org.gwtbootstrap4.client.ui.html.Figure {
 
     public Figure() {
+        super();
+
         setStyleName(Styles.FIGURE);
     }
-
 
 }

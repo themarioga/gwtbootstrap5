@@ -36,6 +36,8 @@ public class ListGroupItem extends ComplexWidget implements HasType<ListGroupIte
     private final Span span = new Span();
 
     public ListGroupItem() {
+        super();
+
         setElement(Document.get().createLIElement());
         setStyleName(Styles.LIST_GROUP_ITEM);
 

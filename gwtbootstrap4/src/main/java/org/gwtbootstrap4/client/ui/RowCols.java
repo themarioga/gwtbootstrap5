@@ -36,6 +36,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class RowCols extends Div implements HasSize<RowColSize> {
 
     public RowCols() {
+        super();
+
         setStyleName(Styles.ROW);
         addStyleName(RowColSize.DEFAULT.getCssName());
     }

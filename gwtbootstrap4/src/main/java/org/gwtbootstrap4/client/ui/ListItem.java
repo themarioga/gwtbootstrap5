@@ -48,6 +48,8 @@ public class ListItem extends AbstractListItem implements HasWidgets, HasText, H
      * Creates a default list item element
      */
     public ListItem() {
+        super();
+
         setStyleName(Styles.LIST_INLINE_ITEM);
     }
 

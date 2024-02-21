@@ -45,17 +45,20 @@ import org.gwtbootstrap4.client.ui.html.Div;
  * @see org.gwtbootstrap4.client.ui.TabContent
  */
 public class TabPane extends Div implements HasActive {
-    private final ActiveMixin<TabPane> activeMixin = new ActiveMixin<TabPane>(this);
+
+    private final ActiveMixin<TabPane> activeMixin = new ActiveMixin<>(this);
 
     /**
      * Creates the default widget with the default styles
      */
     public TabPane() {
+        super();
+
         setStyleName(Styles.TAB_PANE);
     }
 
     /**
-     * Sets whether or not to fade the tab pane in/out when clicked
+     * Sets whether to fade the tab pane in/out when clicked
      * Must set in="true" on the first tab if using fade!!
      *
      * @param fade true=fade content in/out, false=don't fade
@@ -71,13 +74,13 @@ public class TabPane extends Div implements HasActive {
     /**
      * When using fade, but set the first tabpane with in="true" to work properly
      *
-     * @param in whether or not the first tab pane will be faded properly
+     * @param show whether the first tab pane will be faded properly
      */
-    public void setIn(final boolean in) {
-        if (in) {
-            addStyleName(Styles.IN);
+    public void setShow(final boolean show) {
+        if (show) {
+            addStyleName(Styles.SHOW);
         } else {
-            removeStyleName(Styles.IN);
+            removeStyleName(Styles.SHOW);
         }
     }
 

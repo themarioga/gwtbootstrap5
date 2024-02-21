@@ -47,6 +47,8 @@ public class Collapse extends Div {
     private boolean toggle = true;
 
     public Collapse() {
+        super();
+
         // Set the default styles
         setStyleName(Styles.COLLAPSE);
     }

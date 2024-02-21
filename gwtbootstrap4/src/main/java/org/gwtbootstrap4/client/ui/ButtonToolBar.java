@@ -47,6 +47,8 @@ import org.gwtbootstrap4.client.ui.gwt.FlowPanel;
 public class ButtonToolBar extends FlowPanel {
 
     public ButtonToolBar() {
+        super();
+
         setStyleName(Styles.BTN_TOOLBAR);
     }
 }

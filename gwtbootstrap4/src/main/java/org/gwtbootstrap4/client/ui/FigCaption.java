@@ -32,6 +32,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class FigCaption extends org.gwtbootstrap4.client.ui.html.FigCaption {
 
     public FigCaption() {
+        super();
+
         setStyleName(Styles.FIGURE_CAPTION);
     }
 

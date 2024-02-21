@@ -32,6 +32,7 @@ import org.gwtbootstrap4.client.shared.js.JQuery;
 import org.gwtbootstrap4.client.ui.base.HasDataTarget;
 import org.gwtbootstrap4.client.ui.constants.IconSize;
 import org.gwtbootstrap4.client.ui.constants.IconType;
+import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.Toggle;
 
 import java.util.List;
@@ -56,12 +57,12 @@ import java.util.List;
  * @author Drew Spencer
  * @see org.gwtbootstrap4.client.ui.NavTabs
  */
-public class TabListItem extends AnchorListItem implements HasDataTarget {
+public class NavTabItem extends AnchorListItem implements HasDataTarget {
 
     /**
      * Creates the default widget with no text
      */
-    public TabListItem() {
+    public NavTabItem() {
         this("");
     }
 
@@ -70,24 +71,32 @@ public class TabListItem extends AnchorListItem implements HasDataTarget {
      *
      * @param text text for the list item
      */
-    public TabListItem(final String text) {
+    public NavTabItem(final String text) {
         super(text);
         setDataToggle(Toggle.TAB);
+
+        addStyleName(Styles.NAV_ITEM);
     }
 
-    public TabListItem(final String text, final IconType iconType) {
+    public NavTabItem(final String text, final IconType iconType) {
         this(text);
         setIcon(iconType);
+
+        addStyleName(Styles.NAV_ITEM);
     }
 
-    public TabListItem(final String text, final IconType iconType, final IconSize iconSize) {
+    public NavTabItem(final String text, final IconType iconType, final IconSize iconSize) {
         this(text, iconType);
         setIconSize(iconSize);
+
+        addStyleName(Styles.NAV_ITEM);
     }
 
-    public TabListItem(final String text, final String badgeText) {
+    public NavTabItem(final String text, final String badgeText) {
         this(text);
         setBadgeText(badgeText);
+
+        addStyleName(Styles.NAV_ITEM);
     }
 
     /**

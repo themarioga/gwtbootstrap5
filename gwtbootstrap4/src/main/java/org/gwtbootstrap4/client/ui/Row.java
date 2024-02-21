@@ -35,6 +35,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class Row extends Div {
 
     public Row() {
+        super();
+
         setStyleName(Styles.ROW);
     }
 

@@ -53,6 +53,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class DropDownHeader extends Widget implements HasText, HasResponsiveness {
 
     public DropDownHeader() {
+        super();
+
         setElement(Document.get().createLIElement());
         setStyleName(Styles.DROPDOWN_HEADER);
     }

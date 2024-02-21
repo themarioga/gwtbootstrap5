@@ -32,12 +32,15 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
  * @author Joshua Godi
  */
 public class ImageAnchor extends Anchor implements HasType<ImageType> {
+
     private final Image image = new Image();
 
     /**
      * Creates the base anchor with the image
      */
     public ImageAnchor() {
+        super();
+
         add(image);
     }
 

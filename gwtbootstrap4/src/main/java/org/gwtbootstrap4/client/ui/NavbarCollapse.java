@@ -51,6 +51,8 @@ public class NavbarCollapse extends FlowPanel {
     private boolean toggle = false;
 
     public NavbarCollapse() {
+        super();
+
         setStyleName(Styles.COLLAPSE);
         addStyleName(Styles.NAVBAR_COLLAPSE);
     }

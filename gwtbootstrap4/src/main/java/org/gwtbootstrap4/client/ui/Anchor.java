@@ -86,6 +86,8 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
      * @param href href for the anchor
      */
     public Anchor(final String href) {
+        super();
+
         setElement(Document.get().createAnchorElement());
         setHref(href);
         iconTextMixin.addTextWidgetToParent();

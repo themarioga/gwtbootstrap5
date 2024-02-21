@@ -44,6 +44,7 @@ public class CarouselControl extends ComplexWidget implements HasHref, HasText {
     private final Span span;
 
     public CarouselControl() {
+        super();
 
         // Anchor
         this.anchorElem = Document.get().createAnchorElement();

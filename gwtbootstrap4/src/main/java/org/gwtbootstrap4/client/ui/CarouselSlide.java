@@ -32,6 +32,8 @@ public class CarouselSlide extends Div implements HasActive {
     private final ActiveMixin<CarouselSlide> activeMixin = new ActiveMixin<>(this);
 
     public CarouselSlide() {
+        super();
+
         setStyleName(Styles.CAROUSEL_ITEM);
     }
 

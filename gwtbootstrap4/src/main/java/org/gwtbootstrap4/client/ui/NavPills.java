@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class NavPills extends Nav {
 
     public NavPills() {
+        super();
+
         addStyleName(Styles.NAV_PILLS);
     }
 

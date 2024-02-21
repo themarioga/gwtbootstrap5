@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class CardFooter extends Div {
 
     public CardFooter() {
+        super();
+
         setStyleName(Styles.CARD_FOOTER);
     }
 }

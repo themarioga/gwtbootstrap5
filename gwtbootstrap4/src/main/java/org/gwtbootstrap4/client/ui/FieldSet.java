@@ -34,6 +34,8 @@ public class FieldSet extends ComplexWidget implements HasEnabled {
     private static final String DISABLED = "disabled";
 
     public FieldSet() {
+        super();
+
         setElement(Document.get().createFieldSetElement());
     }
 

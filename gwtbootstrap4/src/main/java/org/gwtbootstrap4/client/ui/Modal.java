@@ -34,6 +34,7 @@ import org.gwtbootstrap4.client.ui.base.modal.ModalContent;
 import org.gwtbootstrap4.client.ui.base.modal.ModalDialog;
 import org.gwtbootstrap4.client.ui.constants.Attributes;
 import org.gwtbootstrap4.client.ui.constants.ModalBackdrop;
+import org.gwtbootstrap4.client.ui.constants.ModalSize;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
 
@@ -103,6 +104,8 @@ public class Modal extends Div implements IsClosable {
     private boolean hideOtherModals = false;
 
     public Modal() {
+        super();
+
         setStyleName(Styles.MODAL);
         
         // Set the z-index to match bootstrap's .modal

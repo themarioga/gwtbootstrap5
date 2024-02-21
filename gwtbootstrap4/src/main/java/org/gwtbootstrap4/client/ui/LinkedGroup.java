@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class LinkedGroup extends Div {
 
     public LinkedGroup() {
+        super();
+
         setStyleName(Styles.LIST_GROUP);
     }
 }

@@ -45,6 +45,8 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
 
     @UiConstructor
     public Icon() {
+        super();
+
         setElement(Document.get().createElement(ElementTags.I));
         addStyleName(Styles.FONT_AWESOME_BASE);
     }

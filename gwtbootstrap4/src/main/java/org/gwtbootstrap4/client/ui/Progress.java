@@ -35,6 +35,8 @@ public class Progress extends Div implements HasType<ProgressType>, HasActive {
     private final ActiveMixin<Progress> activeMixin = new ActiveMixin<>(this);
 
     public Progress() {
+        super();
+
         setStyleName(Styles.PROGRESS);
     }
 

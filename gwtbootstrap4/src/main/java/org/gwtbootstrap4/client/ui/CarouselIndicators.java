@@ -31,6 +31,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class CarouselIndicators extends OrderedList {
 
     public CarouselIndicators() {
+        super();
+
         setStyleName(Styles.CAROUSEL_INDICATORS);
     }
 

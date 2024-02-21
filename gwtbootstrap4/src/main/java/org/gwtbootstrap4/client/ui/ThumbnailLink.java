@@ -74,6 +74,8 @@ public class ThumbnailLink extends ComplexWidget implements HasClickHandlers, Ha
      * @param href String href to use
      */
     public ThumbnailLink(final String href) {
+        super();
+
         setElement(Document.get().createAnchorElement());
         setHref(href);
         focusableMixin = new FocusableMixin<>(this);

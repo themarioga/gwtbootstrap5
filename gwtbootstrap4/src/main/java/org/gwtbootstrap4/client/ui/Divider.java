@@ -37,6 +37,8 @@ import com.google.gwt.user.client.ui.Widget;
 public class Divider extends Widget implements HasResponsiveness {
 
     public Divider() {
+        super();
+
         setElement(Document.get().createLIElement());
         setStyleName(Styles.DROPDOWN_DIVIDER);
     }

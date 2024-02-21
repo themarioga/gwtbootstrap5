@@ -33,6 +33,8 @@ public class Toast extends Div {
     public static final int DEFAULT_DELAY_MS = 5000;
 
     public Toast(ToastRole toastRole, String title, String subtitle, String msg) {
+        super();
+
         setId(HTMLPanel.createUniqueId());
 
         setStyleName(Styles.TOAST);

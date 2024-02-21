@@ -37,6 +37,8 @@ import org.gwtbootstrap4.client.ui.html.UnorderedList;
 public class NavItem extends ListItem {
 
     public NavItem() {
+        super();
+
         setStyleName(Styles.NAV_ITEM);
     }
 

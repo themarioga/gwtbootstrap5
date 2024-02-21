@@ -20,6 +20,7 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+import com.google.gwt.uibinder.client.UiConstructor;
 import org.gwtbootstrap4.client.ui.base.AbstractAnchorListItem;
 
 /**
@@ -28,9 +29,13 @@ import org.gwtbootstrap4.client.ui.base.AbstractAnchorListItem;
 public class AnchorListItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
 
     public AnchorListItem() {
+        super();
     }
 
+    @UiConstructor
     public AnchorListItem(final String text) {
+        super();
+
         setText(text);
     }
 

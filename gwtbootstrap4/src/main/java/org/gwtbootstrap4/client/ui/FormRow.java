@@ -35,6 +35,8 @@ import org.gwtbootstrap4.client.ui.constants.ValidationState;
 public class FormRow extends FormElementContainer {
 
     public FormRow() {
+        super();
+
         setElement(Document.get().createDivElement());
         setStyleName(Styles.FORM_ROW);
     }

@@ -34,6 +34,8 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class NavLink extends Anchor {
 
     public NavLink() {
+        super();
+
         setStyleName(Styles.NAV_LINK);
     }
 

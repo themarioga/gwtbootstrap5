@@ -39,6 +39,8 @@ public class Spinner extends Div implements HasType<SpinnerType>, HasEmphasis {
 
     @UiConstructor
     public Spinner(SpinnerType spinnerType, String defaultText) {
+        super();
+
         getElement().setAttribute("role", "status");
 
         SpanElement spanElement = Document.get().createSpanElement();

@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class CarouselCaption extends Div {
 
     public CarouselCaption() {
+        super();
+
         setStyleName(Styles.CAROUSEL_CAPTION);
     }
 }

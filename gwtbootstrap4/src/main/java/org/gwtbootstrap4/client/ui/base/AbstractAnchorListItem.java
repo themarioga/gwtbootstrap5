@@ -20,7 +20,7 @@ package org.gwtbootstrap4.client.ui.base;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.Anchor;
+import org.gwtbootstrap4.client.ui.AnchorNavLink;
 import org.gwtbootstrap4.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Element;
@@ -41,20 +41,14 @@ import com.google.gwt.user.client.ui.Focusable;
 public abstract class AbstractAnchorListItem extends AbstractListItem implements HasHref, HasTargetHistoryToken,
         HasClickHandlers, Focusable, HasDataToggle, HasIcon, HasIconPosition, HasBadge, HasTarget {
 
-    protected final Anchor anchor;
+    protected final AnchorNavLink anchor;
 
     /**
      * Constructor.
      */
     protected AbstractAnchorListItem() {
-        anchor = new Anchor();
-        anchor.addClickHandler(new ClickHandler() {
-
-            @Override
-            public void onClick(ClickEvent event) {
-                delegateEvent(AbstractAnchorListItem.this, event);
-            }
-        });
+        anchor = new AnchorNavLink();
+        anchor.addClickHandler(event -> delegateEvent(AbstractAnchorListItem.this, event));
         add(anchor, (Element) getElement());
     }
 
@@ -170,6 +164,12 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
+    public boolean isActive() {
+        return anchor.isActive();
+    }
+
+    /** {@inheritDoc} */
+    @Override
     public void setAccessKey(final char key) {
         anchor.setAccessKey(key);
     }
@@ -197,6 +197,12 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
     public void setEnabled(final boolean enabled) {
         super.setEnabled(enabled);
         anchor.setEnabled(enabled);
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public void setActive(final boolean active) {
+        anchor.setActive(active);
     }
 
     /** {@inheritDoc} */

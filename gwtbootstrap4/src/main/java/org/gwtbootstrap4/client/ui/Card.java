@@ -29,6 +29,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class Card extends Div {
 
     public Card() {
+        super();
+
         setStyleName(Styles.CARD);
     }
 

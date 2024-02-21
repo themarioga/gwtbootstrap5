@@ -36,6 +36,8 @@ import org.gwtbootstrap4.client.ui.html.Div;
 public class Container extends Div implements HasSize<ContainerSize> {
 
     public Container() {
+        super();
+
         setStyleName(ContainerSize.DEFAULT.getCssName());
     }
 

@@ -41,6 +41,8 @@ public class CarouselIndicator extends ComplexWidget implements HasDataTarget, H
     private final ActiveMixin<CarouselIndicator> activeMixin = new ActiveMixin<>(this);
 
     public CarouselIndicator() {
+        super();
+
         setElement(Document.get().createLIElement());
     }
 
