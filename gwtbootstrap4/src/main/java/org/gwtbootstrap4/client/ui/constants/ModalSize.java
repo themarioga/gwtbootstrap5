@@ -30,7 +30,8 @@ import com.google.gwt.dom.client.Style;
 public enum ModalSize implements Style.HasCssName {
     SMALL("modal-sm"),
     MEDIUM(""),
-    LARGE("modal-lg");
+    LARGE("modal-lg"),
+    EXTRA_LARGE("modal-xl");
 
     private final String cssClass;
 
