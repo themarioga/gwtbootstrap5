@@ -21,7 +21,10 @@ package org.gwtbootstrap4.client.ui;
  */
 
 import org.gwtbootstrap4.client.ui.base.HasActive;
+import org.gwtbootstrap4.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap4.client.ui.base.mixin.ActiveMixin;
+import org.gwtbootstrap4.client.ui.constants.Attributes;
+import org.gwtbootstrap4.client.ui.constants.Roles;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
 
@@ -55,6 +58,7 @@ public class TabPane extends Div implements HasActive {
         super();
 
         setStyleName(Styles.TAB_PANE);
+        RoleHelper.setRole(getElement(), Roles.TABPANEL);
     }
 
     /**
@@ -98,5 +102,23 @@ public class TabPane extends Div implements HasActive {
     @Override
     public boolean isActive() {
         return activeMixin.isActive();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void setAriaLabelledBy(final String ariaLabelledBy) {
+        if (ariaLabelledBy != null) {
+            getElement().setAttribute(Attributes.ARIA_LABELLEDBY, ariaLabelledBy);
+        } else {
+            getElement().removeAttribute(Attributes.ARIA_LABELLEDBY);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public String getAriaLabelledBy() {
+        return getElement().getAttribute(Attributes.ARIA_LABELLEDBY);
     }
 }

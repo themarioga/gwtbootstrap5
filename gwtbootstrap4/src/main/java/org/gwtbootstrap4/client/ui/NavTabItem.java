@@ -30,10 +30,8 @@ import org.gwtbootstrap4.client.shared.event.TabShownEvent;
 import org.gwtbootstrap4.client.shared.event.TabShownHandler;
 import org.gwtbootstrap4.client.shared.js.JQuery;
 import org.gwtbootstrap4.client.ui.base.HasDataTarget;
-import org.gwtbootstrap4.client.ui.constants.IconSize;
-import org.gwtbootstrap4.client.ui.constants.IconType;
-import org.gwtbootstrap4.client.ui.constants.Styles;
-import org.gwtbootstrap4.client.ui.constants.Toggle;
+import org.gwtbootstrap4.client.ui.base.helper.RoleHelper;
+import org.gwtbootstrap4.client.ui.constants.*;
 
 import java.util.List;
 
@@ -73,9 +71,12 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
      */
     public NavTabItem(final String text) {
         super(text);
-        setDataToggle(Toggle.TAB);
 
+        setDataToggle(Toggle.TAB);
         addStyleName(Styles.NAV_ITEM);
+
+        RoleHelper.setRole(getElement(), Roles.PRESENTATION);
+        RoleHelper.setRole(anchor.getElement(), Roles.TAB);
     }
 
     public NavTabItem(final String text, final IconType iconType) {
@@ -148,37 +149,49 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
         setDataTarget(href);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getHref() {
         return getDataTarget();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setDataTargetWidgets(final List<Widget> widgets) {
         anchor.setDataTargetWidgets(widgets);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setDataTargetWidget(final Widget widget) {
         anchor.setDataTargetWidget(widget);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setDataTarget(final String dataTarget) {
         anchor.setDataTarget(dataTarget);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getDataTarget() {
         return anchor.getDataTarget();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setEnabled(final boolean enabled) {
         super.setEnabled(enabled);
@@ -191,7 +204,21 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
         }
     }
 
-    /** {@inheritDoc} */
+    public void setAriaControls(final String ariaControls) {
+        if (ariaControls != null) {
+            anchor.getElement().setAttribute(Attributes.ARIA_CONTROLS, ariaControls);
+        } else {
+            anchor.getElement().removeAttribute(Attributes.ARIA_CONTROLS);
+        }
+    }
+
+    public String getAriaControls() {
+        return anchor.getElement().getAttribute(Attributes.ARIA_CONTROLS);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void onLoad() {
         super.onLoad();
@@ -200,7 +227,9 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
         bindJavaScriptEvents(anchor.getElement());
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void onUnload() {
         super.onUnload();
@@ -260,5 +289,5 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
         JQuery.jQuery(e).off("show.bs.tab");
         JQuery.jQuery(e).off("shown.bs.tab");
     }
-    
+
 }

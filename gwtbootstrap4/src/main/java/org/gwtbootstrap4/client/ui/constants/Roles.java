@@ -1,10 +1,10 @@
-package org.gwtbootstrap4.client.ui;
+package org.gwtbootstrap4.client.ui.constants;
 
 /*
  * #%L
  * GwtBootstrap4
  * %%
- * Copyright (C) 2013 GwtBootstrap4
+ * Copyright (C) 2013 - 2024 GwtBootstrap4
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,21 +20,16 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap4.client.ui.base.helper.RoleHelper;
-import org.gwtbootstrap4.client.ui.constants.Roles;
-import org.gwtbootstrap4.client.ui.constants.Styles;
+public final class Roles {
 
-/**
- * @author Sven Jacobs
- * @see AnchorListItem
- */
-public class NavTabs extends Nav {
+    public static final String TABLIST = "tablist";
 
-    public NavTabs() {
-        super();
+    public static final String TAB = "tab";
 
-        addStyleName(Styles.NAV_TABS);
-        RoleHelper.setRole(getElement(), Roles.TABLIST);
-    }
+    public static final String TABPANEL = "tabpanel";
+
+    public static final String PRESENTATION = "presentation";
+
+    public static final String STATUS = "status";
 
 }

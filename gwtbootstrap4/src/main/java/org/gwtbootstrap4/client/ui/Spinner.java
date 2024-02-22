@@ -25,8 +25,10 @@ import com.google.gwt.dom.client.SpanElement;
 import com.google.gwt.uibinder.client.UiConstructor;
 import org.gwtbootstrap4.client.ui.base.HasEmphasis;
 import org.gwtbootstrap4.client.ui.base.HasType;
+import org.gwtbootstrap4.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap4.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap4.client.ui.constants.Emphasis;
+import org.gwtbootstrap4.client.ui.constants.Roles;
 import org.gwtbootstrap4.client.ui.constants.SpinnerType;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.html.Div;
@@ -41,7 +43,7 @@ public class Spinner extends Div implements HasType<SpinnerType>, HasEmphasis {
     public Spinner(SpinnerType spinnerType, String defaultText) {
         super();
 
-        getElement().setAttribute("role", "status");
+        RoleHelper.setRole(getElement(), Roles.STATUS);
 
         SpanElement spanElement = Document.get().createSpanElement();
         spanElement.setClassName(Styles.SR_ONLY);

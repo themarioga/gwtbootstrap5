@@ -322,4 +322,24 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
         anchor.setTargetHistoryToken(targetHistoryToken);
     }
 
+    public void setAnchorId(String id) {
+        anchor.setId(id);
+    }
+
+    public String getAnchorId() {
+        return anchor.getId();
+    }
+
+    public void setDisabled(boolean disabled) {
+        if (disabled) {
+            anchor.addStyleName(Styles.DISABLED);
+        } else {
+            anchor.removeStyleName(Styles.DISABLED);
+        }
+    }
+
+    public boolean isDisabled() {
+        return anchor.getStyleName().contains(Styles.DISABLED);
+    }
+
 }

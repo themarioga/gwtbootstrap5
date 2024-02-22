@@ -20,6 +20,8 @@ package org.gwtbootstrap4.client.ui;
  * #L%
  */
 
+import org.gwtbootstrap4.client.ui.base.helper.RoleHelper;
+import org.gwtbootstrap4.client.ui.constants.Roles;
 import org.gwtbootstrap4.client.ui.constants.Styles;
 import org.gwtbootstrap4.client.ui.constants.ToastRole;
 import org.gwtbootstrap4.client.ui.gwt.HTMLPanel;
@@ -80,7 +82,8 @@ public class Toast extends Div {
     }
 
     private void setToastAttributes(ToastRole toastRole) {
-        getElement().setAttribute("role", toastRole.getRole());
+        RoleHelper.setRole(getElement(), toastRole.getRole());
+
         getElement().setAttribute("aria-live", toastRole.getAriaLive());
         getElement().setAttribute("aria-atomic", "true");
 
