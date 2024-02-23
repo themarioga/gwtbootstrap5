@@ -35,24 +35,24 @@ public interface IconType extends Type, Style.HasCssName {
 
     static List<IconType> getValues() {
         List<IconType> iconTypeList = new ArrayList<>();
-        iconTypeList.addAll(Arrays.asList(IconTypeBrands.values()));
         iconTypeList.addAll(Arrays.asList(IconTypeSolid.values()));
         iconTypeList.addAll(Arrays.asList(IconTypeRegular.values()));
+        iconTypeList.addAll(Arrays.asList(IconTypeBrands.values()));
         return iconTypeList;
     }
 
     static IconType fromIconType(final String enumName) {
-        IconType type = EnumHelper.fromEnumName(enumName, IconTypeBrands.class, null);
-        if (type == null) EnumHelper.fromEnumName(enumName, IconTypeSolid.class, null);
+        IconType type = EnumHelper.fromEnumName(enumName, IconTypeSolid.class, null);
         if (type == null) EnumHelper.fromEnumName(enumName, IconTypeRegular.class, null);
+        if (type == null) EnumHelper.fromEnumName(enumName, IconTypeBrands.class, null);
 
         return type;
     }
 
     static IconType fromStyleName(final String styleName) {
-        IconType type = EnumHelper.fromStyleName(styleName, IconTypeBrands.class, null);
-        if (type == null) EnumHelper.fromStyleName(styleName, IconTypeSolid.class, null);
+        IconType type = EnumHelper.fromStyleName(styleName, IconTypeSolid.class, null);
         if (type == null) EnumHelper.fromStyleName(styleName, IconTypeRegular.class, null);
+        if (type == null) EnumHelper.fromStyleName(styleName, IconTypeBrands.class, null);
 
         return type;
     }
