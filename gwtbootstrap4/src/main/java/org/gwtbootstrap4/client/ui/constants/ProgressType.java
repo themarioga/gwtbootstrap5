@@ -33,7 +33,7 @@ public enum ProgressType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private ProgressType(final String cssClass) {
+    ProgressType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

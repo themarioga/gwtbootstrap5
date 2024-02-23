@@ -34,7 +34,7 @@ public enum PaginationSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private PaginationSize(final String cssClass) {
+    PaginationSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

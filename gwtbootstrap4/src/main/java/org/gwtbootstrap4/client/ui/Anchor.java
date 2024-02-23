@@ -147,31 +147,32 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
      * {@inheritDoc}
      */
     @Override
-    public void setIcon(final IconType iconType) {
-        iconTextMixin.setIcon(iconType);
-    }
-
-    @Override
-    public void setIconBrand(IconTypeBrands iconType) {
-        setIcon(iconType);
-    }
-
-    @Override
-    public void setIconSolid(IconTypeSolid iconType) {
-        setIcon(iconType);
-    }
-
-    @Override
-    public void setIconRegular(IconTypeRegular iconType) {
-        setIcon(iconType);
+    public void setIcon(String icon) {
+        iconTextMixin.setIcon(icon);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public IconType getIcon() {
+    public String getIcon() {
         return iconTextMixin.getIcon();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setIconType(final IconType iconType) {
+        iconTextMixin.setIconType(iconType);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public IconType getIconType() {
+        return iconTextMixin.getIconType();
     }
 
     /**

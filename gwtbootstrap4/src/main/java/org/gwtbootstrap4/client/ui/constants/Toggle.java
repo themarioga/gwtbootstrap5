@@ -34,7 +34,7 @@ public enum Toggle {
 
     private final String toggle;
 
-    private Toggle(final String toggle) {
+    Toggle(final String toggle) {
         this.toggle = toggle;
     }
 

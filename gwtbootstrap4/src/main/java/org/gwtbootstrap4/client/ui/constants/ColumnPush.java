@@ -99,7 +99,7 @@ public enum ColumnPush implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private ColumnPush(final String cssClass) {
+    ColumnPush(final String cssClass) {
         this.cssClass = cssClass;
     }
 

@@ -37,6 +37,32 @@ public final class EnumHelper {
      * @return First enum constant found or default value
      */
     @SuppressWarnings("unchecked")
+    public static <E extends Enum<?>> E fromEnumName(final String enumName,
+                                                   final Class<E> enumClass,
+                                                   final E defaultValue) {
+        if (enumName == null || enumClass == null) {
+            return defaultValue;
+        }
+
+        for (final E constant : enumClass.getEnumConstants()) {
+            if (constant != null && constant.name().equals(enumName)) {
+                return constant;
+            }
+        }
+
+        return defaultValue;
+    }
+
+    /**
+     * Returns first enum constant found in at space-separated list of style names.
+     *
+     * @param styleName    Space-separated list of styles
+     * @param enumClass    Type of enum
+     * @param defaultValue Default value of no match was found
+     * @param <E>
+     * @return First enum constant found or default value
+     */
+    @SuppressWarnings("unchecked")
     public static <E extends Enum<? extends Style.HasCssName>> E fromStyleName(final String styleName,
                                                                                final Class<E> enumClass,
                                                                                final E defaultValue) {

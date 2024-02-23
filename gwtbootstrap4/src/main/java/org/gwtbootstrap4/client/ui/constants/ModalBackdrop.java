@@ -41,7 +41,7 @@ public enum ModalBackdrop {
 
     private final String backdrop;
 
-    private ModalBackdrop(final String backdrop) {
+    ModalBackdrop(final String backdrop) {
         this.backdrop = backdrop;
     }
 

@@ -36,7 +36,7 @@ public enum ImageType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private ImageType(final String cssClass) {
+    ImageType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

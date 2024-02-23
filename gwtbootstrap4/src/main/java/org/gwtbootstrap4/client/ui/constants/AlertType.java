@@ -41,7 +41,7 @@ public enum AlertType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private AlertType(final String cssClass) {
+    AlertType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

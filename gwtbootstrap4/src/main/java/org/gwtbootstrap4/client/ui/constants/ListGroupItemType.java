@@ -40,7 +40,7 @@ public enum ListGroupItemType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private ListGroupItemType(final String cssClass) {
+    ListGroupItemType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

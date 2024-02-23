@@ -39,7 +39,7 @@ public enum TableType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private TableType(final String cssClass) {
+    TableType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

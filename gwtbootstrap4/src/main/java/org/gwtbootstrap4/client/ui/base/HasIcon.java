@@ -29,15 +29,14 @@ import org.gwtbootstrap4.client.ui.constants.*;
  * @author Joshua Godi
  */
 public interface HasIcon {
-    void setIcon(IconType iconType);
 
-    void setIconBrand(IconTypeBrands iconType);
+    void setIcon(String icon);
 
-    void setIconSolid(IconTypeSolid iconType);
+    String getIcon();
 
-    void setIconRegular(IconTypeRegular iconType);
+    void setIconType(IconType iconType);
 
-    IconType getIcon();
+    IconType getIconType();
 
     void setIconSize(IconSize iconSize);
 

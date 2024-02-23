@@ -84,8 +84,14 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
-    public IconType getIcon() {
+    public String getIcon() {
         return anchor.getIcon();
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public IconType getIconType() {
+        return anchor.getIconType();
     }
 
     /** {@inheritDoc} */
@@ -219,26 +225,14 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
-    public void setIcon(final IconType iconType) {
-        anchor.setIcon(iconType);
+    public void setIcon(final String icon) {
+        anchor.setIcon(icon);
     }
 
     /** {@inheritDoc} */
     @Override
-    public void setIconBrand(final IconTypeBrands iconType) {
-        anchor.setIconBrand(iconType);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void setIconSolid(final IconTypeSolid iconType) {
-        anchor.setIconSolid(iconType);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void setIconRegular(final IconTypeRegular iconType) {
-        anchor.setIcon(iconType);
+    public void setIconType(final IconType iconType) {
+        anchor.setIconType(iconType);
     }
 
     /** {@inheritDoc} */

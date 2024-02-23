@@ -35,7 +35,7 @@ public enum IconRotate implements Style.HasCssName {
 
     private final String cssClass;
 
-    private IconRotate(final String cssClass) {
+    IconRotate(final String cssClass) {
         this.cssClass = cssClass;
     }
 

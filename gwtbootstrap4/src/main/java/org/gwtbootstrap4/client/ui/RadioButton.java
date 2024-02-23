@@ -101,7 +101,6 @@ public class RadioButton extends Radio implements HasActive,
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
      *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
      */
     public RadioButton(String name, SafeHtml label, DirectionEstimator directionEstimator) {
         this(name);
@@ -154,7 +153,6 @@ public class RadioButton extends Radio implements HasActive,
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
      *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
      */
     public RadioButton(String name, String label, DirectionEstimator directionEstimator) {
         this(name);
@@ -271,27 +269,22 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     @Override
-    public void setIcon(IconType iconType) {
+    public void setIcon(String icon) {
+        getActualIcon().setType(IconType.fromIconType(icon));
+    }
+
+    @Override
+    public String getIcon() {
+        return getActualIcon().getType().getName();
+    }
+
+    @Override
+    public void setIconType(IconType iconType) {
         getActualIcon().setType(iconType);
     }
 
     @Override
-    public void setIconBrand(IconTypeBrands iconType) {
-        getActualIcon().setType(iconType);
-    }
-
-    @Override
-    public void setIconSolid(IconTypeSolid iconType) {
-        getActualIcon().setType(iconType);
-    }
-
-    @Override
-    public void setIconRegular(IconTypeRegular iconType) {
-        getActualIcon().setType(iconType);
-    }
-
-    @Override
-    public IconType getIcon() {
+    public IconType getIconType() {
         return getActualIcon().getType();
     }
 

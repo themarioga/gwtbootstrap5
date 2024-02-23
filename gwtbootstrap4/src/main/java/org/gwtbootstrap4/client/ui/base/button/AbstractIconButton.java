@@ -36,10 +36,9 @@ import com.google.gwt.user.client.ui.HasText;
  */
 public abstract class AbstractIconButton extends AbstractButton implements HasText, HasIcon, HasIconPosition, HasBadge {
 
-    IconTextMixin<AbstractIconButton> iconTextMixin = new IconTextMixin<AbstractIconButton>(this);
+    IconTextMixin<AbstractIconButton> iconTextMixin = new IconTextMixin<>(this);
 
-    protected AbstractIconButton() {
-    }
+    protected AbstractIconButton() { }
 
     protected AbstractIconButton(final ButtonType type) {
         super(type);
@@ -56,28 +55,23 @@ public abstract class AbstractIconButton extends AbstractButton implements HasTe
     }
 
     @Override
-    public void setIcon(final IconType iconType) {
-        iconTextMixin.setIcon(iconType);
+    public void setIcon(final String icon) {
+        iconTextMixin.setIcon(icon);
     }
 
     @Override
-    public void setIconBrand(final IconTypeBrands iconType) {
-        iconTextMixin.setIconBrand(iconType);
-    }
-
-    @Override
-    public void setIconSolid(final IconTypeSolid iconType) {
-        iconTextMixin.setIconSolid(iconType);
-    }
-
-    @Override
-    public void setIconRegular(final IconTypeRegular iconType) {
-        iconTextMixin.setIcon(iconType);
-    }
-
-    @Override
-    public IconType getIcon() {
+    public String getIcon() {
         return iconTextMixin.getIcon();
+    }
+
+    @Override
+    public void setIconType(final IconType iconType) {
+        iconTextMixin.setIconType(iconType);
+    }
+
+    @Override
+    public IconType getIconType() {
+        return iconTextMixin.getIconType();
     }
 
     @Override

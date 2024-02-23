@@ -35,7 +35,7 @@ public enum InputGroupSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private InputGroupSize(final String cssClass) {
+    InputGroupSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

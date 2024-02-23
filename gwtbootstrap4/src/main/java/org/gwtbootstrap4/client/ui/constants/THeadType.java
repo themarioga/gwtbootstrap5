@@ -34,7 +34,7 @@ public enum THeadType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private THeadType(final String cssClass) {
+    THeadType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

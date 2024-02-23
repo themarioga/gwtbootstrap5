@@ -35,7 +35,7 @@ public enum TabPosition implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private TabPosition(final String cssClass) {
+    TabPosition(final String cssClass) {
         this.cssClass = cssClass;
     }
 

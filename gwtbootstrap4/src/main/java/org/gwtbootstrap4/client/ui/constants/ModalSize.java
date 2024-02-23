@@ -35,7 +35,7 @@ public enum ModalSize implements Style.HasCssName {
 
     private final String cssClass;
 
-    private ModalSize(final String cssClass) {
+    ModalSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

@@ -80,28 +80,23 @@ public class IconTextMixin<T extends ComplexWidget & HasText & HasIcon & HasIcon
     }
 
     @Override
-    public void setIcon(final IconType iconType) {
+    public void setIcon(String icon) {
+        this.iconType = IconType.fromIconType(icon);
+    }
+
+    @Override
+    public String getIcon() {
+        return iconType.getName();
+    }
+
+    @Override
+    public void setIconType(final IconType iconType) {
         this.iconType = iconType;
         render();
     }
 
     @Override
-    public void setIconBrand(IconTypeBrands iconType) {
-        setIcon(iconType);
-    }
-
-    @Override
-    public void setIconSolid(IconTypeSolid iconType) {
-        setIcon(iconType);
-    }
-
-    @Override
-    public void setIconRegular(IconTypeRegular iconType) {
-        setIcon(iconType);
-    }
-
-    @Override
-    public IconType getIcon() {
+    public IconType getIconType() {
         return icon == null ? null : icon.getType();
     }
 

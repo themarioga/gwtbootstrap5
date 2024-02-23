@@ -36,7 +36,7 @@ public enum NavbarPosition implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private NavbarPosition(final String cssClass) {
+    NavbarPosition(final String cssClass) {
         this.cssClass = cssClass;
     }
 

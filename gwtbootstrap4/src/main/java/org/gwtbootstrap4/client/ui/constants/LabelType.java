@@ -37,7 +37,7 @@ public enum LabelType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private LabelType(final String cssClass) {
+    LabelType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

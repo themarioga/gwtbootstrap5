@@ -51,6 +51,16 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
         addStyleName(Styles.FONT_AWESOME_BASE);
     }
 
+    public void setIcon(final String icon) {
+        IconType iconType = IconType.fromIconType(icon);
+
+        setType(iconType);
+    }
+
+    public String getIcon() {
+        return IconType.fromStyleName(getStyleName()).getName();
+    }
+
     @Override
     public void setType(final IconType type) {
         if (type instanceof IconTypeBrands) {
@@ -65,18 +75,6 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
     @Override
     public IconType getType() {
         return IconType.fromStyleName(getStyleName());
-    }
-
-    public void setTypeBrands(IconTypeBrands type) {
-        setType(type);
-    }
-
-    public void setTypeSolid(IconTypeSolid type) {
-        setType(type);
-    }
-
-    public void setTypeRegular(IconTypeRegular type) {
-        setType(type);
     }
 
     public void setBorder(final boolean border) {

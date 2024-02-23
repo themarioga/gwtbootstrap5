@@ -35,7 +35,7 @@ public enum ButtonGroupSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private ButtonGroupSize(final String cssClass) {
+    ButtonGroupSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

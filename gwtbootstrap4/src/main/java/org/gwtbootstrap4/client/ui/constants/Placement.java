@@ -37,7 +37,7 @@ public enum Placement implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private Placement(final String cssClass) {
+    Placement(final String cssClass) {
         this.cssClass = cssClass;
     }
 

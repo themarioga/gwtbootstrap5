@@ -71,7 +71,7 @@ public class Button extends AbstractToggleButton {
 
     public Button(final String text, final IconType iconType, final ClickHandler clickHandler) {
         this(text, clickHandler);
-        setIcon(iconType);
+        setIconType(iconType);
     }
 
     @Override

@@ -36,7 +36,7 @@ public enum Trigger implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private Trigger(final String cssClass) {
+    Trigger(final String cssClass) {
         this.cssClass = cssClass;
     }
 

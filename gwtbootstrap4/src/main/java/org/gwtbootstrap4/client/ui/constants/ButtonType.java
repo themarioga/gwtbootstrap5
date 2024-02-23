@@ -53,7 +53,7 @@ public enum ButtonType implements Type, Style.HasCssName {
 
     private final String cssClass;
 
-    private ButtonType(final String cssClass) {
+    ButtonType(final String cssClass) {
         this.cssClass = cssClass;
     }
 

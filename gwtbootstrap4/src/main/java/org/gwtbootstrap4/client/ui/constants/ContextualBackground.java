@@ -35,18 +35,18 @@ public enum ContextualBackground implements Style.HasCssName {
     DANGER("bg-danger"),
     INFO("bg-info");
 
-    public static ContextualBackground fromStyleName(final String styleName) {
-        return EnumHelper.fromStyleName(styleName, ContextualBackground.class, DEFAULT);
-    }
-
     private final String cssClass;
 
-    private ContextualBackground(final String cssClass) {
+    ContextualBackground(final String cssClass) {
         this.cssClass = cssClass;
     }
 
     @Override
     public String getCssName() {
         return cssClass;
+    }
+
+    public static ContextualBackground fromStyleName(final String styleName) {
+        return EnumHelper.fromStyleName(styleName, ContextualBackground.class, DEFAULT);
     }
 }

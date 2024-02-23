@@ -36,7 +36,7 @@ public enum NavbarExpand implements Style.HasCssName {
 
     private final String cssClass;
 
-    private NavbarExpand(final String cssClass) {
+    NavbarExpand(final String cssClass) {
         this.cssClass = cssClass;
     }
 

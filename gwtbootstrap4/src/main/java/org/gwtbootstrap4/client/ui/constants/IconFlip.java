@@ -34,7 +34,7 @@ public enum IconFlip implements Style.HasCssName {
 
     private final String cssClass;
 
-    private IconFlip(final String cssClass) {
+    IconFlip(final String cssClass) {
         this.cssClass = cssClass;
     }
 

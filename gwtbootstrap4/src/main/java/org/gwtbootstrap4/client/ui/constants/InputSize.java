@@ -35,7 +35,7 @@ public enum InputSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private InputSize(final String cssClass) {
+    InputSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

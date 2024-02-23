@@ -38,7 +38,7 @@ public enum IconSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private IconSize(final String cssClass) {
+    IconSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

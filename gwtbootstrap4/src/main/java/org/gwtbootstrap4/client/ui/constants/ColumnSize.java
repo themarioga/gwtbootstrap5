@@ -103,7 +103,7 @@ public enum ColumnSize implements Size, Style.HasCssName {
 
     private final String cssClass;
 
-    private ColumnSize(final String cssClass) {
+    ColumnSize(final String cssClass) {
         this.cssClass = cssClass;
     }
 

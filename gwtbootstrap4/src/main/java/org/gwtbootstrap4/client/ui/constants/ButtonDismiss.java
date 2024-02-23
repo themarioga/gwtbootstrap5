@@ -29,7 +29,7 @@ public enum ButtonDismiss {
 
     private final String dismiss;
 
-    private ButtonDismiss(final String dismiss) {
+    ButtonDismiss(final String dismiss) {
         this.dismiss = dismiss;
     }
 

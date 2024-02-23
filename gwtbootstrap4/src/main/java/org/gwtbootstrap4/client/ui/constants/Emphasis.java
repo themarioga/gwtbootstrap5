@@ -38,7 +38,7 @@ public enum Emphasis implements Style.HasCssName {
 
     private final String cssClass;
 
-    private Emphasis(final String cssClass) {
+    Emphasis(final String cssClass) {
         this.cssClass = cssClass;
     }
 
