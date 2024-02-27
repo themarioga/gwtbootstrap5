@@ -120,6 +120,12 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
+    public String getIconColor() {
+        return anchor.getIconColor();
+    }
+
+    /** {@inheritDoc} */
+    @Override
     public int getTabIndex() {
         return anchor.getTabIndex();
     }

@@ -43,9 +43,9 @@ import com.google.gwt.user.client.ui.impl.HyperlinkImpl;
  */
 public class AnchorButton extends AbstractToggleButton implements HasHref, HasTargetHistoryToken {
 
-    private String targetHistoryToken;
+    private static final HyperlinkImpl impl = GWT.create(HyperlinkImpl.class);
 
-    private static HyperlinkImpl impl = GWT.create(HyperlinkImpl.class);
+    private String targetHistoryToken;
 
     public AnchorButton(final ButtonType type) {
         super(type);

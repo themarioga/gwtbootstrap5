@@ -566,4 +566,9 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
         iconTextMixin.setIconColor(iconColor);
     }
 
+    @Override
+    public String getIconColor() {
+        return iconTextMixin.getIconColor();
+    }
+
 }

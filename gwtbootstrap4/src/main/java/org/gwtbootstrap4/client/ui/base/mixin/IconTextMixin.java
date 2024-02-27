@@ -207,6 +207,11 @@ public class IconTextMixin<T extends ComplexWidget & HasText & HasIcon & HasIcon
     }
 
     @Override
+    public String getIconColor() {
+        return iconColor;
+    }
+
+    @Override
     public void setBadgeText(String badgeText) {
         badge.setText(badgeText);
         render();

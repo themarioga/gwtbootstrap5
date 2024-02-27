@@ -233,6 +233,10 @@ public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiven
         getElement().getStyle().setColor(color);
     }
 
+    public String getColor() {
+        return getElement().getStyle().getColor();
+    }
+
     /**
      * {@inheritDoc}
      */

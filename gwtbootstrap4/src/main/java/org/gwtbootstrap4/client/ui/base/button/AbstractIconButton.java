@@ -195,4 +195,9 @@ public abstract class AbstractIconButton extends AbstractButton implements HasTe
         iconTextMixin.setIconColor(iconColor);
     }
 
+    @Override
+    public String getIconColor() {
+        return iconTextMixin.getIconColor();
+    }
+
 }

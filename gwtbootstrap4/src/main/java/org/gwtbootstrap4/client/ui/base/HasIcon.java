@@ -72,4 +72,6 @@ public interface HasIcon {
 
     void setIconColor(String iconColor);
 
+    String getIconColor();
+
 }
