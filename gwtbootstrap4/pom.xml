@@ -5,13 +5,14 @@
     <parent>
         <groupId>org.gwtbootstrap4</groupId>
         <artifactId>gwtbootstrap4-parent</artifactId>
-        <version>0.0.1</version>
+        <version>0.1.0</version>
     </parent>
 
     <artifactId>gwtbootstrap4</artifactId>
     <name>GwtBootstrap4</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>http://gwtbootstrap4.org</url>
+    <packaging>gwt-lib</packaging>
 
     <properties>
         <junit.version>4.13.2</junit.version>
@@ -23,7 +24,17 @@
             <groupId>org.gwtproject</groupId>
             <artifactId>gwt-user</artifactId>
             <version>${gwt.version}</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>apache-jsp</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -36,10 +47,11 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
+                <groupId>net.ltgt.gwt.maven</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <validateOnly>true</validateOnly>
+                    <moduleName>org.gwtbootstrap4.GwtBootstrap4</moduleName>
+                    <moduleShortName>GwtBootstrap4</moduleShortName>
                 </configuration>
             </plugin>
             <plugin>

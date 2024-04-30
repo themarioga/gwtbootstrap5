@@ -7,7 +7,7 @@
     <groupId>org.gwtbootstrap4</groupId>
     <artifactId>gwtbootstrap4-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <name>GwtBootstrap4 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>http://gwtbootstrap4.org</url>
@@ -77,6 +77,7 @@
 
     <modules>
         <module>gwtbootstrap4</module>
+        <module>../gwtbootstrap4-extras</module>
     </modules>
 
     <properties>
@@ -174,65 +175,28 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
+                    <groupId>net.ltgt.gwt.maven</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                    <version>${gwt.version}</version>
+                    <version>1.1.0</version>
+                    <extensions>true</extensions>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <webappDirectory>${webapp.directory}</webappDirectory>
+                        <logLevel>INFO</logLevel>
+                        <sourceLevel>11</sourceLevel>
+                        <launcherDir>${webapp.directory}</launcherDir>
+                        <warDir>${webapp.directory}</warDir>
+                        <devmodeWorkDir>${webapp.directory}</devmodeWorkDir>
+                        <skipModule>true</skipModule>
+                    </configuration>
                     <executions>
                         <execution>
                             <goals>
                                 <goal>compile</goal>
                                 <goal>test</goal>
-                                <goal>resources</goal>
                             </goals>
-                            <configuration>
-                                <mode>htmlunit</mode>
-                                <testTimeOut>240</testTimeOut>
-                                <failOnError>true</failOnError>
-                                <generateJsInteropExports>true</generateJsInteropExports>
-                            </configuration>
                         </execution>
                     </executions>
-                    <inherited>true</inherited>
-                </plugin>
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>gwt-maven-plugin</artifactId>
-                                        <versionRange>[0,)</versionRange>
-                                        <goals>
-                                            <goal>resources</goal>
-                                            <goal>i18n</goal>
-                                            <goal>generateAsync</goal>
-                                            <goal>css</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <execute />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>license-maven-plugin</artifactId>
-                                        <versionRange>[0,)</versionRange>
-                                        <goals>
-                                            <goal>update-file-header</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <execute />
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

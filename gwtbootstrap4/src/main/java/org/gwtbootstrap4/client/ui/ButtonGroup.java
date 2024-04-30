@@ -54,7 +54,7 @@ import org.gwtbootstrap4.client.ui.constants.Styles;
 public class ButtonGroup extends AbstractButtonGroup {
 
     public ButtonGroup() {
-        super("");
+        super();
     }
 
     public void setToggle(final boolean toggle) {
