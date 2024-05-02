@@ -7,7 +7,7 @@
     <groupId>org.gwtbootstrap4</groupId>
     <artifactId>gwtbootstrap4-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <name>GwtBootstrap4 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>http://gwtbootstrap4.org</url>
