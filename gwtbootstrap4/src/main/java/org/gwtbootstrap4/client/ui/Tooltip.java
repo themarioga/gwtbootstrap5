@@ -107,9 +107,8 @@ public class Tooltip extends AbstractTooltip {
     @Override
     public void init() {
         Element element = getWidget().getElement();
-        createOptions(element, isAnimated(), isHtml(), getSelector(),
-                getTrigger().getCssName(), getShowDelayMs(), getHideDelayMs(), getContainer(), prepareTemplate(), 
-                getViewportSelector(), getViewportPadding());
+        createOptions(element, isAnimated(), isHtml(), getSelector(), getTrigger().getCssName(), getShowDelayMs(),
+                getHideDelayMs(), getContainer(), prepareTemplate());
         tooltip(element);
         bindJavaScriptEvents(element);
         setInitialized(true);
@@ -120,22 +119,6 @@ public class Tooltip extends AbstractTooltip {
      */
     private void tooltip(Element e) {
         JQuery.jQuery(e).tooltip();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    protected void updateTitleWhenShowing() {
-        updateTitleWhenShowing(getWidget().getElement());
-    }
-
-    /**
-     * Update the title. This should only be called when the title is already showing. It causes a small flicker but
-     * updates the title immediately.
-     *
-     * @param e the tooltip {@link Element}.
-     */
-    private void updateTitleWhenShowing(Element e) {
-        JQuery.jQuery(e).tooltip("fixTitle").tooltip("show");
     }
 
 }

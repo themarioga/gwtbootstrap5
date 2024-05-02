@@ -132,9 +132,8 @@ public class Popover extends AbstractTooltip {
     @Override
     public void init() {
         Element element = getWidget().getElement();
-        createOptions(element, isAnimated(), isHtml(), getSelector(),
-                getTrigger().getCssName(), getShowDelayMs(), getHideDelayMs(), getContainer(), prepareTemplate(), 
-                getViewportSelector(), getViewportPadding());
+        createOptions(element, isAnimated(), isHtml(), getSelector(), getTrigger().getCssName(), getShowDelayMs(),
+                getHideDelayMs(), getContainer(), prepareTemplate());
         popover(element, getContent());
         bindJavaScriptEvents(element);
         setInitialized(true);
@@ -157,21 +156,5 @@ public class Popover extends AbstractTooltip {
             updateString(widget.getElement(), "content", content);
         }
     }
-
-    /** {@inheritDoc} */
-    @Override
-    protected void updateTitleWhenShowing() {
-        updateTitleWhenShowing(getWidget().getElement());
-    }
-
-    /**
-     * Update the title. This should only be called when the title is already showing. It causes a small flicker but
-     * updates the title immediately.
-     *
-     * @param e the popover {@link Element}.
-     */
-    private void updateTitleWhenShowing(Element e) {
-        JQuery.jQuery(e).popover("fixTitle").popover("show");
-    };
 
 }

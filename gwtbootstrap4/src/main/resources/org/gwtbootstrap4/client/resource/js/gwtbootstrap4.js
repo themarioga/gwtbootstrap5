@@ -27,21 +27,23 @@ _gwtbootstrap4_Create(org, "gwtbootstrap4", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4, "client", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client, "ui", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui, "base", {});
+
+// AbstractTooltip
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base, "AbstractTooltip", {});
+_gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base.AbstractTooltip, "updateString",
+    function(dataTarget, e, option, value) {
+        window.jQuery(e).data(dataTarget).options[option] = value;
+    });
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base.AbstractTooltip, "updateBool",
-function(dataTarget, e, option, value) {
-    window.jQuery(e).data(dataTarget).options[option] = value;
-});
+    function(dataTarget, e, option, value) {
+        window.jQuery(e).data(dataTarget).options[option] = value;
+    });
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base.AbstractTooltip, "updateDelay",
 function(dataTarget, e, showDelay, hideDelay) {
     window.jQuery(e).data(dataTarget).options['delay'] = {
         show : showDelay,
         hide : hideDelay
     };
-});
-_gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base.AbstractTooltip, "updateString",
-function(dataTarget, e, option, value) {
-    window.jQuery(e).data(dataTarget).options[option] = value;
 });
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.base.AbstractTooltip, "updateViewport",
 function(dataTarget, e, selector, padding) {
@@ -50,6 +52,8 @@ function(dataTarget, e, selector, padding) {
         padding : padding
     };
 });
+
+// Affix
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui, "Affix", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.Affix, "internalAffix",
 function(e, offset) {
@@ -57,6 +61,8 @@ function(e, offset) {
         offset: offset
     });
 });
+
+// Carousel
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui, "Carousel", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.Carousel, "carousel",
 function(e, interval, pause, wrap) {
@@ -66,6 +72,8 @@ function(e, interval, pause, wrap) {
         wrap: wrap
     });
 });
+
+// ScrollSpy
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui, "ScrollSpy", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.ui.ScrollSpy, "init",
 function(e, target) {
@@ -73,6 +81,8 @@ function(e, target) {
         target: target
     });
 });
+
+// EntryPoint
 _gwtbootstrap4_Create(org.gwtbootstrap4.client, "GwtBootstrap4EntryPoint", {});
 _gwtbootstrap4_Create(org.gwtbootstrap4.client.GwtBootstrap4EntryPoint, "isBootstrapLoaded",
 function () {
