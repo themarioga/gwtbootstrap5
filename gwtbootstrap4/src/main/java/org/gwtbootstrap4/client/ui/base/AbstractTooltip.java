@@ -708,7 +708,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setTitle(final String title) {
         this.title = title;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-title", this.title);
+            getWidget().getElement().setAttribute("title", this.title);
             if (showing) {
                 show();
             }
