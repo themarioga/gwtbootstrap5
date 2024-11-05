@@ -15,28 +15,28 @@ git config --global user.name "travis-ci"
 # clone and build the demo application.
 cd $HOME
 rm -rf demo
-git clone --quiet --branch=master https://$GH_TOKEN@github.com/gwtbootstrap4/gwtbootstrap4-demo demo > /dev/null
+git clone --quiet --branch=master https://$GH_TOKEN@github.com/gwtbootstrap5/gwtbootstrap5-demo demo > /dev/null
 cd demo
-mvn clean package || { echo -e "gwtbootstrap4-demo build failed" ; exit 1; }
+mvn clean package || { echo -e "gwtbootstrap5-demo build failed" ; exit 1; }
 
 # check to make sure the demo war file is present.
-if [ ! -f $HOME/demo/target/gwtbootstrap4-demo-*.war ]; then
-echo -e "gwtbootstrap4-demo war file not found."
+if [ ! -f $HOME/demo/target/gwtbootstrap5-demo-*.war ]; then
+echo -e "gwtbootstrap5-demo war file not found."
 exit 1
 fi	
 
 # clone the gh-pages branch.
 cd $HOME
 rm -rf gh-pages
-git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/gwtbootstrap4/gwtbootstrap4-demo gh-pages > /dev/null
+git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/gwtbootstrap5/gwtbootstrap5-demo gh-pages > /dev/null
 cd gh-pages
 
-# remove the GwtBootstrap4Demo directories from git.
-if [[ -d ./snapshot/GwtBootstrap4Demo ]]; then
-git rm -rf ./snapshot/GwtBootstrap4Demo
+# remove the GwtBootstrap5Demo directories from git.
+if [[ -d ./snapshot/GwtBootstrap5Demo ]]; then
+git rm -rf ./snapshot/GwtBootstrap5Demo
 fi
-if [[ -f ./snapshot/GwtBootstrap4Demo.html ]]; then
-git rm -rf ./snapshot/GwtBootstrap4Demo.html
+if [[ -f ./snapshot/GwtBootstrap5Demo.html ]]; then
+git rm -rf ./snapshot/GwtBootstrap5Demo.html
 fi
 if [[ -d ./snapshot/images ]]; then
 git rm -rf ./snapshot/images
@@ -48,9 +48,9 @@ if [[ -d ./snapshot/WEB-INF ]]; then
 git rm -rf ./snapshot/WEB-INF
 fi
 
-# copy the new GwtBootstrap4Demo the snapshot dir.
-unzip -u $HOME/demo/target/gwtbootstrap4-demo-*.war -d ./snapshot/
-mv -f  ./snapshot/GwtBootstrap4Demo.html ./snapshot/index.html
+# copy the new GwtBootstrap5Demo the snapshot dir.
+unzip -u $HOME/demo/target/gwtbootstrap5-demo-*.war -d ./snapshot/
+mv -f  ./snapshot/GwtBootstrap5Demo.html ./snapshot/index.html
 rm -rf ./snapshot/META-INF 
 rm -rf ./snapshot/WEB-INF
 

@@ -9,7 +9,7 @@ fi
 			
 echo -e "Publishing javadoc to gh-pages . . .\n"
 
-cp -R -v ./gwtbootstrap4/target/apidocs $HOME/javadoc-latest
+cp -R -v ./gwtbootstrap5/target/apidocs $HOME/javadoc-latest
 
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "travis-ci"
@@ -17,7 +17,7 @@ git config --global user.name "travis-ci"
 # clone the gh-pages branch.
 cd $HOME
 rm -rf gh-pages
-git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/gwtbootstrap4/gwtbootstrap4-demo gh-pages > /dev/null
+git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/gwtbootstrap5/gwtbootstrap5-demo gh-pages > /dev/null
 cd gh-pages
 
 # remove the javadoc directories from git.
