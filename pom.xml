@@ -7,7 +7,7 @@
     <groupId>org.gwtbootstrap5</groupId>
     <artifactId>gwtbootstrap5-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.4</version>
+    <version>0.1.0</version>
     <name>GwtBootstrap5 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>http://gwtbootstrap5.org</url>
@@ -77,11 +77,11 @@
 
     <modules>
         <module>gwtbootstrap5</module>
-<!--        <module>../gwtbootstrap5-extras</module>-->
+        <module>../gwtbootstrap5-extras</module>
     </modules>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -97,7 +97,7 @@
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
 
-        <gwt.version>2.11.0</gwt.version>
+        <gwt.version>2.12.0</gwt.version>
     </properties>
 
     <build>
