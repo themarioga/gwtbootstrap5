@@ -97,7 +97,7 @@
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
 
-        <gwt.version>2.12.0</gwt.version>
+        <gwt.version>2.12.1</gwt.version>
     </properties>
 
     <build>
