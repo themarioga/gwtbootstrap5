@@ -19,8 +19,12 @@
   #L%
   -->
 <module>
-    <inherits name="org.gwtbootstrap5.client.NoThemeResources"/>
+    <public path="resource">
+        <include name="css/*.css"/>
+        <include name="js/*.js"/>
+        <include name="webfonts/*.woff2"/>
+    </public>
 
-    <stylesheet src="css/bootstrap-5.3.3.min.cache.css"/>
-    <stylesheet src="css/font-awesome-6.6.0.min.cache.css"/>
+    <stylesheet src="css/bootstrap-5.3.8.min.cache.css"/>
+    <stylesheet src="css/font-awesome-7.0.1.min.cache.css"/>
 </module>

@@ -28,51 +28,24 @@
         <when-type-is class="org.gwtbootstrap5.client.ui.form.validator.ValidatorMessageMixin" />
     </replace-with>
 
-    <!-- Fall through to this rule is the browser isn't IE 8 -->
+    <!-- Fall through to this rule -->
     <replace-with class="org.gwtbootstrap5.client.ui.impl.SimpleCheckBoxImpl">
         <when-type-is class="org.gwtbootstrap5.client.ui.impl.SimpleCheckBoxImpl" />
     </replace-with>
 
-    <!-- IE 8 uses a different implementation -->
-    <replace-with class="org.gwtbootstrap5.client.ui.impl.SimpleCheckBoxImplIE8">
-        <when-type-is class="org.gwtbootstrap5.client.ui.impl.SimpleCheckBoxImpl" />
-        <when-property-is name="user.agent" value="ie8" />
-    </replace-with>
-
-    <!-- Fall through to this rule is the browser isn't IE 8 -->
+    <!-- Fall through to this rule -->
     <replace-with class="org.gwtbootstrap5.client.ui.impl.SimpleRadioButtonImpl">
         <when-type-is class="org.gwtbootstrap5.client.ui.impl.SimpleRadioButtonImpl" />
     </replace-with>
 
-    <!-- IE 8 uses a different implementation -->
-    <replace-with
-        class="org.gwtbootstrap5.client.ui.impl.SimpleRadioButtonImplIE8">
-        <when-type-is class="org.gwtbootstrap5.client.ui.impl.SimpleRadioButtonImpl" />
-        <when-property-is name="user.agent" value="ie8" />
-    </replace-with>
-
-    <!-- Fall through to this rule if the browser isn't IE 8 -->
+    <!-- Fall through to this rule -->
     <replace-with class="org.gwtbootstrap5.client.ui.impl.CheckBoxImpl">
         <when-type-is class="org.gwtbootstrap5.client.ui.impl.CheckBoxImpl" />
     </replace-with>
 
-    <!-- IE 8 uses a different implementation -->
-    <replace-with
-        class="org.gwtbootstrap5.client.ui.impl.CheckBoxImplIE8">
-        <when-type-is class="org.gwtbootstrap5.client.ui.impl.CheckBoxImpl" />
-        <when-property-is name="user.agent" value="ie8" />
-    </replace-with>
-
-    <!-- Fall through to this rule if the browser isn't IE 8 -->
+    <!-- Fall through to this rule -->
     <replace-with class="org.gwtbootstrap5.client.ui.impl.RadioImpl">
         <when-type-is class="org.gwtbootstrap5.client.ui.impl.RadioImpl" />
-    </replace-with>
-
-    <!-- IE 8 uses a different implementation -->
-    <replace-with
-        class="org.gwtbootstrap5.client.ui.impl.RadioImplIE8">
-        <when-type-is class="org.gwtbootstrap5.client.ui.impl.RadioImpl" />
-        <when-property-is name="user.agent" value="ie8" />
     </replace-with>
 
     <source path="client" />

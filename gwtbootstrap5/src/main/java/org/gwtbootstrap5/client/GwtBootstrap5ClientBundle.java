@@ -40,6 +40,6 @@ public interface GwtBootstrap5ClientBundle extends ClientBundle {
     @Source("resource/js/jquery-migrate-3.5.0.min.cache.js")
     TextResource jQueryMigrate();
 
-    @Source("resource/js/bootstrap-5.3.3.min.cache.js")
+    @Source("resource/js/bootstrap-5.3.8.min.cache.js")
     TextResource bootstrap();
 }

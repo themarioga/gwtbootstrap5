@@ -8,7 +8,7 @@
 
 var fs = require('fs'),
     file = process.argv[2],
-    regex = /^\.(fa-([^:]+)):before/m;
+    regex = /^\.fa-([^\s{]+)/m;
 
 fs.readFile(file, 'UTF-8', function (err, data) {
     if (err) throw err;
@@ -20,7 +20,8 @@ fs.readFile(file, 'UTF-8', function (err, data) {
         var match = regex.exec(line);
 
         if (match) {
-            var name = match[2].toUpperCase().replace(/-/g, '_');
+            var name = match[1].toUpperCase().replace(/-/g, '_');
+
             if (/^\d/.test(name))
             	name = '_' + name;
             result.push(name + '("' + match[1] + '"),');

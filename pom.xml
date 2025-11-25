@@ -10,10 +10,10 @@
     <version>0.1.0</version>
     <name>GwtBootstrap5 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
-    <url>http://gwtbootstrap5.org</url>
+    <url>https://gwtbootstrap5.org</url>
 
     <prerequisites>
-        <maven>3.8.1</maven>
+        <maven>3.9.11</maven>
     </prerequisites>
 
     <scm>
@@ -87,20 +87,99 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <license-maven-plugin.version>1.8</license-maven-plugin.version>
-        <gwt-maven-plugin.version>${gwt.version}</gwt-maven-plugin.version>
-        <maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
-        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
-        <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
+        <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-release-plugin.version>3.2.0</maven-release-plugin.version>
+        <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
+        <license-maven-plugin.version>2.7.0</license-maven-plugin.version>
 
-        <gwt.version>2.12.1</gwt.version>
+        <gwt.version>2.12.2</gwt.version>
+        <guava.version>33.5.0-jre</guava.version>
+        <gwt-maven-plugin.version>1.2.0</gwt-maven-plugin.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.gwtproject</groupId>
+                <artifactId>gwt-user</artifactId>
+                <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-gwt</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>net.ltgt.gwt.maven</groupId>
+                    <artifactId>gwt-maven-plugin</artifactId>
+                    <version>${gwt-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <inherited>true</inherited>
+                    <configuration>
+                        <webappDirectory>${webapp.directory}</webappDirectory>
+                        <logLevel>INFO</logLevel>
+                        <sourceLevel>${java.version}</sourceLevel>
+                        <launcherDir>${webapp.directory}</launcherDir>
+                        <warDir>${webapp.directory}</warDir>
+                        <devmodeWorkDir>${webapp.directory}</devmodeWorkDir>
+                        <skipModule>true</skipModule>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>12.1.5</version>
+                    <configuration>
+                        <failBuildOnCVSS>8</failBuildOnCVSS>
+                        <nvdApiKey>be21d79f-0012-4a77-a95d-4be22f43a1e1</nvdApiKey>
+                        <suppressionFiles>
+                            <suppressionFile>${basedir}/src/main/resources/cve-false-possitives.xml</suppressionFile>
+                        </suppressionFiles>
+                        <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                        <nvdDatafeedUrl>http://172.17.30.41:8585/nvdcve-{0}.json.gz</nvdDatafeedUrl>
+                        <ossIndexUsername>mario.gonzalez@i2e.es</ossIndexUsername>
+                        <ossIndexPassword>236441fa7b8dddd2aba836f77b4d3fbefff04d2d</ossIndexPassword>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -171,27 +250,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>net.ltgt.gwt.maven</groupId>
-                    <artifactId>gwt-maven-plugin</artifactId>
-                    <version>1.1.0</version>
-                    <extensions>true</extensions>
-                    <inherited>true</inherited>
-                    <configuration>
-                        <webappDirectory>${webapp.directory}</webappDirectory>
-                        <logLevel>INFO</logLevel>
-                        <sourceLevel>11</sourceLevel>
-                        <launcherDir>${webapp.directory}</launcherDir>
-                        <warDir>${webapp.directory}</warDir>
-                        <devmodeWorkDir>${webapp.directory}</devmodeWorkDir>
-                        <skipModule>true</skipModule>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 
     <profiles>
@@ -202,15 +260,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -244,15 +293,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -291,27 +331,6 @@
                         </executions>
                     </plugin>
                 </plugins>
-            </build>
-        </profile>
-
-        <!-- Disable doclint on JDK 8 -->
-        <profile>
-            <id>nodoclint</id>
-            <activation>
-                <jdk>1.8</jdk>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <configuration>
-                                <additionalparam>-Xdoclint:none</additionalparam>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
             </build>
         </profile>
     </profiles>
