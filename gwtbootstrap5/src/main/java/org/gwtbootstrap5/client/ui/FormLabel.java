@@ -21,10 +21,7 @@ package org.gwtbootstrap5.client.ui;
  */
 
 import org.gwtbootstrap5.client.ui.base.AbstractTextWidget;
-import org.gwtbootstrap5.client.ui.constants.Attributes;
-import org.gwtbootstrap5.client.ui.constants.ElementTags;
-import org.gwtbootstrap5.client.ui.constants.IconTypeBrands;
-import org.gwtbootstrap5.client.ui.constants.Styles;
+import org.gwtbootstrap5.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
@@ -72,7 +69,7 @@ public class FormLabel extends AbstractTextWidget {
     protected Element createIconElement() {
         Element e = Document.get().createElement(ElementTags.I);
         e.addClassName(Styles.FONT_AWESOME_BASE);
-        e.addClassName(IconTypeBrands.STAR.getCssName());
+        e.addClassName(IconTypeRegular.STAR.getCssName());
         Style s = e.getStyle();
         s.setFontSize(6, Unit.PX);
         s.setPaddingLeft(2, Unit.PX);

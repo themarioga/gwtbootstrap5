@@ -22,6 +22,7 @@ package org.gwtbootstrap5.client.ui;
 
 import org.gwtbootstrap5.client.ui.constants.IconType;
 import org.gwtbootstrap5.client.ui.constants.IconTypeBrands;
+import org.gwtbootstrap5.client.ui.constants.IconTypeRegular;
 import org.gwtbootstrap5.client.ui.constants.Placement;
 
 import com.google.gwt.dom.client.Document;
@@ -74,7 +75,7 @@ public class TooltipHelpBlock extends Tooltip {
             }
         };
         helpBlock.getElement().getStyle().setPaddingLeft(0, Unit.PX);
-        helpBlock.setIconType(IconTypeBrands.EXCLAMATION_TRIANGLE);
+        helpBlock.setIconType(IconTypeRegular.EXCLAMATION_TRIANGLE);
         setWidget(helpBlock);
     }
 
