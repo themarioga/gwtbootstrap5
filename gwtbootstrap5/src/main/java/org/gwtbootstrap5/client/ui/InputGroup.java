@@ -27,12 +27,12 @@ import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
 
 /**
- * Input group parent element of {@link InputGroupAddon}.
+ * Input group parent element of {@link InputGroupAppend}.
  *
  * @author Sven Jacobs
  * @author Joshua Godi
  * @author Tercio Gaudencio Filho (terciofilho [at] gmail.com)
- * @see InputGroupAddon
+ * @see InputGroupAppend
  */
 public class InputGroup extends FlowPanel implements HasSize<InputGroupSize> {
 

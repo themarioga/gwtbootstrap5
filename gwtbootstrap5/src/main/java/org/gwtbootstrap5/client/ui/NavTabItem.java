@@ -45,8 +45,8 @@ import java.util.List;
  * <pre>
  * {@code
  * <b:NavTabs>
- *    <b:TabListItem/>
- *    <b:TabListItem/>
+ *    <b:NavTabItem/>
+ *    <b:NavTabItem/>
  * </b:NavTabs>
  * }
  * </pre>
