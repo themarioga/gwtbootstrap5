@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,9 +107,6 @@ public class Modal extends Div implements IsClosable {
         super();
 
         setStyleName(Styles.MODAL);
-        
-        // Set the z-index to match bootstrap's .modal
-        getElement().getStyle().setZIndex(1050);
 
         content.add(header);
         dialog.add(content);

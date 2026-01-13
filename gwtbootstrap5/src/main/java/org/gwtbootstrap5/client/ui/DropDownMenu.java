@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap5.client.ui.base.HasPull;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.Attributes;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.constants.Styles;
@@ -35,10 +35,10 @@ import org.gwtbootstrap5.client.ui.html.UnorderedList;
  * @author Sven Jacobs
  * @see ButtonGroup
  */
-public class DropDownMenu extends UnorderedList implements HasPull {
+public class DropDownMenu extends UnorderedList implements HasFloat {
     private static final String MENU = "menu";
 
-    private final PullMixin<DropDownMenu> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<DropDownMenu> floatMixin = new FloatMixin<>(this);
 
     public DropDownMenu() {
         super();
@@ -48,13 +48,13 @@ public class DropDownMenu extends UnorderedList implements HasPull {
     }
 
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
     public void setDark(final boolean dark) {

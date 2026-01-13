@@ -234,21 +234,21 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
      */
     protected void createOptions(Element e, boolean animation, boolean html, String selector,
             String trigger, int showDelay, int hideDelay, String container, String template) {
-        e.setAttribute("data-toggle", "tooltip");
+        e.setAttribute("data-bs-toggle", "tooltip");
 
-        e.setAttribute("data-animation", Boolean.toString(animation));
+        e.setAttribute("data-bs-animation", Boolean.toString(animation));
         if (container != null) {
-            e.setAttribute("data-container", container);
+            e.setAttribute("data-bs-container", container);
         }
-        e.setAttribute("data-delay", "{ \"show\": " + showDelay + ", \"hide\": " + hideDelay + " }");
-        e.setAttribute("data-html", Boolean.toString(html));
-        e.setAttribute("data-placement", getPlacementCssName());
+        e.setAttribute("data-bs-delay", "{ \"show\": " + showDelay + ", \"hide\": " + hideDelay + " }");
+        e.setAttribute("data-bs-html", Boolean.toString(html));
+        e.setAttribute("data-bs-placement", getPlacementCssName());
         if (selector != null) {
-            e.setAttribute("data-selector", selector);
+            e.setAttribute("data-bs-selector", selector);
         }
-        e.setAttribute("data-template", template);
-        e.setAttribute("data-title", getTitle());
-        e.setAttribute("data-trigger", trigger);
+        e.setAttribute("data-bs-template", template);
+        e.setAttribute("data-bs-title", getTitle());
+        e.setAttribute("data-bs-trigger", trigger);
     }
     
     /**
@@ -593,7 +593,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setIsAnimated(final boolean isAnimated) {
         this.isAnimated = isAnimated;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-animation", String.valueOf(isAnimated));
+            getWidget().getElement().setAttribute("data-bs-animation", String.valueOf(isAnimated));
         }
     }
 
@@ -602,7 +602,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setContainer(final String container) {
         this.container = container;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-container", container);
+            getWidget().getElement().setAttribute("data-bs-container", container);
         }
     }
 
@@ -629,7 +629,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setIsHtml(final boolean isHTML) {
         this.isHTML = isHTML;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-html", String.valueOf(isHTML));
+            getWidget().getElement().setAttribute("data-bs-html", String.valueOf(isHTML));
         }
 
     }
@@ -639,7 +639,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setPlacement(final Placement placement) {
         this.placement = placement;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-placement", getPlacementCssName());
+            getWidget().getElement().setAttribute("data-bs-placement", getPlacementCssName());
         }
     }
 
@@ -651,7 +651,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setSelector(String selector) {
         this.selector = selector;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-selector", selector);
+            getWidget().getElement().setAttribute("data-bs-selector", selector);
         }
     }
 
@@ -666,7 +666,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setAlternateTemplate(String alternateTemplate) {
         this.alternateTemplate = alternateTemplate;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-template", prepareTemplate());
+            getWidget().getElement().setAttribute("data-bs-template", prepareTemplate());
         }
     }
 
@@ -700,7 +700,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     public void setTrigger(final Trigger trigger) {
         this.trigger = trigger;
         if (initialized) {
-            getWidget().getElement().setAttribute("data-trigger", trigger == null ? Trigger.HOVER.getCssName() : trigger.getCssName());
+            getWidget().getElement().setAttribute("data-bs-trigger", trigger == null ? Trigger.HOVER.getCssName() : trigger.getCssName());
         }
     }
 

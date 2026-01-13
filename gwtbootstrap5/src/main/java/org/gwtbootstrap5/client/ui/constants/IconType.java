@@ -42,6 +42,8 @@ public interface IconType extends Type, Style.HasCssName {
     }
 
     static IconType fromIconType(final String enumName) {
+        if (enumName == null) return null;
+
         IconType type = EnumHelper.fromEnumName(enumName, IconTypeSolid.class, null);
         if (type == null) EnumHelper.fromEnumName(enumName, IconTypeRegular.class, null);
         if (type == null) EnumHelper.fromEnumName(enumName, IconTypeBrands.class, null);
@@ -50,6 +52,8 @@ public interface IconType extends Type, Style.HasCssName {
     }
 
     static IconType fromStyleName(final String styleName) {
+        if (styleName == null) return null;
+
         IconType type = EnumHelper.fromStyleName(styleName, IconTypeSolid.class, null);
         if (type == null) EnumHelper.fromStyleName(styleName, IconTypeRegular.class, null);
         if (type == null) EnumHelper.fromStyleName(styleName, IconTypeBrands.class, null);

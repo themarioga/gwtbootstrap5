@@ -20,6 +20,7 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
+import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.html.Div;
 
 public class ToastContainer extends Div {
@@ -27,7 +28,7 @@ public class ToastContainer extends Div {
     public ToastContainer() {
         super();
 
-        getElement().setClassName("toast-container");
+        getElement().setClassName(Styles.TOAST_CONTAINER);
     }
 
 }

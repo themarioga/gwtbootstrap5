@@ -143,7 +143,7 @@ public class Popover extends AbstractTooltip {
      * Create the popover.
      */
     private void popover(Element e, String content) {
-        e.setAttribute("data-content", content);
+        e.setAttribute("data-bs-content", content);
         JQuery.jQuery(e).popover();
     }
 

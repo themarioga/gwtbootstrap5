@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui.constants;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,7 +198,7 @@ public final class Styles {
     public static final String VISUALLY_HIDDEN_FOCUSABLE = "visually-hidden-focusable";
 
     public static final String TAB_CONTENT = "tab-content";
-    public static final String TAB_PANE = "tab-pane";
+    public static final String TAB_PANEL = "tab-pane";
 
     public static final String TABLE = "table";
 

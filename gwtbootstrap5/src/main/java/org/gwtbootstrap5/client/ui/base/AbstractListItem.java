@@ -21,10 +21,9 @@ package org.gwtbootstrap5.client.ui.base;
  */
 
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap5.client.ui.base.mixin.ActiveMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.constants.Styles;
@@ -41,10 +40,10 @@ import com.google.gwt.user.client.ui.HasEnabled;
  * @see org.gwtbootstrap5.client.ui.AnchorListItem
  * @see org.gwtbootstrap5.client.ui.ListDropDown
  */
-public abstract class AbstractListItem extends ComplexWidget implements HasEnabled, HasPull,
+public abstract class AbstractListItem extends ComplexWidget implements HasEnabled, HasFloat,
         HasResponsiveness, HasId {
 
-    private final PullMixin<AbstractListItem> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<AbstractListItem> floatMixin = new FloatMixin<>(this);
     private final IdMixin<AbstractListItem> idMixin = new IdMixin<>(this);
     private final EnabledMixin<AbstractListItem> enabledMixin = new EnabledMixin<>(this);
 
@@ -63,13 +62,13 @@ public abstract class AbstractListItem extends ComplexWidget implements HasEnabl
     }
 
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
 

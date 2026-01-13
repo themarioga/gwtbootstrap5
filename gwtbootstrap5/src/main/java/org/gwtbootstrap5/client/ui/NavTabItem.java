@@ -81,7 +81,7 @@ public class NavTabItem extends AnchorListItem implements HasDataTarget {
 
     public NavTabItem(final String text, final IconType iconType) {
         this(text);
-        setIconType(iconType);
+        setIcon(iconType);
 
         addStyleName(Styles.NAV_ITEM);
     }

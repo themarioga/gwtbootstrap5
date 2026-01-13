@@ -22,12 +22,12 @@ package org.gwtbootstrap5.client.ui;
 
 import org.gwtbootstrap5.client.ui.base.HasFormValue;
 import org.gwtbootstrap5.client.ui.base.HasId;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.impl.SimpleCheckBoxImpl;
@@ -46,7 +46,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * A simple checkbox widget, with no label.
  */
 public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox implements HasResponsiveness, HasId,
-        HasPull, HasFormValue, HasChangeHandlers {
+        HasFloat, HasFormValue, HasChangeHandlers {
 
     private static final SimpleCheckBoxImpl impl = GWT.create(SimpleCheckBoxImpl.class);
 
@@ -73,7 +73,7 @@ public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox
     }
 
     private final IdMixin<SimpleCheckBox> idMixin = new IdMixin<>(this);
-    private final PullMixin<SimpleCheckBox> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<SimpleCheckBox> floatMixin = new FloatMixin<>(this);
     private final EnabledMixin<SimpleCheckBox> enabledMixin = new EnabledMixin<>(this);
 
     /**
@@ -146,16 +146,16 @@ public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
     @Override

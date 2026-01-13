@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,17 +20,9 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
-import java.util.List;
-
-import org.gwtbootstrap5.client.ui.base.HasDataTarget;
-import org.gwtbootstrap5.client.ui.base.HasPull;
-import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
-import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
-import org.gwtbootstrap5.client.ui.constants.*;
-
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtbootstrap5.client.ui.constants.Attributes;
+import org.gwtbootstrap5.client.ui.constants.Styles;
+import org.gwtbootstrap5.client.ui.constants.Toggle;
 import org.gwtbootstrap5.client.ui.html.Span;
 
 /**
@@ -40,99 +32,54 @@ import org.gwtbootstrap5.client.ui.html.Span;
  * @author Joshua Godi
  * @see NavbarCollapse
  */
-public class NavbarCollapseButton extends Composite implements HasDataTarget, HasResponsiveness, HasPull {
-
-    private final PullMixin<NavbarCollapseButton> pullMixin = new PullMixin<NavbarCollapseButton>(this);
-    private final Button button;
+public class NavbarCollapseButton extends Button {
 
     public NavbarCollapseButton() {
         super();
 
-        button = new Button();
-        button.setStyleName(Styles.NAVBAR_TOGGLER);
-        button.setDataToggle(Toggle.COLLAPSE);
+        addStyleName(Styles.NAVBAR_COLLAPSE);
+        setDataToggle(Toggle.COLLAPSE);
 
         Span navbarIcon = new Span();
         navbarIcon.setStyleName(Styles.NAVBAR_TOGGLER_ICON);
-        button.add(navbarIcon);
-
-        initWidget(button);
-    }
-
-    @Override
-    public void setDataTargetWidgets(final List<Widget> widgets) {
-        button.setDataTargetWidgets(widgets);
-    }
-
-    @Override
-    public void setDataTargetWidget(final Widget widget) {
-        button.setDataTargetWidget(widget);
-    }
-
-    @Override
-    public void setDataTarget(final String dataTarget) {
-        button.setDataTarget(dataTarget);
-    }
-
-    @Override
-    public String getDataTarget() {
-        return button.getDataTarget();
+        add(navbarIcon);
     }
 
     public void setAriaControls(final String ariaControls) {
         if (ariaControls != null) {
-            button.getElement().setAttribute(Attributes.ARIA_CONTROLS, ariaControls);
+            getElement().setAttribute(Attributes.ARIA_CONTROLS, ariaControls);
         } else {
-            button.getElement().removeAttribute(Attributes.ARIA_CONTROLS);
+            getElement().removeAttribute(Attributes.ARIA_CONTROLS);
         }
     }
 
     public String getAriaControls() {
-        return button.getElement().getAttribute(Attributes.ARIA_CONTROLS);
+        return getElement().getAttribute(Attributes.ARIA_CONTROLS);
     }
 
     public void setAriaExpanded(final String ariaExpanded) {
         if (ariaExpanded != null) {
-            button.getElement().setAttribute(Attributes.ARIA_EXPANDED, ariaExpanded);
+            getElement().setAttribute(Attributes.ARIA_EXPANDED, ariaExpanded);
         } else {
-            button.getElement().removeAttribute(Attributes.ARIA_EXPANDED);
+            getElement().removeAttribute(Attributes.ARIA_EXPANDED);
         }
     }
 
     public String getAriaExpanded() {
-        return button.getElement().getAttribute(Attributes.ARIA_EXPANDED);
+        return getElement().getAttribute(Attributes.ARIA_EXPANDED);
     }
 
     public void setAriaLabel(final String ariaLabel) {
         if (ariaLabel != null) {
-            button.getElement().setAttribute(Attributes.ARIA_LABEL, ariaLabel);
+            getElement().setAttribute(Attributes.ARIA_LABEL, ariaLabel);
         } else {
-            button.getElement().removeAttribute(Attributes.ARIA_LABEL);
+            getElement().removeAttribute(Attributes.ARIA_LABEL);
         }
     }
 
     public String getAriaLabel() {
-        return button.getElement().getAttribute(Attributes.ARIA_LABEL);
+        return getElement().getAttribute(Attributes.ARIA_LABEL);
     }
 
-    @Override
-    public void setVisibleOn(final DeviceSize deviceSize) {
-        StyleHelper.setVisibleOn(this, deviceSize);
-    }
-
-    @Override
-    public void setHiddenOn(final DeviceSize deviceSize) {
-        StyleHelper.setHiddenOn(this, deviceSize);
-    }
-
-    @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
-    }
-
-    @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
-    }
 
 }

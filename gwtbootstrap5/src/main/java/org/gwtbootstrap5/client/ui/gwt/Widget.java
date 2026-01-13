@@ -21,18 +21,18 @@ package org.gwtbootstrap5.client.ui.gwt;
  */
 
 import org.gwtbootstrap5.client.ui.base.HasId;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 
-public class Widget extends com.google.gwt.user.client.ui.Widget implements HasResponsiveness, HasId, HasPull {
+public class Widget extends com.google.gwt.user.client.ui.Widget implements HasResponsiveness, HasId, HasFloat {
 
     private final IdMixin<Widget> idMixin = new IdMixin<Widget>(this);
-    private final PullMixin<Widget> pullMixin = new PullMixin<Widget>(this);
+    private final FloatMixin<Widget> floatMixin = new FloatMixin<Widget>(this);
 
     /**
      * {@inheritDoc}
@@ -70,16 +70,16 @@ public class Widget extends com.google.gwt.user.client.ui.Widget implements HasR
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
 }

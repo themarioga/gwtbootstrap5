@@ -22,12 +22,12 @@ package org.gwtbootstrap5.client.ui;
 
 import org.gwtbootstrap5.client.ui.base.HasFormValue;
 import org.gwtbootstrap5.client.ui.base.HasId;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.impl.SimpleRadioButtonImpl;
@@ -47,7 +47,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * A simple radio button widget, with no label.
  */
 public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadioButton implements HasResponsiveness,
-        HasId, HasPull, HasFormValue, HasChangeHandlers {
+        HasId, HasFloat, HasFormValue, HasChangeHandlers {
 
     private static final SimpleRadioButtonImpl impl = GWT.create(SimpleRadioButtonImpl.class);
 
@@ -74,7 +74,7 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
     }
 
     private final IdMixin<SimpleRadioButton> idMixin = new IdMixin<>(this);
-    private final PullMixin<SimpleRadioButton> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<SimpleRadioButton> floatMixin = new FloatMixin<>(this);
     private final EnabledMixin<SimpleRadioButton> enabledMixin = new EnabledMixin<>(this);
 
     /**
@@ -155,16 +155,16 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
     @Override

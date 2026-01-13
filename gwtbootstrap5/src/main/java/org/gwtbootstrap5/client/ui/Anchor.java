@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ import org.gwtbootstrap5.client.ui.base.HasDataToggle;
 import org.gwtbootstrap5.client.ui.base.HasHref;
 import org.gwtbootstrap5.client.ui.base.HasIcon;
 import org.gwtbootstrap5.client.ui.base.HasIconPosition;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasTarget;
 import org.gwtbootstrap5.client.ui.base.HasTargetHistoryToken;
 import org.gwtbootstrap5.client.ui.base.mixin.AttributeMixin;
@@ -54,7 +54,7 @@ import org.gwtbootstrap5.client.ui.base.mixin.DataToggleMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.FocusableMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.IconTextMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.*;
 
 import java.util.List;
@@ -68,9 +68,9 @@ import java.util.List;
  * @author Drew Spencer
  */
 public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandlers, HasDoubleClickHandlers, HasHref, HasDataToggle, HasDataParent,
-        HasTargetHistoryToken, HasHTML, HasIcon, HasIconPosition, Focusable, HasDataTarget, HasTarget, HasPull, HasBadge {
+        HasTargetHistoryToken, HasHTML, HasIcon, HasIconPosition, Focusable, HasDataTarget, HasTarget, HasFloat, HasBadge {
 
-    private final PullMixin<Anchor> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<Anchor> floatMixin = new FloatMixin<>(this);
     private final DataToggleMixin<Anchor> toggleMixin = new DataToggleMixin<>(this);
     private final DataParentMixin<Anchor> parentMixin = new DataParentMixin<>(this);
     private final IconTextMixin<Anchor> iconTextMixin = new IconTextMixin<>(this);
@@ -155,24 +155,16 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
      * {@inheritDoc}
      */
     @Override
-    public String getIcon() {
+    public void setIcon(final IconType iconType) {
+        iconTextMixin.setIcon(iconType);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public IconType getIcon() {
         return iconTextMixin.getIcon();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void setIconType(final IconType iconType) {
-        iconTextMixin.setIconType(iconType);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public IconType getIconType() {
-        return iconTextMixin.getIconType();
     }
 
     /**
@@ -479,16 +471,16 @@ public class Anchor extends ComplexWidget implements HasEnabled, HasClickHandler
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
     /**

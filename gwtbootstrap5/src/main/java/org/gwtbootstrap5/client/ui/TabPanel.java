@@ -38,8 +38,8 @@ import org.gwtbootstrap5.client.ui.html.Div;
  * <pre>
  * {@code
  * <b:TabContent>
- *    <b:TabPane/>
- *    <b:TabPane/>
+ *    <b:TabPanel/>
+ *    <b:TabPanel/>
  * </b:TabContent>
  * }
  * </pre>
@@ -47,17 +47,17 @@ import org.gwtbootstrap5.client.ui.html.Div;
  * @author Joshua Godi
  * @see org.gwtbootstrap5.client.ui.TabContent
  */
-public class TabPane extends Div implements HasActive {
+public class TabPanel extends Div implements HasActive {
 
-    private final ActiveMixin<TabPane> activeMixin = new ActiveMixin<>(this);
+    private final ActiveMixin<TabPanel> activeMixin = new ActiveMixin<>(this);
 
     /**
      * Creates the default widget with the default styles
      */
-    public TabPane() {
+    public TabPanel() {
         super();
 
-        setStyleName(Styles.TAB_PANE);
+        setStyleName(Styles.TAB_PANEL);
         RoleHelper.setRole(getElement(), Roles.TABPANEL);
     }
 
@@ -76,7 +76,7 @@ public class TabPane extends Div implements HasActive {
     }
 
     /**
-     * When using fade, but set the first tabpane with in="true" to work properly
+     * When using fade, but set the first tabpanel with in="true" to work properly
      *
      * @param show whether the first tab pane will be faded properly
      */

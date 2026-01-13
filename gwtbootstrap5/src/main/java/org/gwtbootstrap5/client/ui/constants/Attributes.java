@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui.constants;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,22 +25,25 @@ package org.gwtbootstrap5.client.ui.constants;
  */
 public class Attributes {
 
-    public static final String DATA_BACKDROP = "data-backdrop";
-    public static final String DATA_DISMISS = "data-dismiss";
-    public static final String DATA_KEYBOARD = "data-keyboard";
-    public static final String DATA_LOADING_TEXT = "data-loading-text";
-    public static final String DATA_SPY = "data-spy";
-    public static final String DATA_TARGET = "data-target";
-    public static final String DATA_TOGGLE = "data-toggle";
-    public static final String DATA_PARENT = "data-parent";
-    public static final String DATA_SLIDE_TO = "data-slide-to";
-    public static final String DATA_RIDE = "data-ride";
-    public static final String DATA_SLIDE = "data-slide";
+    public static final String DATA_BACKDROP = "data-bs-backdrop";
+    public static final String DATA_DISMISS = "data-bs-dismiss";
+    public static final String DATA_KEYBOARD = "data-bs-keyboard";
+    public static final String DATA_LOADING_TEXT = "data-bs-loading-text";
+    public static final String DATA_SPY = "data-bs-spy";
+    public static final String DATA_TARGET = "data-bs-target";
+    public static final String DATA_TOGGLE = "data-bs-toggle";
+    public static final String DATA_PARENT = "data-bs-parent";
+    public static final String DATA_SLIDE_TO = "data-bs-slide-to";
+    public static final String DATA_RIDE = "data-bs-ride";
+    public static final String DATA_SLIDE = "data-bs-slide";
 
+    public static final String ARIA_ATOMIC = "aria-atomic";
     public static final String ARIA_CONTROLS = "aria-controls";
     public static final String ARIA_EXPANDED = "aria-expanded";
+    public static final String ARIA_HIDDEN = "aria-hidden";
     public static final String ARIA_LABEL = "aria-label";
     public static final String ARIA_LABELLEDBY = "aria-labelledby";
+    public static final String ARIA_LIVE = "aria-live";
 
     public static final String FOR = "for";
 

@@ -22,7 +22,7 @@ package org.gwtbootstrap5.client.ui.base;
 
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.DataToggleMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.*;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
@@ -39,9 +39,9 @@ import com.google.gwt.user.client.ui.Widget;
  * @see org.gwtbootstrap5.client.ui.VerticalButtonGroup
  */
 public abstract class AbstractButtonGroup extends FlowPanel implements HasName, HasSize<ButtonGroupSize>,
-        HasDataToggle, HasPull, HasResponsiveness {
+        HasDataToggle, HasFloat, HasResponsiveness {
 
-    private final PullMixin<AbstractButtonGroup> pullMixin = new PullMixin<>(this);
+    private final FloatMixin<AbstractButtonGroup> floatMixin = new FloatMixin<>(this);
     private final DataToggleMixin<AbstractButtonGroup> toggleMixin = new DataToggleMixin<>(this);
     private String name;
 
@@ -101,13 +101,13 @@ public abstract class AbstractButtonGroup extends FlowPanel implements HasName, 
     }
 
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
     @Override

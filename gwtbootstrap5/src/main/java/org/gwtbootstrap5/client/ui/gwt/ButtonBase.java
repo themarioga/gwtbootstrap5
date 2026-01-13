@@ -21,22 +21,22 @@ package org.gwtbootstrap5.client.ui.gwt;
  */
 
 import org.gwtbootstrap5.client.ui.base.HasId;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.EnabledMixin;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 
 import com.google.gwt.dom.client.Element;
 
 public abstract class ButtonBase extends com.google.gwt.user.client.ui.ButtonBase implements HasResponsiveness, HasId,
-        HasPull {
+        HasFloat {
 
     private final IdMixin<ButtonBase> idMixin = new IdMixin<ButtonBase>(this);
-    private final PullMixin<ButtonBase> pullMixin = new PullMixin<ButtonBase>(this);
+    private final FloatMixin<ButtonBase> floatMixin = new FloatMixin<ButtonBase>(this);
     private final EnabledMixin<ButtonBase> enabledMixin = new EnabledMixin<ButtonBase>(this);
 
     protected ButtonBase(Element elem) {
@@ -89,16 +89,16 @@ public abstract class ButtonBase extends com.google.gwt.user.client.ui.ButtonBas
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
 }

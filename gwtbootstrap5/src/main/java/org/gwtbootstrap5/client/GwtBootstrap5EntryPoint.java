@@ -71,7 +71,6 @@ public class GwtBootstrap5EntryPoint implements EntryPoint {
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
         }
-
     }
     
 }

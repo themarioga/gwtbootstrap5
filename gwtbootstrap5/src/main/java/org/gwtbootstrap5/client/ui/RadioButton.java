@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -274,17 +274,12 @@ public class RadioButton extends Radio implements HasActive,
     }
 
     @Override
-    public String getIcon() {
-        return getActualIcon().getType().getName();
-    }
-
-    @Override
-    public void setIconType(IconType iconType) {
+    public void setIcon(IconType iconType) {
         getActualIcon().setType(iconType);
     }
 
     @Override
-    public IconType getIconType() {
+    public IconType getIcon() {
         return getActualIcon().getType();
     }
 

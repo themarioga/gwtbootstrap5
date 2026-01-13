@@ -21,11 +21,11 @@ package org.gwtbootstrap5.client.ui.gwt;
  */
 
 import org.gwtbootstrap5.client.ui.base.HasId;
-import org.gwtbootstrap5.client.ui.base.HasPull;
+import org.gwtbootstrap5.client.ui.base.HasFloat;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.constants.Styles;
@@ -33,10 +33,10 @@ import org.gwtbootstrap5.client.ui.constants.Styles;
 import com.google.gwt.dom.client.Element;
 
 public abstract class FocusWidget extends com.google.gwt.user.client.ui.FocusWidget implements HasResponsiveness,
-        HasId, HasPull {
+        HasId, HasFloat {
 
     private final IdMixin<FocusWidget> idMixin = new IdMixin<FocusWidget>(this);
-    private final PullMixin<FocusWidget> pullMixin = new PullMixin<FocusWidget>(this);
+    private final FloatMixin<FocusWidget> floatMixin = new FloatMixin<FocusWidget>(this);
 
     public FocusWidget(Element elem) {
         super(elem);
@@ -88,16 +88,16 @@ public abstract class FocusWidget extends com.google.gwt.user.client.ui.FocusWid
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 
 }

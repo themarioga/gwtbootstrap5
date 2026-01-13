@@ -1,4 +1,4 @@
-package org.gwtbootstrap5.client.ui.base.modal;
+package org.gwtbootstrap5.client.ui;
 
 /*
  * #%L
@@ -20,17 +20,33 @@ package org.gwtbootstrap5.client.ui.base.modal;
  * #L%
  */
 
+import com.google.gwt.dom.client.Document;
+import org.gwtbootstrap5.client.ui.base.AbstractDropDown;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 
-import com.google.gwt.user.client.ui.FlowPanel;
-
 /**
+ * Dropdown parent container.
+ * <p/>
+ * <h3>UiBinder example</h3>
+ * <pre>{@code
+ *     <b:DropDown>
+ *         <b:Anchor toggle="DROPDOWN">Click to toggle dropdown</b:Anchor>
+ *         <b:DropDownMenu>
+ *             <b:AnchorListItem>Action 1</b:AnchorListItem>
+ *             <b:AnchorListItem>Action 2</b:AnchorListItem>
+ *         </b:DropDownMenu>
+ *     </b:DropDown>
+ * }</pre>
+ *
  * @author Sven Jacobs
- * @see org.gwtbootstrap5.client.ui.Modal
+ * @see DropDownMenu
  */
-public class ModalContent extends FlowPanel {
+public class NavbarDropdown extends ListItem {
 
-    public ModalContent() {
-        setStyleName(Styles.MODAL_CONTENT);
+    public NavbarDropdown() {
+        super();
+
+        setStyleName(Styles.NAV_ITEM);
+        addStyleName(Styles.DROPDOWN);
     }
 }

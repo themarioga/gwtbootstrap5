@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,18 +217,13 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
     }
 
     @Override
-    public String getIcon() {
+    public void setIcon(IconType iconType) {
+        iconTextMixin.setIcon(iconType);
+    }
+
+    @Override
+    public IconType getIcon() {
         return iconTextMixin.getIcon();
-    }
-
-    @Override
-    public void setIconType(IconType iconType) {
-        iconTextMixin.setIconType(iconType);
-    }
-
-    @Override
-    public IconType getIconType() {
-        return iconTextMixin.getIconType();
     }
 
     @Override

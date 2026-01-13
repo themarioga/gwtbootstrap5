@@ -21,10 +21,13 @@ package org.gwtbootstrap5.client.ui;
  */
 
 import org.gwtbootstrap5.client.ui.base.HasActive;
+import org.gwtbootstrap5.client.ui.base.HasRole;
+import org.gwtbootstrap5.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.ActiveMixin;
+import org.gwtbootstrap5.client.ui.constants.Attributes;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 
-public class AnchorNavLink extends Anchor implements HasActive {
+public class AnchorNavLink extends Anchor implements HasActive, HasRole {
 
     private final ActiveMixin<AnchorNavLink> activeMixin = new ActiveMixin<>(this);
 
@@ -42,4 +45,13 @@ public class AnchorNavLink extends Anchor implements HasActive {
         return activeMixin.isActive();
     }
 
+    @Override
+    public void setRole(String role) {
+        RoleHelper.setRole(getElement(), role);
+    }
+
+    @Override
+    public String getRole() {
+        return RoleHelper.getRole(getElement());
+    }
 }

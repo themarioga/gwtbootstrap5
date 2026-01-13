@@ -22,7 +22,7 @@ package org.gwtbootstrap5.client.ui.base;
 
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.base.mixin.IdMixin;
-import org.gwtbootstrap5.client.ui.base.mixin.PullMixin;
+import org.gwtbootstrap5.client.ui.base.mixin.FloatMixin;
 import org.gwtbootstrap5.client.ui.constants.DeviceSize;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 import org.gwtbootstrap5.client.ui.html.Text;
@@ -38,9 +38,9 @@ import com.google.gwt.user.client.ui.Widget;
  *
  * @author Sven Jacobs
  */
-public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiveness, HasInlineStyle, HasPull {
+public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiveness, HasInlineStyle, HasFloat {
     private final IdMixin<ComplexWidget> idMixin = new IdMixin<ComplexWidget>(this);
-    private final PullMixin<ComplexWidget> pullMixin = new PullMixin<ComplexWidget>(this);
+    private final FloatMixin<ComplexWidget> floatMixin = new FloatMixin<ComplexWidget>(this);
 
     /**
      * {@inheritDoc}
@@ -241,15 +241,15 @@ public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiven
      * {@inheritDoc}
      */
     @Override
-    public void setPull(final FloatCSS aFloatCSS) {
-        pullMixin.setPull(aFloatCSS);
+    public void setFloat(final FloatCSS aFloatCSS) {
+        floatMixin.setFloat(aFloatCSS);
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public FloatCSS getPull() {
-        return pullMixin.getPull();
+    public FloatCSS getFloat() {
+        return floatMixin.getFloat();
     }
 }

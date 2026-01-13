@@ -42,7 +42,7 @@ import com.google.gwt.user.client.ui.Widget;
  * </pre>
  *
  * @author Joshua Godi
- * @see org.gwtbootstrap5.client.ui.TabPane
+ * @see TabPanel
  */
 public class TabContent extends Div {
 
@@ -59,11 +59,11 @@ public class TabContent extends Div {
      * We override the add to make sure only children of type TabPane can be added!
      *
      * @param child widget to be added
-     * @see org.gwtbootstrap5.client.ui.TabPane
+     * @see TabPanel
      */
     @Override
     public void add(final Widget child) {
-        if (!(child instanceof TabPane)) {
+        if (!(child instanceof TabPanel)) {
             throw new IllegalArgumentException("TabContent must have children of type TabPane.");
         }
         super.add(child);

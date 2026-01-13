@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui.base;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,14 +84,8 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
-    public String getIcon() {
+    public IconType getIcon() {
         return anchor.getIcon();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public IconType getIconType() {
-        return anchor.getIconType();
     }
 
     /** {@inheritDoc} */
@@ -225,8 +219,8 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
 
     /** {@inheritDoc} */
     @Override
-    public void setIconType(final IconType iconType) {
-        anchor.setIconType(iconType);
+    public void setIcon(final IconType iconType) {
+        anchor.setIcon(iconType);
     }
 
     /** {@inheritDoc} */
@@ -341,4 +335,9 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
     public boolean isDisabled() {
         return anchor.getStyleName().contains(Styles.DISABLED);
     }
+
+    public AnchorNavLink getAnchor() {
+        return anchor;
+    }
+
 }

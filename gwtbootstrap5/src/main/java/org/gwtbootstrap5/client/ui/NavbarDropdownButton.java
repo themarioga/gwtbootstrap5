@@ -20,41 +20,46 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap5.client.ui.base.HasRole;
-import org.gwtbootstrap5.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap5.client.ui.constants.Attributes;
 import org.gwtbootstrap5.client.ui.constants.Styles;
-import org.gwtbootstrap5.client.ui.html.UnorderedList;
+import org.gwtbootstrap5.client.ui.constants.Toggle;
+import org.gwtbootstrap5.client.ui.html.Span;
 
 /**
- * Container for {@link AnchorListItem} or {@link ListDropDown} within {@link Navbar}.
+ * Special button to toggle collapsible area of {@link Navbar}.
  *
  * @author Sven Jacobs
- * @see Navbar
- * @see AnchorListItem
- * @see ListDropDown
+ * @author Joshua Godi
+ * @see NavbarCollapse
  */
-public class NavbarNav extends UnorderedList implements HasRole {
+public class NavbarDropdownButton extends Button {
 
-    public NavbarNav() {
+    public NavbarDropdownButton() {
         super();
 
-        setStyleName(Styles.NAV);
-        addStyleName(Styles.NAVBAR_NAV);
+        addStyleName(Styles.NAV_LINK);
+        addStyleName(Styles.DROPDOWN_TOGGLE);
+        setDataToggle(Toggle.DROPDOWN);
     }
 
-    @Override
-    public void setRole(final String role) {
-        RoleHelper.setRole(getElement(), role);
+    public void setAriaExpanded(final String ariaExpanded) {
+        if (ariaExpanded != null) {
+            getElement().setAttribute(Attributes.ARIA_EXPANDED, ariaExpanded);
+        } else {
+            getElement().removeAttribute(Attributes.ARIA_EXPANDED);
+        }
     }
 
-    @Override
-    public String getRole() {
-        return RoleHelper.getRole(getElement());
+    public String getAriaExpanded() {
+        return getElement().getAttribute(Attributes.ARIA_EXPANDED);
     }
 
     public void setAriaLabel(final String ariaLabel) {
-        getElement().setAttribute(Attributes.ARIA_LABEL, ariaLabel);
+        if (ariaLabel != null) {
+            getElement().setAttribute(Attributes.ARIA_LABEL, ariaLabel);
+        } else {
+            getElement().removeAttribute(Attributes.ARIA_LABEL);
+        }
     }
 
     public String getAriaLabel() {

@@ -1,10 +1,10 @@
-package org.gwtbootstrap5.client.ui.base;
+package org.gwtbootstrap5.client.ui.base.mixin;
 
 /*
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,28 @@ package org.gwtbootstrap5.client.ui.base;
  * #L%
  */
 
+import org.gwtbootstrap5.client.ui.base.HasFloat;
+import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.constants.FloatCSS;
+
+import com.google.gwt.user.client.ui.UIObject;
 
 /**
  * @author Sven Jacobs
  */
-public interface HasPull {
-    void setPull(FloatCSS aFloatCSS);
+public class FloatMixin<T extends UIObject & HasFloat> extends AbstractMixin implements HasFloat {
 
-    FloatCSS getPull();
+    public FloatMixin(final T uiObject) {
+        super(uiObject);
+    }
+
+    @Override
+    public void setFloat(final FloatCSS aFloatCSS) {
+        StyleHelper.addUniqueEnumStyleName(uiObject, FloatCSS.class, aFloatCSS);
+    }
+
+    @Override
+    public FloatCSS getFloat() {
+        return FloatCSS.fromStyleName(uiObject.getStyleName());
+    }
 }

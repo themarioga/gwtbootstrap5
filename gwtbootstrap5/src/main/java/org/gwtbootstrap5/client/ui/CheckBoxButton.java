@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,6 @@ import org.gwtbootstrap5.client.ui.constants.*;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.i18n.client.HasDirection.Direction;
 import com.google.gwt.i18n.shared.DirectionEstimator;
@@ -57,20 +55,20 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     private Icon icon;
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      */
     public CheckBoxButton(SafeHtml label) {
         this(label.asString(), true);
     }
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param dir
      *            the text's direction. Note that {@code DEFAULT} means
      *            direction should be inherited from the widget's parent
@@ -82,14 +80,13 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     }
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public CheckBoxButton(SafeHtml label, DirectionEstimator directionEstimator) {
         this();
@@ -98,10 +95,10 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     }
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      */
     public CheckBoxButton(String label) {
         this();
@@ -109,10 +106,10 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     }
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param dir
      *            the text's direction. Note that {@code DEFAULT} means
      *            direction should be inherited from the widget's parent
@@ -128,11 +125,10 @@ public class CheckBoxButton extends CheckBox implements HasActive,
      * estimator.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public CheckBoxButton(String label, DirectionEstimator directionEstimator) {
         this();
@@ -141,10 +137,10 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     }
 
     /**
-     * Creates a check box button with the specified text label.
+     * Creates a checkbox button with the specified text label.
      *
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param asHTML
      *            <code>true</code> to treat the specified label as html
      */
@@ -178,14 +174,7 @@ public class CheckBoxButton extends CheckBox implements HasActive,
         // Use a ClickHandler since Bootstrap's jQuery does not trigger native
         // change events:
         // http://learn.jquery.com/events/triggering-event-handlers/
-        addClickHandler(new ClickHandler() {
-
-            @Override
-            public void onClick(ClickEvent event) {
-                ValueChangeEvent.fire(CheckBoxButton.this, getValue());
-            }
-
-        });
+        addClickHandler(event -> ValueChangeEvent.fire(CheckBoxButton.this, getValue()));
     }
 
     @Override
@@ -247,17 +236,12 @@ public class CheckBoxButton extends CheckBox implements HasActive,
     }
 
     @Override
-    public String getIcon() {
-        return getActualIcon().getType().getName();
-    }
-
-    @Override
-    public void setIconType(IconType iconType) {
+    public void setIcon(IconType iconType) {
         getActualIcon().setType(iconType);
     }
 
     @Override
-    public IconType getIconType() {
+    public IconType getIcon() {
         return getActualIcon().getType();
     }
 

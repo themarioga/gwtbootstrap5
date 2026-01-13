@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui.base.mixin;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,18 +86,13 @@ public class IconTextMixin<T extends ComplexWidget & HasText & HasIcon & HasIcon
     }
 
     @Override
-    public String getIcon() {
-        return iconType.getName();
-    }
-
-    @Override
-    public void setIconType(final IconType iconType) {
+    public void setIcon(final IconType iconType) {
         this.iconType = iconType;
         render();
     }
 
     @Override
-    public IconType getIconType() {
+    public IconType getIcon() {
         return icon == null ? null : icon.getType();
     }
 
