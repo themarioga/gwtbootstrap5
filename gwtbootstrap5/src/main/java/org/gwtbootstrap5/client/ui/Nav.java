@@ -21,6 +21,8 @@ package org.gwtbootstrap5.client.ui;
  */
 
 import org.gwtbootstrap5.client.ui.base.HasJustified;
+import org.gwtbootstrap5.client.ui.base.HasRole;
+import org.gwtbootstrap5.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.html.UnorderedList;
@@ -33,7 +35,7 @@ import org.gwtbootstrap5.client.ui.html.UnorderedList;
  * @see NavPills
  * @see Affix
  */
-public class Nav extends UnorderedList implements HasJustified {
+public class Nav extends UnorderedList implements HasJustified, HasRole {
 
     public Nav() {
         super();
@@ -67,4 +69,13 @@ public class Nav extends UnorderedList implements HasJustified {
         return StyleHelper.containsStyle(getStyleName(), Styles.FLEX_COLUMN);
     }
 
+    @Override
+    public void setRole(String role) {
+        RoleHelper.setRole(getElement(), role);
+    }
+
+    @Override
+    public String getRole() {
+        return RoleHelper.getRole(getElement());
+    }
 }
