@@ -35,7 +35,6 @@ public class CloseButton extends AbstractButton {
 
     public CloseButton() {
         setStyleName(Styles.CLOSE);
-        getElement().setInnerHTML("&times;");
     }
 
     @Override
