@@ -19,7 +19,7 @@
  */
 
 function _gwtbootstrap5_Create(parent, name, value) {
-    if (typeof parent[name] === 'undefined') parent[name] = value;
+    if (parent[name] === undefined) parent[name] = value;
 }
 
 _gwtbootstrap5_Create(this, "org", {});
@@ -92,3 +92,14 @@ _gwtbootstrap5_Create(org.gwtbootstrap5.client.GwtBootstrap5EntryPoint, "isjQuer
 function () {
     return (typeof window['jQuery'] !== 'undefined');
 });
+
+// URLEntryPoint
+_gwtbootstrap5_Create(org.gwtbootstrap5.client, "GwtBootstrap5URLEntryPoint", {});
+_gwtbootstrap5_Create(org.gwtbootstrap5.client.GwtBootstrap5URLEntryPoint, "isBootstrapLoaded",
+    function () {
+        return typeof window['jQuery'].fn.emulateTransitionEnd !== 'undefined';
+    });
+_gwtbootstrap5_Create(org.gwtbootstrap5.client.GwtBootstrap5URLEntryPoint, "isjQueryLoaded",
+    function () {
+        return (typeof window['jQuery'] !== 'undefined');
+    });
