@@ -22,9 +22,10 @@
     <public path="resource">
         <include name="css/*.css"/>
         <include name="js/*.js"/>
-        <include name="webfonts/*.woff2"/>
+        <include name="fonts/*.woff"/>
+        <include name="fonts/*.woff2"/>
     </public>
 
     <stylesheet src="css/bootstrap-5.3.8.min.cache.css"/>
-    <stylesheet src="css/font-awesome-7.0.1.min.cache.css"/>
+    <stylesheet src="css/bootstrap-icons-1.13.1.min.cache.css"/>
 </module>

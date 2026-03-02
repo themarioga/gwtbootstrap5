@@ -33,6 +33,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtbootstrap5.client.ui.util.IconUtil;
 
 /**
  * Simple put, an icon.
@@ -48,33 +49,26 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
         super();
 
         setElement(Document.get().createElement(ElementTags.I));
-        addStyleName(Styles.FONT_AWESOME_BASE);
     }
 
     public void setIcon(final String icon) {
-        IconType iconType = IconType.fromIconType(icon);
+        IconType iconType = IconUtil.getInstance().fromIconType(icon);
 
         setType(iconType);
     }
 
     public String getIcon() {
-        return IconType.fromStyleName(getStyleName()).getName();
+        return IconUtil.getInstance().fromStyleName(getStyleName()).getName();
     }
 
     @Override
     public void setType(final IconType type) {
-        if (type instanceof IconTypeBrands) {
-            StyleHelper.addUniqueEnumStyleName(this, IconTypeBrands.class, type);
-        } else if (type instanceof IconTypeSolid) {
-            StyleHelper.addUniqueEnumStyleName(this, IconTypeSolid.class, type);
-        } else if (type instanceof IconTypeRegular) {
-            StyleHelper.addUniqueEnumStyleName(this, IconTypeRegular.class, type);
-        }
+        IconUtil.getInstance().setType(this, type);
     }
 
     @Override
     public IconType getType() {
-        return IconType.fromStyleName(getStyleName());
+        return IconUtil.getInstance().fromStyleName(getStyleName());
     }
 
     public void setBorder(final boolean border) {

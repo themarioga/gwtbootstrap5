@@ -23,7 +23,7 @@ package org.gwtbootstrap5.client.ui;
 import org.gwtbootstrap5.client.ui.base.HasPaginationSize;
 import org.gwtbootstrap5.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap5.client.ui.constants.IconTypeSolid;
+import org.gwtbootstrap5.client.ui.constants.IconTypeBI;
 import org.gwtbootstrap5.client.ui.constants.PaginationSize;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.html.UnorderedList;
@@ -60,14 +60,14 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
 
     public AnchorListItem addPreviousLink() {
         final AnchorListItem listItem = new AnchorListItem();
-        listItem.setIcon(IconTypeSolid.ANGLE_DOUBLE_LEFT);
+        listItem.setIcon(IconTypeBI.CHEVRON_DOUBLE_LEFT);
         insert(listItem, 0);
         return listItem;
     }
 
     public AnchorListItem addNextLink() {
         final AnchorListItem listItem = new AnchorListItem();
-        listItem.setIcon(IconTypeSolid.ANGLE_DOUBLE_RIGHT);
+        listItem.setIcon(IconTypeBI.CHEVRON_DOUBLE_RIGHT);
         add(listItem);
         return listItem;
     }

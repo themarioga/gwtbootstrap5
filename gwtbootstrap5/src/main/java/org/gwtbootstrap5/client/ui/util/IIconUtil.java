@@ -1,10 +1,10 @@
-package org.gwtbootstrap5.client.ui.constants;
+package org.gwtbootstrap5.client.ui.util;
 
-/*
+/*-
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 - 2024 GwtBootstrap5
+ * Copyright (C) 2023 - 2026 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,17 +20,19 @@ package org.gwtbootstrap5.client.ui.constants;
  * #L%
  */
 
-import com.google.gwt.dom.client.Style;
-import org.gwtbootstrap5.client.ui.base.helper.EnumHelper;
+import com.google.gwt.user.client.ui.UIObject;
+import org.gwtbootstrap5.client.ui.constants.IconType;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public interface IconType extends Type, Style.HasCssName {
+public interface IIconUtil {
 
-    String getOrdinal();
+    List<IconType> getValues();
 
-    String getName();
+    IconType fromIconType(final String enumName);
+
+    IconType fromStyleName(final String styleName);
+
+    void setType(final UIObject uiObject, final IconType type);
 
 }

@@ -31,6 +31,7 @@ import org.gwtbootstrap5.client.ui.base.HasIcon;
 import org.gwtbootstrap5.client.ui.base.HasIconPosition;
 import org.gwtbootstrap5.client.ui.constants.*;
 import org.gwtbootstrap5.client.ui.html.Text;
+import org.gwtbootstrap5.client.ui.util.IconUtil;
 
 /**
  * Mixin for Widgets that have text, an optional icon, and an optional badge
@@ -81,7 +82,7 @@ public class IconTextMixin<T extends ComplexWidget & HasText & HasIcon & HasIcon
 
     @Override
     public void setIcon(String icon) {
-        this.iconType = IconType.fromIconType(icon);
+        this.iconType = IconUtil.getInstance().fromIconType(icon);
         render();
     }
 

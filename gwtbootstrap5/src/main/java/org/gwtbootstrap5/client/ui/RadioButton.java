@@ -39,6 +39,7 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
+import org.gwtbootstrap5.client.ui.util.IconUtil;
 
 /**
  * Button representing a radio button used within a {@link ButtonGroup} that has
@@ -270,7 +271,7 @@ public class RadioButton extends Radio implements HasActive,
 
     @Override
     public void setIcon(String icon) {
-        getActualIcon().setType(IconType.fromIconType(icon));
+        getActualIcon().setType(IconUtil.getInstance().fromIconType(icon));
     }
 
     @Override

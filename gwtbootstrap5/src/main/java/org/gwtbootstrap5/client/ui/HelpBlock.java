@@ -30,6 +30,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.DomEvent;
+import org.gwtbootstrap5.client.ui.util.IconUtil;
 
 /**
  * Help block. Call {@link #setError(String)} to set the error state of this
@@ -77,7 +78,6 @@ public class HelpBlock extends AbstractTextWidget {
      */
     protected Element createIconElement() {
         Element e = Document.get().createElement(ElementTags.I);
-        e.addClassName(Styles.FONT_AWESOME_BASE);
         e.addClassName(iconType.getCssName());
         e.getStyle().setPaddingRight(5, Unit.PX);
         return e;
@@ -138,7 +138,7 @@ public class HelpBlock extends AbstractTextWidget {
     }
 
     public void setIcon(String icon) {
-        setIconType(IconType.fromIconType(icon));
+        setIconType(IconUtil.getInstance().fromIconType(icon));
     }
 
     /** {@inheritDoc} */

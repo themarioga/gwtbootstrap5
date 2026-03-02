@@ -1,10 +1,10 @@
-package org.gwtbootstrap5.client.ui.constants;
+package org.gwtbootstrap5.client.ui.util;
 
-/*
+/*-
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 - 2024 GwtBootstrap5
+ * Copyright (C) 2023 - 2026 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,17 +20,26 @@ package org.gwtbootstrap5.client.ui.constants;
  * #L%
  */
 
-import com.google.gwt.dom.client.Style;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.ui.UIObject;
 import org.gwtbootstrap5.client.ui.base.helper.EnumHelper;
+import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap5.client.ui.constants.IconType;
+import org.gwtbootstrap5.client.ui.constants.IconTypeBI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public interface IconType extends Type, Style.HasCssName {
+public class IconUtil {
 
-    String getOrdinal();
+    private static IIconUtil instance;
 
-    String getName();
+    public static IIconUtil getInstance() {
+        if (instance == null) {
+            instance = GWT.create(IconUtilBI.class);
+        }
+        return instance;
+    }
 
 }

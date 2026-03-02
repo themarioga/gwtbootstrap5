@@ -37,6 +37,7 @@ import com.google.gwt.i18n.shared.DirectionEstimator;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
+import org.gwtbootstrap5.client.ui.util.IconUtil;
 
 /**
  * Button representing a checkbox used within a {@link ButtonGroup} that has
@@ -232,7 +233,7 @@ public class CheckBoxButton extends CheckBox implements HasActive,
 
     @Override
     public void setIcon(String icon) {
-        getActualIcon().setType(IconType.fromIconType(icon));
+        getActualIcon().setType(IconUtil.getInstance().fromIconType(icon));
     }
 
     @Override
