@@ -232,16 +232,16 @@ public class Toast extends Div {
     }
 
     private void generateToastContent(String title, String subtitle, String msg) {
-        if (title != null || subtitle != null) {
+        if ((title != null && !title.isBlank()) || (subtitle != null && !subtitle.isBlank())) {
             Div header = generateToastHeader(title, subtitle);
             header.add(generateCloseButton());
             add(header);
         }
 
-        if (msg != null) {
+        if (msg != null && !msg.isBlank()) {
             Div body = generateToastBody(msg);
 
-            if (title != null || subtitle != null) {
+            if ((title != null && !title.isBlank()) || (subtitle != null && !subtitle.isBlank())) {
                 add(body);
             } else {
                 Div flex = new Div();
@@ -259,14 +259,14 @@ public class Toast extends Div {
         Div header = new Div();
         header.setStyleName(Styles.TOAST_HEADER);
 
-        if (title != null && !title.isEmpty()) {
+        if (title != null && !title.isBlank()) {
             Strong titleElement = new Strong();
             titleElement.setStyleName("mr-auto");
             titleElement.setText(title);
             header.add(titleElement);
         }
 
-        if (subtitle != null && !subtitle.isEmpty()) {
+        if (subtitle != null && !subtitle.isBlank()) {
             Small subtitleElement = new Small();
             subtitleElement.setText(subtitle);
             header.add(subtitleElement);
