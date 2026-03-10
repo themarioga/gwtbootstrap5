@@ -5,10 +5,9 @@ You will be able to easily add GWTBootstrap5 to your project by including the li
 
 ```xml
 <dependency>
-  <groupId>org.gwtbootstrap5org.gwtbootstrap5</groupId>
+  <groupId>org.gwtbootstrap5</groupId>
   <artifactId>gwtbootstrap5</artifactId>
   <version>VERSION</version>
-  <scope>provided</scope>
 </dependency>
 ```
 
@@ -17,12 +16,11 @@ You will be able to easily add GWTBootstrap5 to your project by including the li
 * Utilities
 
 ### Final Release
-* 0.0.1 - Released on 22 December 2023.
-  * Based on Bootstrap v4.6.2
-* [Demo](http://gwtbootstrap5.github.io/gwtbootstrap5-demo/) - The GWTBootstrap5 1.0.0 Demo.
-* [API Docs](http://gwtbootstrap5.github.io/gwtbootstrap5-demo/apidocs) - The GWTBootstrap5 1.0.0 API Javadoc.
-* [Supported Features](https://github.com/gwtbootstrap5/gwtbootstrap5/wiki/Supported-Features) - Current releases supported features.
+* 0.1.5 - Released on 22 December 2023.
+  * Based on Bootstrap v5.3.x
+* [Demo](Soon) - The GWTBootstrap5 0.1.5 Demo.
+* [API Docs](Soon) - The GWTBootstrap5 0.1.5 API Javadoc.
+* [Supported Features](Soon) - Current releases supported features.
 
 ### Resources
-* [Project Wiki](https://github.com/gwtbootstrap5/gwtbootstrap5/wiki) - Help with getting started and other useful project help.
-[![Join the chat at https://gitter.im/gwtbootstrap5/gwtbootstrap5](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gwtbootstrap5/gwtbootstrap5?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+* [Project Wiki](https://github.com/themarioga/gwtbootstrap5/wiki) - Help with getting started and other useful project help.
