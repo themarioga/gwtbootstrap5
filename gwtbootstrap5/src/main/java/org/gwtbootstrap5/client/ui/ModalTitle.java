@@ -4,7 +4,7 @@ package org.gwtbootstrap5.client.ui;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2013 - 2014 GwtBootstrap5
+ * Copyright (C) 2025 GwtBootstrap5
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,34 +20,19 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap5.client.ui.base.AbstractAnchorListItem;
 import org.gwtbootstrap5.client.ui.constants.Styles;
+import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
 
 /**
+ * @author Sven Jacobs
  * @author Joshua Godi
+ * @see Modal
  */
-public class DropDownItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
+public class ModalTitle extends FlowPanel implements ModalComponent {
 
-    public DropDownItem() {
+    public ModalTitle() {
         super();
 
-        setStyleName(Styles.DROPDOWN_ITEM);
+        setStyleName(Styles.MODAL_TITLE);
     }
-
-    public DropDownItem(final String text) {
-        super();
-
-        setText(text);
-    }
-
-    @Override
-    public void setText(final String text) {
-        anchor.setText(text);
-    }
-
-    @Override
-    public String getText() {
-        return anchor.getText();
-    }
-
 }

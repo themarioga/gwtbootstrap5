@@ -33,7 +33,6 @@ import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
  */
 public class ModalHeader extends FlowPanel implements ModalComponent, IsClosable {
 
-    private final Heading heading = new Heading(HeadingSize.H4);
     private final CloseButton closeButton = new CloseButton();
 
     public ModalHeader() {
@@ -41,16 +40,19 @@ public class ModalHeader extends FlowPanel implements ModalComponent, IsClosable
 
         setStyleName(Styles.MODAL_HEADER);
 
-        heading.setStyleName(Styles.MODAL_TITLE);
         closeButton.setDataDismiss(ButtonDismiss.MODAL);
 
-        add(heading);
+        // To make it closable by default
         add(closeButton);
     }
 
     @Override
     public void setTitle(final String title) {
+        final Heading heading = new Heading(HeadingSize.H4);
+        heading.setStyleName(Styles.MODAL_TITLE);
         heading.setText(title);
+        add(heading);
+        adjustIndex(heading, 0);
     }
 
     @Override
