@@ -20,19 +20,52 @@ package org.gwtbootstrap5.client.ui;
  * #L%
  */
 
+import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtbootstrap5.client.ui.constants.HeadingSize;
 import org.gwtbootstrap5.client.ui.constants.Styles;
-import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
 
 /**
  * @author Sven Jacobs
  * @author Joshua Godi
  * @see Modal
  */
-public class ModalTitle extends FlowPanel implements ModalComponent {
+public class ModalTitle extends Heading implements ModalComponent {
 
-    public ModalTitle() {
-        super();
+    /**
+     * Creates a Heading with the passed in size.
+     *
+     * @param size size of the heading
+     */
+    @UiConstructor
+    public ModalTitle(final HeadingSize size) {
+        super(size);
 
         setStyleName(Styles.MODAL_TITLE);
     }
+
+    /**
+     * Creates a Heading with the passed in size and text.
+     *
+     * @param size size of the heading
+     * @param text text for the heading
+     */
+    public ModalTitle(final HeadingSize size, final String text) {
+        super(size, text);
+
+        setStyleName(Styles.MODAL_TITLE);
+    }
+
+    /**
+     * Creates a Heading with the passed in size and text.
+     *
+     * @param size    size of the heading
+     * @param text    text for the heading
+     * @param subText subtext for the heading
+     */
+    public ModalTitle(final HeadingSize size, final String text, final String subText) {
+        super(size, text, subText);
+
+        setStyleName(Styles.MODAL_TITLE);
+    }
+
 }

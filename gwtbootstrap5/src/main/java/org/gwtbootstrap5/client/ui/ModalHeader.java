@@ -33,6 +33,7 @@ import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
  */
 public class ModalHeader extends FlowPanel implements ModalComponent, IsClosable {
 
+    private final ModalTitle modalTitle = new ModalTitle(HeadingSize.H4);
     private final CloseButton closeButton = new CloseButton();
 
     public ModalHeader() {
@@ -48,11 +49,25 @@ public class ModalHeader extends FlowPanel implements ModalComponent, IsClosable
 
     @Override
     public void setTitle(final String title) {
-        final Heading heading = new Heading(HeadingSize.H4);
-        heading.setStyleName(Styles.MODAL_TITLE);
-        heading.setText(title);
-        add(heading);
-        adjustIndex(heading, 0);
+        if (title != null && !title.isBlank()) {
+            addModalTitle();
+        } else {
+            removeHeading();
+        }
+
+        modalTitle.setText(title);
+    }
+
+    private void addModalTitle() {
+        if (!getChildren().contains(modalTitle)) {
+            insert(modalTitle, 0);
+        }
+    }
+
+    private void removeHeading() {
+        if (getChildren().contains(modalTitle)) {
+            modalTitle.removeFromParent();
+        }
     }
 
     @Override
