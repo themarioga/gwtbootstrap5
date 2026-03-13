@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base.helper;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -30,10 +30,10 @@ public final class EnumHelper {
     /**
      * Returns first enum constant found in at space-separated list of style names.
      *
-     * @param styleName    Space-separated list of styles
+     * @param enumName    Space-separated list of styles
      * @param enumClass    Type of enum
      * @param defaultValue Default value of no match was found
-     * @param <E>
+     * @param <E> e
      * @return First enum constant found or default value
      */
     @SuppressWarnings("unchecked")
@@ -59,14 +59,13 @@ public final class EnumHelper {
      * @param styleName    Space-separated list of styles
      * @param enumClass    Type of enum
      * @param defaultValue Default value of no match was found
-     * @param <E>
+     * @param <E> e
      * @return First enum constant found or default value
      */
     @SuppressWarnings("unchecked")
     public static <E extends Enum<? extends Style.HasCssName>> E fromStyleName(final String styleName,
                                                                                final Class<E> enumClass,
                                                                                final E defaultValue) {
-
         if (styleName == null || enumClass == null) {
             return defaultValue;
         }

@@ -11,7 +11,7 @@ import com.google.gwt.dom.client.SpanElement;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -31,7 +31,7 @@ import com.google.gwt.dom.client.SpanElement;
  */
 public class Span extends HTMLPanel {
 
-    private final HTMLMixin<Span> textMixin = new HTMLMixin<Span>(this);
+    private final HTMLMixin<Span> textMixin = new HTMLMixin<>(this);
 
     public Span() {
         super(SpanElement.TAG, "");

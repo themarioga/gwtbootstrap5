@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.gwt;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -40,9 +40,9 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class FlowPanel extends com.google.gwt.user.client.ui.FlowPanel implements HasDataSpy, HasId, HasDataTarget, HasResponsiveness {
 
-    private final DataSpyMixin<FlowPanel> spyMixin = new DataSpyMixin<FlowPanel>(this);
-    private final IdMixin<FlowPanel> idMixin = new IdMixin<FlowPanel>(this);
-    private final DataTargetMixin<FlowPanel> targetMixin = new DataTargetMixin<FlowPanel>(this);
+    private final DataSpyMixin<FlowPanel> spyMixin = new DataSpyMixin<>(this);
+    private final IdMixin<FlowPanel> idMixin = new IdMixin<>(this);
+    private final DataTargetMixin<FlowPanel> targetMixin = new DataTargetMixin<>(this);
 
     @Override
     public void setDataSpy(final Spy spy) {

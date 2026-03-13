@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base.mixin;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -42,7 +42,7 @@ public class ErrorHandlerMixin<V> implements HasEditorErrors<V>, HasErrorHandler
 
     private ErrorHandlerType errorHandlerType = ErrorHandlerType.DEFAULT;
 
-    private Widget inputWidget = null;
+    private Widget inputWidget;
 
     /**
      * Mixin for the {@link ErrorHandler} implementation.

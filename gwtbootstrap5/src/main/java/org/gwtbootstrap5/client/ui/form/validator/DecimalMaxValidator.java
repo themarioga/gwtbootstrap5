@@ -8,7 +8,7 @@ import org.gwtbootstrap5.client.ui.form.validator.ValidationMessages.Keys;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -30,7 +30,7 @@ import org.gwtbootstrap5.client.ui.form.validator.ValidationMessages.Keys;
  */
 public class DecimalMaxValidator<T> extends AbstractValidator<T> {
 
-    private Number maxValue;
+    private final Number maxValue;
 
     /**
      * Constructor.
@@ -63,10 +63,10 @@ public class DecimalMaxValidator<T> extends AbstractValidator<T> {
     @Override
     public boolean isValid(T value) {
         if (value == null) { return true; }
-        if (value instanceof Number) {
-            return ((Number) value).doubleValue() <= maxValue.doubleValue();
+        if (value instanceof Number v) {
+            return v.doubleValue() <= maxValue.doubleValue();
         } else {
-            return Double.valueOf(value.toString()).doubleValue() <= maxValue.doubleValue();
+            return Double.parseDouble(value.toString()) <= maxValue.doubleValue();
         }
     }
 

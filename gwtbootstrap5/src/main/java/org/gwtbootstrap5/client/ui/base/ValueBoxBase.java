@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -49,11 +49,11 @@ public class ValueBoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<
 
     private static final String MAX_LENGTH = "maxlength";
 
-    private final IdMixin<ValueBoxBase<T>> idMixin = new IdMixin<ValueBoxBase<T>>(this);
+    private final IdMixin<ValueBoxBase<T>> idMixin = new IdMixin<>(this);
 
-    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<T>(this);
+    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<>(this);
 
-    private final BlankValidatorMixin<ValueBoxBase<T>, T> validatorMixin = new BlankValidatorMixin<ValueBoxBase<T>, T>(this,
+    private final BlankValidatorMixin<ValueBoxBase<T>, T> validatorMixin = new BlankValidatorMixin<>(this,
         errorHandlerMixin.getErrorHandler());
 
     /**

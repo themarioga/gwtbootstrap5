@@ -10,7 +10,7 @@ import org.gwtbootstrap5.client.ui.form.validator.ValidationMessages.Keys;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -57,7 +57,7 @@ public class BlankValidator<T> extends AbstractValidator<T> {
     /** {@inheritDoc} */
     @Override
     public boolean isValid(T value) {
-        if (value instanceof Collection<?>) { return ((Collection<?>) value).size() > 0; }
+        if (value instanceof Collection<?>) { return !((Collection<?>) value).isEmpty(); }
         return value != null && !"".equals(value.toString());
     }
 

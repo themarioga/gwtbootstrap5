@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -22,7 +22,6 @@ package org.gwtbootstrap5.client.ui.form.validator;
 
 /**
  * Wraps a validator in order to provide sorting capability.
- * 
  * We sort based on priority first, then insertion order. The hashCode and equals function should prevent a
  * set from containing 2 validators of the same type.
  * 
@@ -70,9 +69,8 @@ public class ValidatorWrapper<T> implements Comparable<ValidatorWrapper<T>> {
         if (getClass() != obj.getClass()) return false;
         ValidatorWrapper<?> other = (ValidatorWrapper<?>) obj;
         if (name == null) {
-            if (other.name != null) return false;
-        } else if (!name.equals(other.name)) return false;
-        return true;
+            return other.name == null;
+        } else return name.equals(other.name);
     }
 
     /**

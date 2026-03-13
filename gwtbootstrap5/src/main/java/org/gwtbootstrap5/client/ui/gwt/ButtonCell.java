@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.gwt;
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -93,12 +93,12 @@ public class ButtonCell extends com.google.gwt.cell.client.ButtonCell implements
 
     @Override
     public void render(com.google.gwt.cell.client.Cell.Context context, SafeHtml data, SafeHtmlBuilder sb) {
-        String cssClasses = new StringBuilder("btn") //
-                .append(" ") //
-                .append(type.getCssName()) //
-                .append(" ") //
-                .append(size.getCssName()) //
-                .toString();
+        String cssClasses = "btn" + //
+                " " + //
+                type.getCssName() + //
+                " " + //
+                size.getCssName() //
+                ;
 
         String disabled = "";
         if (!enabled) {
@@ -107,11 +107,11 @@ public class ButtonCell extends com.google.gwt.cell.client.ButtonCell implements
 
         sb.appendHtmlConstant("<button type=\"button\" class=\"" + cssClasses + "\" tabindex=\"-1\"" + disabled + ">");
         if (icon != null) {
-            String iconHtml = new StringBuilder("<i class=\"") //
-                    .append(" ") //
-                    .append(icon.getCssName()) //
-                    .append("\"></i> ") //
-                    .toString();
+            String iconHtml = "<i class=\"" + //
+                    " " + //
+                    icon.getCssName() + //
+                    "\"></i> " //
+                    ;
             sb.appendHtmlConstant(iconHtml);
         }
         if (data != null) {

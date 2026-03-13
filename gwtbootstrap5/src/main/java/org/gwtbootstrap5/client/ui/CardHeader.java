@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -41,9 +41,9 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Joshua Godi
  */
 public class CardHeader extends Div implements HasWidgets, HasText, HasDataToggle, HasDataTarget, HasDataParent {
-    private final DataParentMixin<CardHeader> parentMixin = new DataParentMixin<CardHeader>(this);
-    private final DataTargetMixin<CardHeader> targetMixin = new DataTargetMixin<CardHeader>(this);
-    private final DataToggleMixin<CardHeader> toggleMixin = new DataToggleMixin<CardHeader>(this);
+    private final DataParentMixin<CardHeader> parentMixin = new DataParentMixin<>(this);
+    private final DataTargetMixin<CardHeader> targetMixin = new DataTargetMixin<>(this);
+    private final DataToggleMixin<CardHeader> toggleMixin = new DataToggleMixin<>(this);
     private final Text text = new Text();
 
     public CardHeader() {

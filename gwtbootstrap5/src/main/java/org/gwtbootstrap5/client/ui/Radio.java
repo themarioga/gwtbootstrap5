@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -61,7 +61,6 @@ public class Radio extends CheckBox {
      * Creates a new radio associated with a particular group, and initialized
      * with the given HTML label. All radio buttons associated with the same
      * group name belong to a mutually-exclusive set.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      * 
@@ -75,7 +74,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see #Radio(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -92,7 +91,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see #Radio(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -100,8 +99,7 @@ public class Radio extends CheckBox {
      *            this radio button's html label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public Radio(String name, SafeHtml label, DirectionEstimator directionEstimator) {
         this(name);
@@ -113,7 +111,6 @@ public class Radio extends CheckBox {
      * Creates a new radio associated with a particular group, and initialized
      * with the given HTML label. All radio buttons associated with the same
      * group name belong to a mutually-exclusive set.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      * 
@@ -128,7 +125,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see #Radio(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -145,7 +142,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see #Radio(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -153,8 +150,7 @@ public class Radio extends CheckBox {
      *            this radio button's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public Radio(String name, String label, DirectionEstimator directionEstimator) {
         this(name);
@@ -167,7 +163,6 @@ public class Radio extends CheckBox {
      * initialized with the given label (optionally treated as HTML). All radio
      * buttons associated with the same group name belong to a
      * mutually-exclusive set.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      * 
@@ -191,7 +186,6 @@ public class Radio extends CheckBox {
      * Creates a new radio associated with a particular group name. All radio
      * buttons associated with the same group name belong to a
      * mutually-exclusive set.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      * 
@@ -216,10 +210,8 @@ public class Radio extends CheckBox {
 
     /**
      * Change the group name of this radio button.
-     * 
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
-     * 
      * If changing this group name results in a new radio group with multiple
      * radio buttons selected, this radio button will remain selected and the
      * other radio buttons will be unselected.
@@ -240,7 +232,7 @@ public class Radio extends CheckBox {
     @Override
     public void sinkEvents(int eventBitsToAdd) {
         if (isOrWasAttached()) {
-            impl.sinkEvents(eventBitsToAdd, inputElem, labelElem);
+            impl.sinkEvents(eventBitsToAdd, inputElem);
         } else {
             super.sinkEvents(eventBitsToAdd);
         }

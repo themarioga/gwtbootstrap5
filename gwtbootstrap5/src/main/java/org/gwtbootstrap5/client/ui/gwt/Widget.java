@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.gwt;
  * %%
  * Copyright (C) 2013 - 2014 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -31,8 +31,8 @@ import org.gwtbootstrap5.client.ui.constants.FloatCSS;
 
 public class Widget extends com.google.gwt.user.client.ui.Widget implements HasResponsiveness, HasId, HasFloat {
 
-    private final IdMixin<Widget> idMixin = new IdMixin<Widget>(this);
-    private final FloatMixin<Widget> floatMixin = new FloatMixin<Widget>(this);
+    private final IdMixin<Widget> idMixin = new IdMixin<>(this);
+    private final FloatMixin<Widget> floatMixin = new FloatMixin<>(this);
 
     /**
      * {@inheritDoc}

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2013 - 2014 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -31,7 +31,7 @@ import org.gwtbootstrap5.client.ui.html.UnorderedList;
 import com.google.gwt.user.cellview.client.SimplePager;
 
 /**
- * Support for Bootstrap pagination (http://getbootstrap.com/components/#pagination)
+ * Support for Bootstrap pagination (<a href="http://getbootstrap.com/components/#pagination">...</a>)
  *
  * @author Joshua Godi
  */
@@ -128,7 +128,6 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
      * @param pager the SimplePager of the CellTable/DataGrid
      */
     private void updatePaginationState(final SimplePager pager) {
-
         for (int i = 0; i < getWidgetCount(); i++) {
             if (i == 0) { //previous button
                 ((AnchorListItem)getWidget(i)).setEnabled(pager.hasPreviousPage());
@@ -138,12 +137,7 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
             }
             else {
                 int index = i - 1;
-                if (index == pager.getPage()) {
-                    ((AnchorListItem)getWidget(i)).setActive(true);
-                }
-                else {
-                    ((AnchorListItem)getWidget(i)).setActive(false);
-                }
+                ((AnchorListItem)getWidget(i)).setActive(index == pager.getPage());
             }
         }
    }

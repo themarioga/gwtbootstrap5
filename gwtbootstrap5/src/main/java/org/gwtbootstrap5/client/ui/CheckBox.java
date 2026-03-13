@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -56,8 +56,7 @@ import com.google.gwt.user.client.ui.HasWordWrap;
 import com.google.gwt.user.client.ui.UIObject;
 
 /**
- * A standard check box widget.
- * 
+ * A standard checkbox widget.
  * This class also serves as a base class for {@link Radio}.
  * 
  * <p>
@@ -82,20 +81,20 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     private boolean valueChangeHandlerInitialized;
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      */
     public CheckBox(SafeHtml label) {
         this(label.asString(), true);
     }
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param dir
      *            the text's direction. Note that {@code DEFAULT} means
      *            direction should be inherited from the widget's parent
@@ -107,14 +106,13 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public CheckBox(SafeHtml label, DirectionEstimator directionEstimator) {
         this();
@@ -123,10 +121,10 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      */
     public CheckBox(String label) {
         this();
@@ -134,10 +132,10 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param dir
      *            the text's direction. Note that {@code DEFAULT} means
      *            direction should be inherited from the widget's parent
@@ -153,11 +151,10 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      * estimator.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public CheckBox(String label, DirectionEstimator directionEstimator) {
         this();
@@ -166,10 +163,10 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Creates a check box with the specified text label.
+     * Creates a checkbox with the specified text label.
      * 
      * @param label
-     *            the check box's label
+     *            the checkbox's label
      * @param asHTML
      *            <code>true</code> to treat the specified label as html
      */
@@ -285,13 +282,13 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Determines whether this check box is currently checked.
+     * Determines whether this checkbox is currently checked.
      * <p>
      * Note that this <em>does not</em> return the value property of the
      * checkbox input element wrapped by this widget. For access to that
      * property, see {@link #getFormValue()}
      * 
-     * @return <code>true</code> if the check box is checked, false otherwise.
+     * @return <code>true</code> if the checkbox is checked, false otherwise.
      *         Will not return null
      */
     @Override
@@ -370,7 +367,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      * Don't confuse this with {@link #setValue}, which actually checks and
      * unchecks the box.
      * 
-     * @param value
+     * @param value e
      */
     @Override
     public void setFormValue(String value) {
@@ -415,7 +412,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Checks or unchecks the check box.
+     * Checks or unchecks the checkbox.
      * <p>
      * Note that this <em>does not</em> set the value property of the checkbox
      * input element wrapped by this widget. For access to that property, see
@@ -430,7 +427,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     /**
-     * Checks or unchecks the check box, firing {@link ValueChangeEvent} if
+     * Checks or unchecks the checkbox, firing {@link ValueChangeEvent} if
      * appropriate.
      * <p>
      * Note that this <em>does not</em> set the value property of the checkbox

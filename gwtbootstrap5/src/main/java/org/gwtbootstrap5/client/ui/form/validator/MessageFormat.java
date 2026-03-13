@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -38,7 +38,7 @@ public class MessageFormat {
         String msg = pattern;
         if (arguments != null) {
             for (int index = 0; index < arguments.length; index++) {
-                msg = msg.replaceAll("\\{" + (index + 1) + "\\}", String.valueOf(arguments[index]));
+                msg = msg.replaceAll("\\{" + (index + 1) + "}", String.valueOf(arguments[index]));
             }
         }
         return msg;

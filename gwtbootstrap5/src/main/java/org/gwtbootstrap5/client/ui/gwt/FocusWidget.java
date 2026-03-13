@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.gwt;
  * %%
  * Copyright (C) 2013 - 2014 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -35,10 +35,10 @@ import com.google.gwt.dom.client.Element;
 public abstract class FocusWidget extends com.google.gwt.user.client.ui.FocusWidget implements HasResponsiveness,
         HasId, HasFloat {
 
-    private final IdMixin<FocusWidget> idMixin = new IdMixin<FocusWidget>(this);
-    private final FloatMixin<FocusWidget> floatMixin = new FloatMixin<FocusWidget>(this);
+    private final IdMixin<FocusWidget> idMixin = new IdMixin<>(this);
+    private final FloatMixin<FocusWidget> floatMixin = new FloatMixin<>(this);
 
-    public FocusWidget(Element elem) {
+    protected FocusWidget(Element elem) {
         super(elem);
     }
 

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -39,11 +39,11 @@ public abstract class AbstractValidator<T> implements Validator<T> {
 
     private String invalidMessageOverride = null;
 
-    private String messageKey;
+    private final String messageKey;
 
-    private ValidatorMessageMixin messageMixin = GWT.create(ValidatorMessageMixin.class);
+    private final ValidatorMessageMixin messageMixin = GWT.create(ValidatorMessageMixin.class);
 
-    private Object[] messageValueArgs;
+    private final Object[] messageValueArgs;
 
     /**
      * Constructor. This overrides all validation message handling. Use this constructor for field specific
@@ -51,7 +51,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
      *
      * @param invalidMessageOverride the invalid message override
      */
-    public AbstractValidator(String invalidMessageOverride) {
+    protected AbstractValidator(String invalidMessageOverride) {
         this(null, new Object[0]);
         assert invalidMessageOverride != null;
         this.invalidMessageOverride = invalidMessageOverride;
@@ -63,7 +63,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
      * @param messageKey the message key
      * @param messageValueArgs the message value args
      */
-    public AbstractValidator(String messageKey, Object[] messageValueArgs) {
+    protected AbstractValidator(String messageKey, Object[] messageValueArgs) {
         this.messageKey = messageKey;
         this.messageValueArgs = messageValueArgs;
         assert this.messageValueArgs != null;
@@ -78,7 +78,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
      * @return the list
      */
     public List<EditorError> createErrorList(Editor<T> editor, T value, String messageKey) {
-        List<EditorError> result = new ArrayList<EditorError>();
+        List<EditorError> result = new ArrayList<>();
         result.add(new BasicEditorError(editor, value, getInvalidMessage(messageKey)));
         return result;
     }
@@ -105,7 +105,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
     /** {@inheritDoc} */
     @Override
     public final List<EditorError> validate(Editor<T> editor, T value) {
-        List<EditorError> result = new ArrayList<EditorError>();
+        List<EditorError> result = new ArrayList<>();
         if (!isValid(value)) {
             result.add(new BasicEditorError(editor, value, getInvalidMessage(messageKey)));
         }

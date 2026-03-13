@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.shared.event;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -30,7 +30,7 @@ import com.google.gwt.user.client.Event;
  */
 public class ModalShowEvent extends GwtEvent<ModalShowHandler> implements ModalEvent {
 
-    private static final Type<ModalShowHandler> TYPE = new Type<ModalShowHandler>();
+    private static final Type<ModalShowHandler> TYPE = new Type<>();
 
     private final Modal modal;
     private final Event nativeEvent;

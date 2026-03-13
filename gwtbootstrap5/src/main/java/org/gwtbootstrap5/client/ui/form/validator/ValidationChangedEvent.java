@@ -11,7 +11,7 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -56,10 +56,10 @@ public class ValidationChangedEvent extends GwtEvent<ValidationChangedEvent.Vali
          *
          * @param event the event
          */
-        public void onValidationChanged(ValidationChangedEvent event);
+        void onValidationChanged(ValidationChangedEvent event);
     }
 
-    private static final Type<ValidationChangedHandler> TYPE = new Type<ValidationChangedHandler>();
+    private static final Type<ValidationChangedHandler> TYPE = new Type<>();
 
     /**
      * Fire the event.
@@ -121,8 +121,7 @@ public class ValidationChangedEvent extends GwtEvent<ValidationChangedEvent.Vali
         if (obj == null) return false;
         if (getClass() != obj.getClass()) return false;
         ValidationChangedEvent other = (ValidationChangedEvent) obj;
-        if (valid != other.valid) return false;
-        return true;
+        return valid == other.valid;
     }
 
     /** {@inheritDoc} */

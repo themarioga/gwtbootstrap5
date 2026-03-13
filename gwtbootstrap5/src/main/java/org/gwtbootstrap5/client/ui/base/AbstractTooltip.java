@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -37,7 +37,6 @@ import org.gwtbootstrap5.client.ui.constants.Placement;
 import org.gwtbootstrap5.client.ui.constants.Trigger;
 
 import com.google.gwt.dom.client.Element;
-import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.Timer;
@@ -77,7 +76,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     private String tooltipArrowClassNames = "tooltip-arrow";
     private String tooltipInnerClassNames = "tooltip-inner";
 
-    private final static String DEFAULT_TEMPLATE = "<div class=\"{0}\" role=\"{0}\"><div class=\"{1}\"></div><div class=\"{2}\"></div></div>";
+    private static final String DEFAULT_TEMPLATE = "<div class=\"{0}\" role=\"{0}\"><div class=\"{1}\"></div><div class=\"{2}\"></div></div>";
     private String alternateTemplate = null;
 
     protected Widget widget;
@@ -89,7 +88,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     /**
      * Creates the empty Tooltip
      */
-    public AbstractTooltip(String dataTarget) {
+    protected AbstractTooltip(String dataTarget) {
         this.dataTarget = dataTarget;
     }
 
@@ -98,7 +97,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
      *
      * @param title title for the tooltip
      */
-    public AbstractTooltip(String dataTarget, final String title) {
+    protected AbstractTooltip(String dataTarget, final String title) {
         this(dataTarget);
         setTitle(title);
     }
@@ -108,7 +107,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
      *
      * @param w widget for the tooltip
      */
-    public AbstractTooltip(String dataTarget, final Widget w) {
+    protected AbstractTooltip(String dataTarget, final Widget w) {
         this(dataTarget);
         setWidget(w);
     }
@@ -119,7 +118,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
      * @param w     widget for the tooltip
      * @param title title for the tooltip
      */
-    public AbstractTooltip(String dataTarget, final Widget w, final String title) {
+    protected AbstractTooltip(String dataTarget, final Widget w, final String title) {
         this(dataTarget);
         setWidget(w);
         setTitle(title);
@@ -430,7 +429,8 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
                     throw new NoSuchElementException();
                 }
                 hasElement = false;
-                return (returned = widget);
+                returned = widget;
+                return returned;
             }
 
             /**
@@ -446,7 +446,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Can be override by subclasses to handle Tooltip's "hidden" event however
+     * Can be overridden by subclasses to handle Tooltip's "hidden" event however
      * it's recommended to add an event handler to the tooltip.
      *
      * @param evt Event
@@ -458,7 +458,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Can be override by subclasses to handle Tooltip's "hide" event however
+     * Can be overridden by subclasses to handle Tooltip's "hide" event however
      * it's recommended to add an event handler to the tooltip.
      *
      * @param evt Event
@@ -469,7 +469,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Can be override by subclasses to handle Tooltip's "inserted" event however
+     * Can be overridden by subclasses to handle Tooltip's "inserted" event however
      * it's recommended to add an event handler to the tooltip.
      *
      * @param evt Event
@@ -480,7 +480,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Can be override by subclasses to handle Tooltip's "show" event however
+     * Can be overridden by subclasses to handle Tooltip's "show" event however
      * it's recommended to add an event handler to the tooltip.
      *
      * @param evt Event
@@ -491,7 +491,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Can be override by subclasses to handle Tooltip's "shown" event however
+     * Can be overridden by subclasses to handle Tooltip's "shown" event however
      * it's recommended to add an event handler to the tooltip.
      *
      * @param evt Event
@@ -671,7 +671,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
     }
 
     /**
-     * Convenience method. Sets the tooltop's display string.
+     * Convenience method. Sets the tooltip's display string.
      * 
      * @param text String display string.
      * @deprecated use {@link #setTitle(String)}.
@@ -772,13 +772,7 @@ public abstract class AbstractTooltip implements IsWidget, HasWidgets, HasOneWid
         }
 
         // When we attach it, configure the tooltip
-        widget.addAttachHandler(new AttachEvent.Handler() {
-
-            @Override
-            public void onAttachOrDetach(final AttachEvent event) {
-                init();
-            }
-        });
+        widget.addAttachHandler(event-> init());
     }
 
     /**

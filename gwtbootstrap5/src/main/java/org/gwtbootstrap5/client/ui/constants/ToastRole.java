@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.constants;
  * %%
  * Copyright (C) 2013 - 2024 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -24,8 +24,8 @@ public enum ToastRole {
     ALERT("alert", "assertive"),
     STATUS("status", "polite");
 
-    String role;
-    String ariaLive;
+    private final String role;
+    private final String ariaLive;
 
     ToastRole(String role, String ariaLive) {
         this.role = role;

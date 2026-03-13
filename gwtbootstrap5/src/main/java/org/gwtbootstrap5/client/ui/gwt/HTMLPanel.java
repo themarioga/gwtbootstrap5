@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.gwt;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -47,9 +47,9 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class HTMLPanel extends com.google.gwt.user.client.ui.HTMLPanel implements HasId, HasDataSpy, HasDataTarget, HasResponsiveness, HasInlineStyle, HasContextualBackground {
 
-    private final DataSpyMixin<HTMLPanel> spyMixin = new DataSpyMixin<HTMLPanel>(this);
-    private final DataTargetMixin<HTMLPanel> targetMixin = new DataTargetMixin<HTMLPanel>(this);
-    private final IdMixin<HTMLPanel> idMixin = new IdMixin<HTMLPanel>(this);
+    private final DataSpyMixin<HTMLPanel> spyMixin = new DataSpyMixin<>(this);
+    private final DataTargetMixin<HTMLPanel> targetMixin = new DataTargetMixin<>(this);
+    private final IdMixin<HTMLPanel> idMixin = new IdMixin<>(this);
 
     public HTMLPanel(final String html) {
         super(html);

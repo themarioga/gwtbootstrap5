@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.util;
  * %%
  * Copyright (C) 2023 - 2026 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -21,15 +21,6 @@ package org.gwtbootstrap5.client.ui.util;
  */
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.ui.UIObject;
-import org.gwtbootstrap5.client.ui.base.helper.EnumHelper;
-import org.gwtbootstrap5.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap5.client.ui.constants.IconType;
-import org.gwtbootstrap5.client.ui.constants.IconTypeBI;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class IconUtil {
 

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -30,7 +30,6 @@ import java.util.Map;
 
 import org.gwtbootstrap5.client.ui.BaseGwt;
 import org.gwtbootstrap5.client.ui.TextBox;
-import org.gwtbootstrap5.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.editor.client.EditorError;
@@ -47,7 +46,7 @@ public class ValidatorsGwt extends BaseGwt {
      * Test the {@link BlankValidator} class.
      */
     public void testBlankValidator() {
-        BlankValidator<String> v = new BlankValidator<String>();
+        BlankValidator<String> v = new BlankValidator<>();
         List<EditorError> errors = v.validate(null, null);
         assertFalse(errors.isEmpty());
         errors = v.validate(null, "");
@@ -55,7 +54,7 @@ public class ValidatorsGwt extends BaseGwt {
         errors = v.validate(null, "Test");
         assertTrue(errors.isEmpty());
 
-        BlankValidator<Date> dv = new BlankValidator<Date>();
+        BlankValidator<Date> dv = new BlankValidator<>();
         errors = dv.validate(null, null);
         assertFalse(errors.isEmpty());
         errors = dv.validate(null, new Date());
@@ -66,7 +65,7 @@ public class ValidatorsGwt extends BaseGwt {
      * Test the {@link DecimalMaxValidator} class.
      */
     public void testDecimalMaxValidator() {
-        DecimalMaxValidator<Double> v = new DecimalMaxValidator<Double>(1.25);
+        DecimalMaxValidator<Double> v = new DecimalMaxValidator<>(1.25);
         List<EditorError> errors = v.validate(null, null);
         assertTrue(errors.isEmpty());
         errors = v.validate(null, -2.0);
@@ -83,7 +82,7 @@ public class ValidatorsGwt extends BaseGwt {
      * Test the {@link DecimalMinValidator} class.
      */
     public void testDecimalMinValidator() {
-        DecimalMinValidator<Float> v = new DecimalMinValidator<Float>(1.25f);
+        DecimalMinValidator<Float> v = new DecimalMinValidator<>(1.25f);
         List<EditorError> errors = v.validate(null, null);
         assertTrue(errors.isEmpty());
         errors = v.validate(null, -2.0f);
@@ -105,7 +104,7 @@ public class ValidatorsGwt extends BaseGwt {
 
         field1.setValue("1234");
         field2.setValue(field1.getValue());
-        field2.addValidator(new FieldMatchValidator<String>(field1));
+        field2.addValidator(new FieldMatchValidator<>(field1));
         assertTrue(field2.validate());
 
         field2.setValue("12345");
@@ -170,7 +169,7 @@ public class ValidatorsGwt extends BaseGwt {
      * Test the {@link SizeValidator} class.
      */
     public void testSizeValidator() {
-        SizeValidator<String> sv = new SizeValidator<String>(5, 10);
+        SizeValidator<String> sv = new SizeValidator<>(5, 10);
         List<EditorError> errors = sv.validate(null, null);
         assertFalse(errors.isEmpty());
 
@@ -191,18 +190,18 @@ public class ValidatorsGwt extends BaseGwt {
         errors = sv.validate(null, "12345678901");
         assertFalse(errors.isEmpty());
 
-        SizeValidator<Collection<String>> cv = new SizeValidator<Collection<String>>(0, 1);
+        SizeValidator<Collection<String>> cv = new SizeValidator<>(0, 1);
         errors = cv.validate(null, null);
         assertTrue(errors.isEmpty());
 
-        errors = cv.validate(null, new ArrayList<String>());
+        errors = cv.validate(null, new ArrayList<>());
         assertTrue(errors.isEmpty());
-        errors = cv.validate(null, Arrays.asList("test"));
+        errors = cv.validate(null, List.of("test"));
         assertTrue(errors.isEmpty());
         errors = cv.validate(null, Arrays.asList("1", "2"));
         assertFalse(errors.isEmpty());
 
-        SizeValidator<String[]> av = new SizeValidator<String[]>(2, 4);
+        SizeValidator<String[]> av = new SizeValidator<>(2, 4);
         errors = av.validate(null, null);
         assertFalse(errors.isEmpty());
         errors = av.validate(null, new String[0]);
@@ -220,11 +219,11 @@ public class ValidatorsGwt extends BaseGwt {
         errors = av.validate(null, new String[] { "1", "2", "3", "4", "5" });
         assertFalse(errors.isEmpty());
 
-        SizeValidator<Map<String, String>> mv = new SizeValidator<Map<String, String>>(3, 20);
+        SizeValidator<Map<String, String>> mv = new SizeValidator<>(3, 20);
         errors = mv.validate(null, null);
         assertFalse(errors.isEmpty());
 
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
         for (int count = 1; count <= 25; count++) {
             map.put(Integer.toString(count), Integer.toString(count));
             errors = mv.validate(null, map);
@@ -237,7 +236,6 @@ public class ValidatorsGwt extends BaseGwt {
     }
 
     public void testGroupValidators() {
-
         final TextBox box1 = new TextBox();
         box1.setAllowBlank(false);
         final TextBox box2 = new TextBox();
@@ -261,21 +259,13 @@ public class ValidatorsGwt extends BaseGwt {
         box3.setValue("box3");
         assertTrue(validatorGroup.validate(false));
 
-        validatorGroup.addValidationChangedHandler(new ValidationChangedHandler() {
-            @Override
-            public void onValidationChanged(ValidationChangedEvent event) {
-                assertFalse(event.isValid());
-                finishTest();
-            }
+        validatorGroup.addValidationChangedHandler(event -> {
+            assertFalse(event.isValid());
+            finishTest();
         });
 
         delayTestFinish(500);
-        Scheduler.get().scheduleDeferred(new Command() {
-            @Override
-            public void execute() {
-                box1.setValue("", true);
-            }
-        });
+        Scheduler.get().scheduleDeferred((Command) () -> box1.setValue("", true));
 
     }
 

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2013 - 2024 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -25,7 +25,6 @@ import com.google.gwt.user.client.Event;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 import org.gwtbootstrap5.client.shared.event.*;
 import org.gwtbootstrap5.client.shared.js.JQuery;
-import org.gwtbootstrap5.client.ui.base.button.CloseButton;
 import org.gwtbootstrap5.client.ui.base.helper.RoleHelper;
 import org.gwtbootstrap5.client.ui.constants.Attributes;
 import org.gwtbootstrap5.client.ui.constants.Styles;
@@ -261,7 +260,7 @@ public class Toast extends Div {
 
         if (title != null && !title.isBlank()) {
             Strong titleElement = new Strong();
-            titleElement.setStyleName("mr-auto");
+            titleElement.setStyleName("me-auto");
             titleElement.setText(title);
             header.add(titleElement);
         }

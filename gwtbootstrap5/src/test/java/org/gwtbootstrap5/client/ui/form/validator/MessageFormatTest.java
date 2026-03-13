@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -35,11 +35,11 @@ public class MessageFormatTest {
      */
     @Test
     public void test() {
-        Assert.assertEquals(MessageFormat.format("{1} {2} {1}", new Object[] { "1", "2" }), "1 2 1");
-        Assert.assertEquals(MessageFormat.format("{1} is a {2}", new Object[] { "This", "test" }), "This is a test");
-        Assert.assertEquals(MessageFormat.format("{1} is a {2}", new Object[] { "This", "test", "test", "test" }),
+        Assert.assertEquals(MessageFormat.format("{1} {2} {1}", "1", "2"), "1 2 1");
+        Assert.assertEquals(MessageFormat.format("{1} is a {2}", "This", "test"), "This is a test");
+        Assert.assertEquals(MessageFormat.format("{1} is a {2}", "This", "test", "test", "test"),
             "This is a test");
-        Assert.assertEquals(MessageFormat.format("{1} {2} {1}", new Object[0]), "{1} {2} {1}");
+        Assert.assertEquals(MessageFormat.format("{1} {2} {1}"), "{1} {2} {1}");
         Assert.assertEquals(MessageFormat.format("{1} {2} {1}", (Object[]) null), "{1} {2} {1}");
     }
 

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base.button;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -72,10 +72,10 @@ import com.google.gwt.user.client.ui.Widget;
 public abstract class AbstractButton extends ComplexWidget implements HasEnabled, HasActive, HasType<ButtonType>,
         HasSize<ButtonSize>, HasDataTarget, HasClickHandlers, Focusable, HasAllMouseHandlers {
 
-    private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<AbstractButton>(this);
-    private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<AbstractButton>(this);
-    private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<AbstractButton>(this);
-    private final EnabledMixin<AbstractButton> enabledMixin = new EnabledMixin<AbstractButton>(this);
+    private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<>(this);
+    private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<>(this);
+    private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<>(this);
+    private final EnabledMixin<AbstractButton> enabledMixin = new EnabledMixin<>(this);
 
     /**
      * Creates button with DEFAULT type.

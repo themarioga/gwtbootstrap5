@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -23,13 +23,14 @@ package org.gwtbootstrap5.client.ui.base;
 import com.google.gwt.dom.client.Document;
 
 /**
- * Base class for {@link org.gwtbootstrap5.client.ui.InputGroupAddon}
- * and {@link org.gwtbootstrap5.client.ui.InputGroupButton}
+ * Base class for {@link org.gwtbootstrap5.client.ui.InputGroupText}
+ * and {@link org.gwtbootstrap5.client.ui.InputGroupAppend}
+ * and {@link org.gwtbootstrap5.client.ui.InputGroupPrepend}
  *
  * @author Sven Jacobs
  * @author Joshua Godi
- * @see org.gwtbootstrap5.client.ui.InputGroupAddon
- * @see org.gwtbootstrap5.client.ui.InputGroupButton
+ * @see org.gwtbootstrap5.client.ui.InputGroupAppend
+ * @see org.gwtbootstrap5.client.ui.InputGroupPrepend
  */
 public abstract class AbstractInputGroupAddon extends ComplexWidget {
 

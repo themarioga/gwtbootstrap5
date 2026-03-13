@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -23,7 +23,6 @@ package org.gwtbootstrap5.client.ui;
 import org.gwtbootstrap5.client.ui.constants.Attributes;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.constants.Toggle;
-import org.gwtbootstrap5.client.ui.html.Span;
 
 /**
  * Special button to toggle collapsible area of {@link Navbar}.

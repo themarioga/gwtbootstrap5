@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -41,8 +41,8 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Joshua Godi
  */
 public abstract class AbstractTextWidget extends Widget implements HasId, HasHTML, HasResponsiveness, HasInlineStyle, IsEditor<LeafValueEditor<String>>, HasFloat {
-    private final FloatMixin<AbstractTextWidget> floatMixin = new FloatMixin<AbstractTextWidget>(this);
-    private final IdMixin<AbstractTextWidget> idMixin = new IdMixin<AbstractTextWidget>(this);
+    private final FloatMixin<AbstractTextWidget> floatMixin = new FloatMixin<>(this);
+    private final IdMixin<AbstractTextWidget> idMixin = new IdMixin<>(this);
     private LeafValueEditor<String> editor;
 
     protected AbstractTextWidget(final Element element) {

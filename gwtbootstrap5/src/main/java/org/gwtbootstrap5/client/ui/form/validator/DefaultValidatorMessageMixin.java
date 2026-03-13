@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -26,8 +26,7 @@ import com.google.gwt.core.client.GWT;
 
 /**
  * Default implementation of the validator message mixin. This can be replaced with your own version by using
- * a "replace-with" statment in the gwt module file.
- * 
+ * a "replace-with" statement in the gwt module file.
  * Example:
  * 
  * <pre>

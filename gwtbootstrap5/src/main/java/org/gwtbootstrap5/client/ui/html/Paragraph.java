@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.html;
  * %%
  * Copyright (C) 2017 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -35,7 +35,7 @@ import com.google.gwt.dom.client.ParagraphElement;
  */
 public class Paragraph extends HTMLPanel implements HasAlignment, HasEmphasis {
 
-    private final HTMLMixin<Paragraph> textMixin = new HTMLMixin<Paragraph>(this);
+    private final HTMLMixin<Paragraph> textMixin = new HTMLMixin<>(this);
 
     public Paragraph() {
         this("");

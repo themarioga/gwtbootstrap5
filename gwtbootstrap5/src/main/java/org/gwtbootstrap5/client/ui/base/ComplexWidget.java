@@ -4,9 +4,9 @@ package org.gwtbootstrap5.client.ui.base;
  * #%L
  * GwtBootstrap5
  * %%
- * Copyright (C) 2016 GwtBootstrap5
+ * Copyright (C) 2026 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -39,8 +39,8 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Sven Jacobs
  */
 public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiveness, HasInlineStyle, HasFloat {
-    private final IdMixin<ComplexWidget> idMixin = new IdMixin<ComplexWidget>(this);
-    private final FloatMixin<ComplexWidget> floatMixin = new FloatMixin<ComplexWidget>(this);
+    private final IdMixin<ComplexWidget> idMixin = new IdMixin<>(this);
+    private final FloatMixin<ComplexWidget> floatMixin = new FloatMixin<>(this);
 
     /**
      * {@inheritDoc}

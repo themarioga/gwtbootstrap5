@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -34,7 +34,7 @@ public class BooleanParser implements Parser<Boolean> {
     private static BooleanParser instance;
 
     /**
-     * @return the instance of the {@link BooleanRenderer}.
+     * @return the instance of the {@link BooleanParser}.
      */
     public static Parser<Boolean> instance() {
         if (instance == null) {
@@ -52,16 +52,17 @@ public class BooleanParser implements Parser<Boolean> {
 
     /** {@inheritDoc} */
     @Override
-    public Boolean parse(final CharSequence text) throws ParseException {
+    public Boolean parse(final CharSequence text) {
         if (text != null) {
             String value = text.toString();
             if (value.equalsIgnoreCase("true") || value.equalsIgnoreCase("Yes")) {
                 return true;
             }
             try {
-                Integer i = Integer.valueOf(value);
+                int i = Integer.parseInt(value);
                 return i != 0;
-            } catch (Exception e) {
+            } catch (Exception ignored) {
+                // Ignored
             }
         }
         return false;

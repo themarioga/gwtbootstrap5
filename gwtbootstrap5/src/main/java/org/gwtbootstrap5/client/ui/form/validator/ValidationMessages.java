@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.validator;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -25,16 +25,15 @@ import com.google.gwt.i18n.client.LocalizableResource.DefaultLocale;
 
 /**
  * Validation messages.
- * 
  * Message functions should be the key with "_" replacing any periods. This allows the
  * ValidationMessageResolver to find the message by key.
  * 
  * @author Steven Jardine
  */
-@DefaultLocale("en")
+@DefaultLocale()
 public interface ValidationMessages extends ConstantsWithLookup {
 
-    public static class Keys {
+    class Keys {
 
         public static final String BLANK = "org.gwtbootstrap5.validation.Blank.message";
 

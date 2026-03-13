@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -28,7 +28,6 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.DomEvent;
 
 /**
@@ -47,17 +46,14 @@ public class FormLabel extends AbstractTextWidget {
     public FormLabel() {
         super(Document.get().createLabelElement());
         setStyleName(Styles.CONTROL_LABEL);
-        addHandler(new ChangeHandler() {
-            @Override
-            public void onChange(ChangeEvent event) {
-                if (iconElement != null) {
-                    iconElement.removeFromParent();
-                }
-                String html = getHTML();
-                if (showRequiredIndicator && html != null && !html.isEmpty()) {
-                    iconElement = createIconElement();
-                    getElement().appendChild(iconElement);
-                }
+        addHandler(event -> {
+            if (iconElement != null) {
+                iconElement.removeFromParent();
+            }
+            String html = getHTML();
+            if (showRequiredIndicator && html != null && !html.isEmpty()) {
+                iconElement = createIconElement();
+                getElement().appendChild(iconElement);
             }
         }, ChangeEvent.getType());
     }
@@ -102,7 +98,7 @@ public class FormLabel extends AbstractTextWidget {
     }
 
     /**
-     * @param should this label show as required?
+     * @param required should this label show as required?
      */
     public void setShowRequiredIndicator(boolean required) {
         this.showRequiredIndicator = required;

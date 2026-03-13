@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.error;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -35,7 +35,6 @@ import org.gwtbootstrap5.client.ui.constants.ValidationState;
  * This is the default {@link ErrorHandler} implementation. The assumption is that every {@link ValueBoxBase}
  * instance will have a {@link HasValidationState} parent. If there is a {@link HelpBlock} that is a child of
  * the {@link HasValidationState} parent then error messages will be displayed in the {@link HelpBlock}.
- * 
  * Example:
  * 
  * <pre>{@code

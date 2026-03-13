@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.form.error;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -30,11 +30,11 @@ public class BasicEditorError implements EditorError {
 
     protected boolean consumed = false;
 
-    protected Editor<?> editor = null;
+    protected Editor<?> editor;
 
-    protected String message = null;
+    protected String message;
 
-    protected Object value = null;
+    protected Object value;
 
     /**
      * Create an new error.
@@ -64,7 +64,6 @@ public class BasicEditorError implements EditorError {
     /** {@inheritDoc} */
     @Override
     public String getMessage() {
-        // TODO We may need to format the message using MessageFormat.
         return message;
     }
 

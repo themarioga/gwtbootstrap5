@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -21,9 +21,10 @@ package org.gwtbootstrap5.client.ui.base;
  */
 
 public interface HasAutoComplete {
-    public static final String AUTO_COMPLETE = "autocomplete";
-    public static final String ON = "on";
-    public static final String OFF = "off";
+
+    String AUTO_COMPLETE = "autocomplete";
+    String ON = "on";
+    String OFF = "off";
 
     /**
      * Sets the auto complete property on the widget

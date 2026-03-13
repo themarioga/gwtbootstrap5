@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.shared.event;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -27,7 +27,7 @@ import com.google.gwt.event.shared.GwtEvent;
  * @author Joshua Godi
  */
 public class ShowEvent extends GwtEvent<ShowHandler> {
-    private static final Type<ShowHandler> TYPE = new Type<ShowHandler>();
+    private static final Type<ShowHandler> TYPE = new Type<>();
     private final NativeEvent nativeEvent;
 
     public static Type<ShowHandler> getType() {

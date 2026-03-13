@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -91,9 +91,9 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  */
 public class Modal extends Div implements IsClosable {
 
-    private final static String TOGGLE = "toggle";
-    private final static String HIDE = "hide";
-    private final static String SHOW = "show";
+    private static final String TOGGLE = "toggle";
+    private static final String HIDE = "hide";
+    private static final String SHOW = "show";
 
     private final ModalContent content = new ModalContent();
     private final ModalDialog dialog = new ModalDialog();
@@ -138,9 +138,9 @@ public class Modal extends Div implements IsClosable {
     @Override
     public void add(final Widget w) {
         // User can supply own ModalHeader
-        if (w instanceof ModalHeader) {
+        if (w instanceof ModalHeader m) {
             header.removeFromParent();
-            header = (ModalHeader) w;
+            header = m;
         }
 
         if (w instanceof ModalComponent) {
@@ -185,12 +185,9 @@ public class Modal extends Div implements IsClosable {
             removeOnHideHandlerReg = null;
         }
         if (removeOnHide) {
-            removeOnHideHandlerReg = addHiddenHandler(new ModalHiddenHandler() {
-                @Override
-                public void onHidden(final ModalHiddenEvent evt) {
-                    // Do logical detach
-                    removeFromParent();
-                }
+            removeOnHideHandlerReg = addHiddenHandler(evt -> {
+                // Do logical detach
+                removeFromParent();
             });
         }
     }

@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -62,7 +62,6 @@ public class RadioButton extends Radio implements HasActive,
      * Creates a new radio associated with a particular group, and initialized
      * with the given HTML label. All radio buttons associated with the same
      * group name belong to a mutually-exclusive set.
-     *
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      *
@@ -113,7 +112,6 @@ public class RadioButton extends Radio implements HasActive,
      * Creates a new radio associated with a particular group, and initialized
      * with the given HTML label. All radio buttons associated with the same
      * group name belong to a mutually-exclusive set.
-     *
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      *
@@ -166,7 +164,6 @@ public class RadioButton extends Radio implements HasActive,
      * initialized with the given label (optionally treated as HTML). All radio
      * buttons associated with the same group name belong to a
      * mutually-exclusive set.
-     *
      * Radio buttons are grouped by their name attribute, so changing their name
      * using the setName() method will also change their associated group.
      *

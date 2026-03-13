@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2015 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -63,16 +63,16 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
 public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>, LeafValueEditor<T>,
         HasEditorErrors<T>, HasErrorHandler, HasValidators<T>, HasBlankValidator<T> {
 
-    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<T>(this);
+    private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<>(this);
 
     private String name = null;
 
     private final Parser<T> parser;
 
-    private final BlankValidatorMixin<RadioGroupBase<T>, T> validatorMixin = new RadioGroupBlankValidatorMixin<RadioGroupBase<T>, T>(
+    private final BlankValidatorMixin<RadioGroupBase<T>, T> validatorMixin = new RadioGroupBlankValidatorMixin<>(
             this, errorHandlerMixin.getErrorHandler());
 
-    private final Map<Radio, HandlerRegistration> valueChangedRegistrations = new HashMap<Radio, HandlerRegistration>();
+    private final Map<Radio, HandlerRegistration> valueChangedRegistrations = new HashMap<>();
 
     /**
      * Constructor.
@@ -156,16 +156,16 @@ public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>
     protected Set<Radio> getRadioChildren(final Widget widget, final Set<Radio> c) {
         Set<Radio> children = c;
         if (children == null) {
-            children = new HashSet<Radio>();
+            children = new HashSet<>();
         }
-        if (widget instanceof Radio) {
-            children.add((Radio) widget);
-        } else if (widget instanceof HasOneWidget) {
-            children = getRadioChildren(((HasOneWidget) widget).getWidget(), children);
-        } else if (widget instanceof HasWidgets) {
-            for (Widget w : (HasWidgets) widget) {
-                if (w instanceof Radio) {
-                    children.add((Radio) w);
+        if (widget instanceof Radio r) {
+            children.add(r);
+        } else if (widget instanceof HasOneWidget w) {
+            children = getRadioChildren(w.getWidget(), children);
+        } else if (widget instanceof HasWidgets h) {
+            for (Widget w : h) {
+                if (w instanceof Radio r) {
+                    children.add(r);
                 } else {
                     children = getRadioChildren(w, children);
                 }
@@ -188,6 +188,7 @@ public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>
                 try {
                     return parser.parse(child.getFormValue());
                 } catch (ParseException e) {
+                    // Ignore
                 }
             }
         }
@@ -271,6 +272,7 @@ public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>
                     child.setValue(true, fireEvents);
                 }
             } catch (ParseException e) {
+                // Ignore
             }
         }
     }
@@ -281,12 +283,7 @@ public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>
         errorHandlerMixin.showErrors(errors);
     }
 
-    private ValueChangeHandler<Boolean> changeHandler = new ValueChangeHandler<Boolean>() {
-        @Override
-        public void onValueChange(ValueChangeEvent<Boolean> event) {
-            ValueChangeEvent.fire(RadioGroupBase.this, getValue());
-        }
-    };
+    private final ValueChangeHandler<Boolean> changeHandler = event -> ValueChangeEvent.fire(RadioGroupBase.this, getValue());
 
     /**
      * Update the radio children names.

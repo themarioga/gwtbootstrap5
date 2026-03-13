@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.base;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -25,8 +25,8 @@ package org.gwtbootstrap5.client.ui.base;
  */
 public interface HasHref {
     // Empty HREF to avoid issues when clicking!
-    public static final String EMPTY_HREF = "javascript:;";
-    public static final String HREF = "href";
+    String EMPTY_HREF = "javascript:;";
+    String HREF = "href";
 
     /**
      * Set's the HREF of the widget

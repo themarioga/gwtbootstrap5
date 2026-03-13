@@ -8,13 +8,11 @@ import org.gwtbootstrap5.client.ui.form.validator.HasValidators;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.FormElement;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyPressEvent;
-import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -36,7 +34,7 @@ import com.google.gwt.user.client.ui.impl.FormPanelImplHost;
  * %%
  * Copyright (C) 2025 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -73,12 +71,12 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
          */
         public static Type<SubmitCompleteHandler> getType() {
             if (TYPE == null) {
-                TYPE = new Type<SubmitCompleteHandler>();
+                TYPE = new Type<>();
             }
             return TYPE;
         }
 
-        private String resultHtml;
+        private final String resultHtml;
 
         /**
          * Create a submit complete event.
@@ -142,7 +140,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
          */
         public static Type<SubmitHandler> getType() {
             if (TYPE == null) {
-                TYPE = new Type<SubmitHandler>();
+                TYPE = new Type<>();
             }
             return TYPE;
         }
@@ -226,11 +224,11 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
 
     private Element synthesizedFrame;
 
-    public AbstractForm() {
+    protected AbstractForm() {
         this(true);
     }
 
-    public AbstractForm(boolean createIFrame) {
+    protected AbstractForm(boolean createIFrame) {
         this(Document.get().createFormElement(), createIFrame);
         getElement().setAttribute(Attributes.ROLE, FORM);
     }
@@ -257,7 +255,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
 
         if (createIFrame) {
             assert getTarget() == null || getTarget().trim()
-                    .length() == 0 : "Cannot create target iframe if the form's target is already set.";
+                    .isEmpty() : "Cannot create target iframe if the form's target is already set.";
 
             // We use the module name as part of the unique ID to ensure that
             // ids are
@@ -367,8 +365,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     }
 
     /**
-     * Gets the HTTP method used for submitting this form. This should be either
-     * {@link #METHOD_GET} or {@link #METHOD_POST}.
+     * Gets the HTTP method used for submitting this form. This should be either METHOD_GET or METHOD_POST.
      *
      * @return the form's method
      */
@@ -377,8 +374,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     }
 
     /**
-     * Sets the HTTP method used for submitting this form. This should be either
-     * {@link #METHOD_GET} or {@link #METHOD_POST}.
+     * Sets the HTTP method used for submitting this form. This should be either METHOD_GET or METHOD_POST.
      *
      * @param method
      *            the form's method
@@ -399,8 +395,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     }
 
     /**
-     * Gets the encoding used for submitting this form. This should be either
-     * {@link #ENCODING_MULTIPART} or {@link #ENCODING_URLENCODED}.
+     * Gets the encoding used for submitting this form. This should be either ENCODING_MULTIPART or ENCODING_URLENCODED.
      *
      * @return the form's encoding
      */
@@ -409,8 +404,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     }
 
     /**
-     * Sets the encoding used for submitting this form. This should be either
-     * {@link #ENCODING_MULTIPART} or {@link #ENCODING_URLENCODED}.
+     * Sets the encoding used for submitting this form. This should be either ENCODING_MULTIPART or ENCODING_URLENCODED.
      *
      * @param encodingType
      *            the form's encoding
@@ -479,13 +473,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
         // because clients that detach the form panel when submission is
         // complete can cause some browsers (i.e. Mozilla) to go into an
         // 'infinite loading' state. See issue 916.
-        Scheduler.get().scheduleDeferred(new ScheduledCommand() {
-
-            @Override
-            public void execute() {
-                fireEvent(new SubmitCompleteEvent(impl.getContents(synthesizedFrame)));
-            }
-        });
+        Scheduler.get().scheduleDeferred(() -> fireEvent(new SubmitCompleteEvent(impl.getContents(synthesizedFrame))));
     }
 
     private void setTarget(String target) {
@@ -517,16 +505,16 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
      * @return the children with validators
      */
     protected List<HasValidators<?>> getChildrenWithValidators(Widget widget) {
-        List<HasValidators<?>> result = new ArrayList<HasValidators<?>>();
+        List<HasValidators<?>> result = new ArrayList<>();
         if (widget != null) {
             if (widget instanceof HasValidators<?>) {
                 result.add((HasValidators<?>) widget);
             }
-            if (widget instanceof HasOneWidget) {
-                result.addAll(getChildrenWithValidators(((HasOneWidget) widget).getWidget()));
+            if (widget instanceof HasOneWidget w) {
+                result.addAll(getChildrenWithValidators(w.getWidget()));
             }
-            if (widget instanceof HasWidgets) {
-                for (Widget child : (HasWidgets) widget) {
+            if (widget instanceof HasWidgets w) {
+                for (Widget child : w) {
                     result.addAll(getChildrenWithValidators(child));
                 }
             }
@@ -539,14 +527,9 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     public void setSubmitOnEnter(boolean submitOnEnter) {
         if (submitOnEnter) {
             if (submitOnEnterRegistration == null)
-                submitOnEnterRegistration = addDomHandler(new KeyPressHandler() {
-                    @Override
-                    public void onKeyPress(KeyPressEvent event) {
-                        if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {
-                            if (validate()) {
-                                fireSubmitEvent();
-                            }
-                        }
+                submitOnEnterRegistration = addDomHandler(event -> {
+                    if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER && validate()) {
+                        fireSubmitEvent();
                     }
                 }, KeyPressEvent.getType());
         } else if (submitOnEnterRegistration != null) {

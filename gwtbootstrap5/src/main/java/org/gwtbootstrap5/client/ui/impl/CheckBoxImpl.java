@@ -6,7 +6,7 @@ package org.gwtbootstrap5.client.ui.impl;
  * %%
  * Copyright (C) 2013 - 2014 GwtBootstrap5
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -22,21 +22,12 @@ package org.gwtbootstrap5.client.ui.impl;
 
 import org.gwtbootstrap5.client.ui.CheckBox;
 
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 
 public class CheckBoxImpl {
 
     public void ensureDomEventHandlers(final CheckBox checkBox) {
-        checkBox.addChangeHandler(new ChangeHandler() {
-
-            @Override
-            public void onChange(ChangeEvent event) {
-                ValueChangeEvent.fire(checkBox, checkBox.getValue());
-            }
-
-        });
+        checkBox.addChangeHandler(event -> ValueChangeEvent.fire(checkBox, checkBox.getValue()));
     }
 
 }
