@@ -20,8 +20,7 @@ package org.gwtbootstrap5.client.ui;
  * ==========================LICENSE_END=================================
  */
 
-import org.gwtbootstrap5.client.ui.base.button.CloseButton;
-import org.gwtbootstrap5.client.ui.constants.ButtonDismiss;
+import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap5.client.ui.constants.HeadingSize;
 import org.gwtbootstrap5.client.ui.constants.Styles;
 import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
@@ -33,56 +32,90 @@ import org.gwtbootstrap5.client.ui.gwt.FlowPanel;
  */
 public class ModalHeader extends FlowPanel implements ModalComponent, IsClosable {
 
-    private final ModalTitle modalTitle = new ModalTitle(HeadingSize.H4);
-    private final CloseButton closeButton = new CloseButton();
+    private ModalTitle modalTitle;
+    private ModalCloseButton modalCloseButton;
 
     public ModalHeader() {
         super();
 
         setStyleName(Styles.MODAL_HEADER);
 
-        closeButton.setDataDismiss(ButtonDismiss.MODAL);
+        addModalTitle(null);
+        addModalCloseButton(null);
+    }
 
-        // To make it closable by default
-        add(closeButton);
+    @Override
+    public void add(Widget w) {
+        if (w instanceof ModalTitle mt) {
+            removeModalTitle();
+            addModalTitle(mt);
+        } else if (w instanceof ModalCloseButton mcb) {
+            removeModalCloseButton();
+            addModalCloseButton(mcb);
+        } else {
+            super.add(w);
+        }
     }
 
     @Override
     public void setTitle(final String title) {
         if (title != null && !title.isBlank()) {
-            addModalTitle();
+            addModalTitle(this.modalTitle);
         } else {
-            removeHeading();
+            removeModalTitle();
         }
 
         modalTitle.setText(title);
     }
 
-    private void addModalTitle() {
-        if (!getChildren().contains(modalTitle)) {
-            insert(modalTitle, 0);
-        }
-    }
-
-    private void removeHeading() {
-        if (getChildren().contains(modalTitle)) {
-            modalTitle.removeFromParent();
-        }
-    }
-
     @Override
     public void setClosable(final boolean closable) {
         if (closable) {
-            if (!isClosable()) {
-                add(closeButton);
-            }
+            addModalCloseButton(this.modalCloseButton);
         } else {
-            closeButton.removeFromParent();
+            removeModalCloseButton();
         }
     }
 
     @Override
     public boolean isClosable() {
-        return closeButton.getParent() != null;
+        return modalCloseButton != null && modalCloseButton.getParent() != null;
     }
+
+    private void addModalTitle(ModalTitle modalTitle) {
+        if (modalTitle == null) {
+            modalTitle = new ModalTitle(HeadingSize.H4);
+        }
+
+        this.modalTitle = modalTitle;
+
+        if (!getChildren().contains(modalTitle)) {
+            insert(modalTitle, 0);
+        }
+    }
+
+    private void removeModalTitle() {
+        if (modalTitle != null && getChildren().contains(modalTitle)) {
+            modalTitle.removeFromParent();
+        }
+    }
+
+    private void addModalCloseButton(ModalCloseButton modalCloseButton) {
+        if (modalCloseButton == null) {
+            modalCloseButton = new ModalCloseButton();
+        }
+
+        this.modalCloseButton = modalCloseButton;
+
+        if (!getChildren().contains(modalCloseButton)) {
+            insert(modalCloseButton, getWidgetCount());
+        }
+    }
+
+    private void removeModalCloseButton() {
+        if (modalCloseButton != null && getChildren().contains(modalCloseButton)) {
+            modalCloseButton.removeFromParent();
+        }
+    }
+
 }
