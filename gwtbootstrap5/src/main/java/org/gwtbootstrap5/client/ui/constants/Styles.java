@@ -107,6 +107,8 @@ public final class Styles {
     public static final String FORM_CHECK_INPUT = "form-check-input";
     public static final String FORM_CHECK_REVERSE = "form-check-reverse";
 
+    public static final String FORM_SELECT = "form-select";
+
     public static final String HIDE = "hide";
 
     public static final String ICON_BORDER = "fa-border";
