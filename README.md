@@ -15,10 +15,10 @@ You will be able to easily add GWTBootstrap5 to your project by including the li
 * Migrate to JSInterop
 
 ### Final Release
-* 0.1.9.4 - Released on 16 March 2026.
+* 0.1.9.5 - Released on 16 March 2026.
   * Based on Bootstrap v5.3.x
-* [Demo](Soon) - The GWTBootstrap5 0.1.9.4 Demo.
-* [API Docs](Soon) - The GWTBootstrap5 0.1.9.4 API Javadoc.
+* [Demo](Soon) - The GWTBootstrap5 0.1.9.5 Demo.
+* [API Docs](Soon) - The GWTBootstrap5 0.1.9.5 API Javadoc.
 * [Supported Features](Soon) - Current releases supported features.
 
 ### Resources
