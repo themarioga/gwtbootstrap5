@@ -16,10 +16,10 @@ You will be able to easily add GWTBootstrap5 to your project by including the li
 * Extract datepicker and select engines to separate jar
 
 ### Final Release
-* 0.1.10.8 - Released on 23 April 2026.
+* 0.1.10.9 - Released on 23 April 2026.
   * Based on Bootstrap v5.3.x
-* [Demo](Soon) - The GWTBootstrap5 0.1.10.8 Demo.
-* [API Docs](Soon) - The GWTBootstrap5 0.1.10.8 API Javadoc.
+* [Demo](Soon) - The GWTBootstrap5 0.1.10.9 Demo.
+* [API Docs](Soon) - The GWTBootstrap5 0.1.10.9 API Javadoc.
 * [Supported Features](Soon) - Current releases supported features.
 
 ### Resources
