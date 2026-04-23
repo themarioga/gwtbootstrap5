@@ -13,9 +13,10 @@ You will be able to easily add GWTBootstrap5 to your project by including the li
 
 ### ToDo
 * Migrate to JSInterop
+* Extract datepicker and select engines to separate jar
 
 ### Final Release
-* 0.1.10.6 - Released on 16 March 2026.
+* 0.1.10.6 - Released on 23 April 2026.
   * Based on Bootstrap v5.3.x
 * [Demo](Soon) - The GWTBootstrap5 0.1.10.6 Demo.
 * [API Docs](Soon) - The GWTBootstrap5 0.1.10.6 API Javadoc.
