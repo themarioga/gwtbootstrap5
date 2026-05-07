@@ -7,7 +7,7 @@
     <groupId>org.gwtbootstrap5</groupId>
     <artifactId>gwtbootstrap5-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.10.9</version>
+    <version>0.1.10.10</version>
     <name>GwtBootstrap5 Parent</name>
     <description>GWT wrapper for the Bootstrap front-end framework</description>
     <url>https://gwtbootstrap5.org</url>
@@ -158,14 +158,15 @@
                     <version>12.1.5</version>
                     <configuration>
                         <failBuildOnCVSS>8</failBuildOnCVSS>
-                        <nvdApiKey>be21d79f-0012-4a77-a95d-4be22f43a1e1</nvdApiKey>
                         <suppressionFiles>
                             <suppressionFile>${basedir}/src/main/resources/cve-false-possitives.xml</suppressionFile>
                         </suppressionFiles>
                         <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
-                        <nvdDatafeedUrl>http://172.17.30.41:8585/nvdcve-{0}.json.gz</nvdDatafeedUrl>
-                        <ossIndexUsername>mario.gonzalez@i2e.es</ossIndexUsername>
-                        <ossIndexPassword>236441fa7b8dddd2aba836f77b4d3fbefff04d2d</ossIndexPassword>
+                        <nvdDatafeedUrl>${env.NVD_API_URL}</nvdDatafeedUrl>
+                        <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
+                        <ossindexAnalyzerEnabled>${env.OSS_INDEX_ENABLED}</ossindexAnalyzerEnabled>
+                        <ossIndexUsername>${env.OSSINDEX_USERNAME}</ossIndexUsername>
+                        <ossIndexPassword>${env.OSSINDEX_PASSWORD}</ossIndexPassword>
                     </configuration>
                     <executions>
                         <execution>
